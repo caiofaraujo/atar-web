@@ -1,0 +1,38 @@
+package com.atar.web.entities;
+
+import java.io.Serializable;
+import java.util.Date;
+import java.util.List;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tb_clientes_cli")
+
+
+public class Equipamentos implements Serializable {
+
+	private static final long serialVersionUID = 3960436649365666213L;
+	
+	private Long id;
+	private String marca;
+	private String modelo;
+	private Date dtInativacao;
+	private Date dtCadastro;
+	private List<Equipamentos> equipamentos;
+	
+	public Equipamentos() {
+		
+	}
+	
+	
+}

@@ -1,0 +1,5 @@
+package com.atar.web.enums;
+
+public enum TipoEnum {
+
+}

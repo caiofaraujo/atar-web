@@ -1,0 +1,5 @@
+package com.atar.web.entities;
+
+public class Clientes {
+
+}
