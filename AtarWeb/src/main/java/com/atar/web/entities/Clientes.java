@@ -10,30 +10,51 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tb_clientes_cli")
+@Table(name = "TB_CLIENTES_CLIE")
 public class Clientes implements Serializable {
 
 	private static final long serialVersionUID = 3960436649365666213L;
-	
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name = "ID_EQUIPAMENTO_EQUI", nullable = false)
 	private Long id;
+	
+	@Column(name = "DS_NOME_CLIE", nullable = false)
 	private String nome;
+	
+	@Column(name = "DS_ENDERECO_CLIE", nullable = false)
 	private String endereco;
+	
+	@Column(name = "DH_INATIVACAO_CLIE", nullable = false)
 	private Date dtInativacao;
+	
+	@Column(name = "DH_CADASTRO_CLIE", nullable = false)
 	private Date dtCadastro;
-	private List<Clientes> clientes;
+	
+	@OneToMany()
+	@JoinColumn(name = "ID_EQUIPAMENTO_EQUI")
+	private List<Equipamentos> equipamentos;
 	
 	public Clientes() {
-		
+
 	}
 	
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	public List<Equipamentos> getEquipamentos() {
+		return equipamentos;
+	}
+
+	public void setEquipamentos(List<Equipamentos> equipamentos) {
+		this.equipamentos = equipamentos;
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -42,7 +63,6 @@ public class Clientes implements Serializable {
 		this.id = id;
 	}
 
-	@Column(name = "ds_nome_clie", nullable = false)
 	public String getNome() {
 		return nome;
 	}
@@ -50,8 +70,7 @@ public class Clientes implements Serializable {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
-	@Column(name = "ds_endereco_clie", nullable = false)
+
 	public String getEndereco() {
 		return endereco;
 	}
@@ -59,8 +78,7 @@ public class Clientes implements Serializable {
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
-	
-	@Column(name = "dh_inativacao_clie", nullable = false)
+
 	public Date getDtInativacao() {
 		return dtInativacao;
 	}
@@ -68,8 +86,7 @@ public class Clientes implements Serializable {
 	public void setDtInativacao(Date dtInativacao) {
 		this.dtInativacao = dtInativacao;
 	}
-	
-	@Column(name = "dh_cadastro_clie", nullable = false)
+
 	public Date getDtCadastro() {
 		return dtCadastro;
 	}
@@ -78,28 +95,20 @@ public class Clientes implements Serializable {
 		this.dtCadastro = dtCadastro;
 	}
 
-	
-	public List<Clientes> getClientes() {
-		return clientes;
-	}
-
-	public void setClientes(List<Clientes> clientes) {
-		this.clientes = clientes;
-	}
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	
+
 	@PrePersist
 	public void prePersist() {
 		final Date atual = new Date();
 		dtCadastro = atual;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "Cliente [id=" + id + ", nome=" + nome + ", endereco=" + endereco + ", dtCadastro=" + dtCadastro + "]";
 	}
-	
+
 }

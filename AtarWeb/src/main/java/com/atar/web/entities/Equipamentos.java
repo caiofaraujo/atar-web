@@ -10,32 +10,39 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tb_equipamentos_equi")
-
-
+@Table(name = "TB_EQUIPAMENTOS_EQUI")
 public class Equipamentos implements Serializable {
 
 	private static final long serialVersionUID = 3960436649365666213L;
 	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name = "ID_EQUIPAMENTO_EQUI", nullable = false)
 	private Long id;
+	
+	@Column(name = "DS_MARCA_EQUI", nullable = false)
 	private String marca;
+	
+	@Column(name = "DS_MODELO_EQUI", nullable = false)
 	private String modelo;
+	
+	@Column(name = "DH_INATIVACAO_EQUI", nullable = false)
 	private Date dtInativacao;
+	
+	@Column(name = "DH_CADASTRO_EQUI", nullable = false)
 	private Date dtCadastro;
-	private List<Equipamentos> equipamentos;
 	
 	public Equipamentos() {
 		
 	}
 
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
 	public Long getId() {
 		return id;
 	}
@@ -44,7 +51,6 @@ public class Equipamentos implements Serializable {
 		this.id = id;
 	}
 	
-	@Column(name = "ds_marca_equi", nullable = false)
 	public String getMarca() {
 		return marca;
 	}
@@ -53,7 +59,6 @@ public class Equipamentos implements Serializable {
 		this.marca = marca;
 	}
 	
-	@Column(name = "ds_modelo_equi", nullable = false)
 	public String getModelo() {
 		return modelo;
 	}
@@ -62,7 +67,6 @@ public class Equipamentos implements Serializable {
 		this.modelo = modelo;
 	}
 
-	@Column(name = "dh_inativacao_equi", nullable = false)
 	public Date getDtInativacao() {
 		return dtInativacao;
 	}
@@ -71,21 +75,12 @@ public class Equipamentos implements Serializable {
 		this.dtInativacao = dtInativacao;
 	}
 
-	@Column(name = "dh_cadastro_equi", nullable = false)
 	public Date getDtCadastro() {
 		return dtCadastro;
 	}
 
 	public void setDtCadastro(Date dtCadastro) {
 		this.dtCadastro = dtCadastro;
-	}
-
-	public List<Equipamentos> getEquipamentos() {
-		return equipamentos;
-	}
-
-	public void setEquipamentos(List<Equipamentos> equipamentos) {
-		this.equipamentos = equipamentos;
 	}
 
 	public static long getSerialversionuid() {

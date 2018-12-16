@@ -5,7 +5,63 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2018-12-12T20:12:00Z</updated>
+  <updated>2018-12-14T22:42:00Z</updated>
+  <entry>
+    <title>Spring CredHub 2.0.0.RC1 released</title>
+    <link rel="alternate" href="https://spring.io/blog/2018/12/14/spring-credhub-2-0-0-rc1-released" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Scott Frederick</name>
+    </author>
+    <id>tag:spring.io,2018-12-14:3501</id>
+    <updated>2018-12-14T22:42:00Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;I&amp;#8217;m pleased to announce the first release candidate of Spring CredHub 2.0.0, available now in the &lt;a href="https://repo.spring.io/libs-milestone-local/org/springframework/credhub/"&gt;Spring milestone repository&lt;/a&gt;. A GA release of Spring CredHub 2.0.0 will be available in a few weeks.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="credhub"&gt;&lt;a class="anchor" href="#credhub"&gt;&lt;/a&gt;CredHub&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="https://docs.cloudfoundry.org/credhub/"&gt;CredHub&lt;/a&gt; provides centralized credential management to the Cloud Foundry platform. CredHub implements an HTTP API to securely store, generate, retrieve, and delete credentials of various types.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Spring CredHub provides a Java binding for the CredHub API, making it easy to integrate Spring applications with CredHub.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="what-s-new"&gt;&lt;a class="anchor" href="#what-s-new"&gt;&lt;/a&gt;What&amp;#8217;s New&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The 2.0.0 release includes the following enhancements:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Supports CredHub server versions 1.x and 2.x, and the CredHub v1 and v2 APIs&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Provides compatibility with Spring Framework 5.1 and Spring Boot 2.1&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Addition of a reactive interface using &lt;a href="https://projectreactor.io/"&gt;Reactor&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="getting-started"&gt;&lt;a class="anchor" href="#getting-started"&gt;&lt;/a&gt;Getting Started&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The Spring CredHub documentation contains a &lt;a href="https://docs.spring.io/spring-credhub/docs/2.0.0.RC1/reference/html5/#getting-started"&gt;Getting started&lt;/a&gt; section to help get you started using the library. Feedback can be provided via &lt;a href="https://github.com/spring-projects/spring-credhub/issues"&gt;GitHub issues&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="https://spring.io/projects/spring-credhub/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-credhub"&gt;GitHub&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-credhub/docs/2.0.0.RC1/reference/html5/"&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</content>
+  </entry>
   <entry>
     <title>Spring Cloud Greenwich.RC1 available now</title>
     <link rel="alternate" href="https://spring.io/blog/2018/12/12/spring-cloud-greenwich-rc1-available-now" />
@@ -1464,41 +1520,5 @@ Flux&amp;lt;Map&amp;lt;String, Object&amp;gt;&amp;gt; rows = databaseClient.exec
 &lt;p&gt;If you haven’t already upgraded to Spring Boot 2, please consider doing so as support for 1.x will &lt;a href="https://spring.io/blog/2018/07/30/spring-boot-1-x-eol-aug-1st-2019"&gt;end on August 1st 2019&lt;/a&gt;. &lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
 &lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="http://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="http://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community on &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/1.5.18.RELEASE/reference/htmlsingle"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>This Week in Spring - November 27th, 2018</title>
-    <link rel="alternate" href="https://spring.io/blog/2018/11/27/this-week-in-spring-november-27th-2018" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2018-11-27:3479</id>
-    <updated>2018-11-27T16:49:53Z</updated>
-    <content type="html">&lt;p&gt;Hi Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring!&lt;/em&gt; This week I&amp;rsquo;m in Marikesh, Morocco for the epic &lt;a href="http://devoxx.ma"&gt;Devoxx MA&lt;/a&gt; talking about all things Spring and cloud with my friends - Google&amp;rsquo;s Ray Tsang and Microsoft&amp;rsquo;s Bruno Borges. Then, tomorrow it&amp;rsquo;s off to &lt;a href="https://www.jug.ch/html/events/2018/cloud_native_java_be.html"&gt;Bern&lt;/a&gt; and &lt;a href="https://www.jug.ch/html/events/2018/cloud_native_java.html"&gt;Zurich&lt;/a&gt; Switzerland [for the local JUGs there. Tonight, in about 15 minutes, I&amp;rsquo;m doing a live training on Safari - &lt;a href="https://www.safaribooksonline.com/live-training/courses/spring-boot-and-kotlin/0636920221562/"&gt;&amp;ldquo;Bootiful Kotlin,&amp;rdquo;&lt;/a&gt; too. &lt;/p&gt;
-&lt;p&gt;As usual, we&amp;rsquo;ve got a ton of things to cover so let&amp;rsquo;s get to it! &lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2018/11/27/spring-framework-5-1-3-5-0-11-and-4-3-21-available-now"&gt;Spring Framework 5.1.3, 5.0.11 and 4.3.21 available now&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2018/11/21/spring-cloud-greenwich-m3-is-available"&gt;Spring Cloud Greenwich.M3 is available&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://twitter.com/theasf/status/1067252730278891520?s=12"&gt;Join individuals like you who donated more than $70K over the past year to help support 350+ community-driven, Open Source software projects developed at the all-volunteer Apache Software Foundation.&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://twitter.com/pivotal/status/1067106971839619078?s=12"&gt;Wondering what affects availability in Pivotal CF? Denise Yu and Josh McKenty explain in this comic&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://twitter.com/mesirii/status/1067421044934410240?s=12"&gt;The Neo4j team are happy to announce the first release of the Neo4j and Apache Kafka integration.&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data ninja Mark Paluch has just previewed &lt;a href="https://twitter.com/mp911de/status/1067346568167260160?s=12"&gt;typesafe Kotlin queries for Spring Data MongoDB &lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Check out Okta developer advocate Matt Raible&amp;rsquo;s epic post, &lt;a href="https://developer.okta.com/blog/2018/11/26/spring-boot-2-dot-1-oidc-oauth2-reactive-apis"&gt;Spring Boot 2.1: Outstanding OIDC, OAuth 2.0, and Reactive API Support &lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://twitter.com/springcentral/status/1067146548914659328"&gt;I love this thread on tools that are useful that have come out of the development of Spring Boot&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;The &lt;a href="https://groups.google.com/forum/#!topic/lettuce-redis-client-users/7g_DTdru4mg"&gt;Redis Client Lettuce 5.1.3.RELEASE has been released&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://twitter.com/kotlin/status/1067054556402671618"&gt;Gradle 5.0 has been released, and in this release the Kotlin DSL for build scripts is now production-ready!&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Nice post on &lt;a href="https://medium.com/@danieljameskay/making-kafka-rabbitmq-integration-easier-with-spring-cloud-stream-part-1-ddbb1c6bf283"&gt;making Kafka and RabbitMQ integration easier with Spring Cloud Stream &lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;I love this new &lt;a href="https://twitter.com/springcentral/status/1066672814248333312"&gt;software-defined delivery manfiesto&lt;/a&gt; coming from Atomist CEO and Spring founder Rod Johnson&lt;/li&gt;
-  &lt;li&gt;Check out v0.1 of a &lt;a href="https://github.com/ttddyy/datasource-proxy-r2dbc"&gt;datasource-proxy for R2DBC&lt;/a&gt;, the open-sourced, reactive SQL-data access SPI from your friends at Pivotal and beyond.&lt;/li&gt;
-  &lt;li&gt;Also, I like this example of tracing with Spring Cloud sleuth and R2DBC](&lt;a href="https://github.com/ttddyy/datasource-proxy-r2dbc#distributed-tracing"&gt;https://github.com/ttddyy/datasource-proxy-r2dbc#distributed-tracing&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;Hat tip to Michael Hunger: &lt;a href="https://www.youtube.com/watch?v=a-XEZobXspo"&gt;&amp;quot;If you&amp;rsquo;re interested in polyglot (R, python, ruby, js, llvm bitcode, java) execution on GraalVM and the AOT capabilities, this three hour presentation by Oleg and Thomas from Devoxx is really amazing and full of demos&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Check out &lt;a href="https://twitter.com/dhubau/status/1066347481737383936?s=12"&gt;Dieter Hubau&amp;rsquo;s slides for a presentation introducing KNative, Istio, Project Riff and Spring Cloud Function&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=PBiX5nRCHPs"&gt;Check out this great video by James Watters on the power of BOSH: BOSH is the magic sauce behind VMware and Pivotal&amp;rsquo;s PKS&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;There has been amazing progress being made on Apache Tomcat translations and still lots to do. &lt;a href="https://t.co/XZwBkG7uS1"&gt;Come and help us at&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Cloud co-founder has this to offer regarding the future of Hystrix in Spring Cloud, now that Netflix have officially deprecated it: &lt;a href="https://twitter.com/spencerbgibb/status/1064863160979591169?s=12"&gt;&amp;quot;2 things. Watch for a blog post on early December. Also, we will continue to support folks using hystrix through Spring Cloud Netflix. Ribbon has been in a similar state for more than two years and we have supported it the whole time&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Check out Spring Test Framework lead and JUnit 5 lead Sam Brannen&amp;rsquo;s &lt;a href="https://twitter.com/sam_brannen/status/1065213697033994240"&gt;super fast introduction to JUnit5&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://gradle.org/training/whats-new-in-gradle-5/?time_value=whats-new-in-gradle-5-2018-11-29"&gt;Check out this webcast on what&amp;rsquo;s new in Gradle 5.0&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://t.co/J5c3RFvNdr"&gt;R2DBC 1.0 M6 is out&lt;/a&gt; and it has SQL Server, H2 and PostgreSQL bindings you can try.&lt;/li&gt;
-&lt;/ul&gt;</content>
   </entry>
 </feed>

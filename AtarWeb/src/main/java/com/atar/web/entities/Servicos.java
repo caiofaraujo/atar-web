@@ -10,6 +10,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
@@ -17,30 +18,46 @@ import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tb_servicos_serv")
+@Table(name = "TB_SERVICOS_SERV")
 
 public class Servicos implements Serializable {
 
 	private static final long serialVersionUID = 3960436649365666213L;
 	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name = "ID_SERVICO_SERV", nullable = false)
 	private Long id;
+	
+	@Column(name = "DS_TIPO_SERV", nullable = false)
 	private String tipo;
+	
+	@Column(name = "DS_DESCRICAO_SERV", nullable = false)
 	private String descricao;
+	
+	@Column(name = "DS_OBSERVACAO_SERV", nullable = false)
 	private String observacao;
+	
+	@Column(name = "DH_INICIO_SERV", nullable = false)
 	private Date dtInicioServ;
+	
+	@Column(name = "DH_FINAL_SERV", nullable = false)
 	private Date dtFinalServ;
+	
+	@Column(name = "DH_INATIVACAO_SERV", nullable = false)
 	private Date dtInativacao;
+	
+	@Column(name = "DH_CADASTRO_SERV", nullable = false)
 	private Date dtCadastro;	
-	private Clientes clientes;	
-	private List<Servicos> servicos;
 	
-	
+	@ManyToOne()
+	@JoinColumn(name = "ID_CLIENTE_CLIE")
+	private Clientes clientes;
+
 	public Servicos() {
 		
 	}
-	
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+		
 	public Long getId() {
 		return id;
 	}
@@ -49,7 +66,6 @@ public class Servicos implements Serializable {
 		this.id = id;
 	}
 	
-	@Column(name = "ds_tipo_serv", nullable = false)
 	public String getTipo() {
 		return tipo;
 	}
@@ -59,7 +75,6 @@ public class Servicos implements Serializable {
 		this.tipo = tipo;
 	}
 	
-	@Column(name = "ds_descricao_serv", nullable = false)
 	public String getDescricao() {
 		return descricao;
 	}
@@ -68,7 +83,6 @@ public class Servicos implements Serializable {
 		this.descricao = descricao;
 	}
 
-	@Column(name = "ds_observacao_serv", nullable = false)
 	public String getObservacao() {
 		return observacao;
 	}
@@ -77,7 +91,6 @@ public class Servicos implements Serializable {
 		this.observacao = observacao;
 	}
 
-	@Column(name = "dh_inicio_serv", nullable = false)
 	public Date getDtInicioServ() {
 		return dtInicioServ;
 	}
@@ -86,7 +99,6 @@ public class Servicos implements Serializable {
 		this.dtInicioServ = dtInicioServ;
 	}
 
-	@Column(name = "dh_final_serv", nullable = false)
 	public Date getDtFinalServ() {
 		return dtFinalServ;
 	}
@@ -95,7 +107,6 @@ public class Servicos implements Serializable {
 		this.dtFinalServ = dtFinalServ;
 	}
 
-	@Column(name = "dh_inativacao_serv", nullable = false)
 	public Date getDtInativacao() {
 		return dtInativacao;
 	}
@@ -104,7 +115,6 @@ public class Servicos implements Serializable {
 		this.dtInativacao = dtInativacao;
 	}
 
-	@Column(name = "dh_cadastro_serv", nullable = false)
 	public Date getDtCadastro() {
 		return dtCadastro;
 	}
@@ -113,23 +123,6 @@ public class Servicos implements Serializable {
 		this.dtCadastro = dtCadastro;
 	}
 
-	@ManyToOne(fetch = FetchType.EAGER)
-	public Clientes getClientes() {
-		return clientes;
-	}
-
-	public void setClientes(Clientes clientes) {
-		this.clientes = clientes;
-	}
-
-	public List<Servicos> getServicos() {
-		return servicos;
-	}
-
-	public void setServicos(List<Servicos> servicos) {
-		this.servicos = servicos;
-	}
-	
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
