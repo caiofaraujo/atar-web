@@ -1615,3 +1615,51 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact org.springfra
 2018-12-15 22:54:26,662 [Worker-30: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\eclipse-workspace\atar_web\AtarWeb\src\test\resources
 2018-12-15 22:54:48,067 [Worker-29: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2018-12-15 22:54:48,068 [Worker-29: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-12-15 22:54:48,068 [Worker-29: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-12-15 22:54:48,073 [Worker-29: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-15 22:54:48,074 [Worker-29: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\eclipse-workspace\atar_web\AtarWeb\src\test\resources
+2018-12-15 23:05:41,138 [main] INFO  o.e.m2e.actions.ExecutePomAction - Creating new launch configuration
+2018-12-15 23:05:44,348 [Worker-29: Launching AtarWeb (3)] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\eclipse-workspace\atar_web\AtarWeb
+2018-12-15 23:05:44,348 [Worker-29: Launching AtarWeb (3)] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -Ppom.xml -B mvn test -B
+2018-12-15 23:06:15,905 [main] INFO  o.e.m2e.actions.ExecutePomAction - Creating new launch configuration
+2018-12-15 23:06:18,517 [Worker-35: Launching AtarWeb (4)] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\eclipse-workspace\atar_web\AtarWeb
+2018-12-15 23:06:18,518 [Worker-35: Launching AtarWeb (4)] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -Ppom.xml -B mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+2018-12-15 23:06:56,577 [main] INFO  o.e.m2e.actions.ExecutePomAction - Creating new launch configuration
+2018-12-15 23:07:31,576 [main] INFO  o.e.m2e.actions.ExecutePomAction - Creating new launch configuration
+2018-12-15 23:07:33,523 [Worker-37: Launching AtarWeb (6)] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\eclipse-workspace\atar_web\AtarWeb
+2018-12-15 23:07:33,523 [Worker-37: Launching AtarWeb (6)] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -Ppom.xml -B ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+2018-12-15 23:07:50,353 [Worker-37: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-15 23:07:50,354 [Worker-37: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-12-15 23:07:50,357 [Worker-37: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-12-15 23:07:50,359 [Worker-37: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-15 23:07:50,359 [Worker-37: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\eclipse-workspace\atar_web\AtarWeb\src\test\resources
+2018-12-15 23:07:55,254 [Worker-33: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-15 23:07:55,258 [Worker-33: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-12-15 23:07:55,261 [Worker-33: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-12-15 23:07:55,265 [Worker-33: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-15 23:07:55,265 [Worker-33: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\eclipse-workspace\atar_web\AtarWeb\src\test\resources
+2018-12-15 23:07:59,425 [main] INFO  o.e.m2e.actions.ExecutePomAction - Creating new launch configuration
+2018-12-15 23:08:01,461 [Worker-35: Launching AtarWeb (7)] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\eclipse-workspace\atar_web\AtarWeb
+2018-12-15 23:08:01,461 [Worker-35: Launching AtarWeb (7)] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -Ppom.xml -B ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+2018-12-15 23:17:56,646 [Worker-33: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-15 23:17:56,647 [Worker-33: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-12-15 23:17:56,648 [Worker-33: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-12-15 23:17:56,651 [Worker-33: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-15 23:17:56,651 [Worker-33: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\eclipse-workspace\atar_web\AtarWeb\src\test\resources
+2018-12-15 23:18:42,844 [Worker-35: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-15 23:18:42,844 [Worker-35: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-12-15 23:18:42,845 [Worker-35: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-12-15 23:18:42,849 [Worker-35: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-15 23:18:42,849 [Worker-35: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\eclipse-workspace\atar_web\AtarWeb\src\test\resources
+2018-12-15 23:19:06,301 [Worker-42: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-15 23:19:06,303 [Worker-42: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-12-15 23:19:06,304 [Worker-42: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-12-15 23:19:06,307 [Worker-42: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-15 23:19:06,307 [Worker-42: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\eclipse-workspace\atar_web\AtarWeb\src\test\resources
+2018-12-15 23:19:25,288 [Worker-39: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-15 23:19:25,288 [Worker-39: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-12-15 23:19:25,289 [Worker-39: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-12-15 23:19:25,333 [Worker-39: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-15 23:19:25,333 [Worker-39: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\eclipse-workspace\atar_web\AtarWeb\src\test\resources
+2018-12-15 23:20:59,581 [Worker-33: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-15 23:20:59,582 [Worker-33: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
