@@ -16,6 +16,9 @@ import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 @Entity
 @Table(name = "TB_CLIENTES_CLIE")
 public class Clientes implements Serializable {
@@ -24,7 +27,7 @@ public class Clientes implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name = "ID_EQUIPAMENTO_EQUI", nullable = false)
+	@Column(name = "ID_CLIENTE_CLIE", nullable = false)
 	private Long id;
 	
 	@Column(name = "DS_NOME_CLIE", nullable = false)
@@ -39,12 +42,25 @@ public class Clientes implements Serializable {
 	@Column(name = "DH_CADASTRO_CLIE", nullable = false)
 	private Date dtCadastro;
 	
-	@OneToMany()
+	@OneToMany(cascade= CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "ID_EQUIPAMENTO_EQUI")
 	private List<Equipamentos> equipamentos;
 	
+	@OneToMany(cascade= CascadeType.ALL)
+	@LazyCollection(LazyCollectionOption.FALSE)  
+	@JoinColumn(name = "ID_SERVICO_SERV")
+	private List<Servicos> servicos;
+
 	public Clientes() {
 
+	}
+	
+	public List<Servicos> getServicos() {
+		return servicos;
+	}
+
+	public void setServicos(List<Servicos> servicos) {
+		this.servicos = servicos;
 	}
 	
 	public List<Equipamentos> getEquipamentos() {
