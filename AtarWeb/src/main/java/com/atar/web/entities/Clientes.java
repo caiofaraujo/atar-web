@@ -36,10 +36,10 @@ public class Clientes implements Serializable {
 	@Column(name = "DS_ENDERECO_CLIE", nullable = false)
 	private String endereco;
 	
-	@Column(name = "DH_INATIVACAO_CLIE", nullable = false)
+	@Column(name = "DH_INATIVACAO_CLIE")
 	private Date dtInativacao;
 	
-	@Column(name = "DH_CADASTRO_CLIE", nullable = false)
+	@Column(name = "DH_CADASTRO_CLIE")
 	private Date dtCadastro;
 	
 	@OneToMany(cascade= CascadeType.ALL, fetch = FetchType.EAGER)
