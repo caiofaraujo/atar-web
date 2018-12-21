@@ -2,7 +2,6 @@ package com.atar.web.services;
 
 import java.util.Optional;
 
-import com.atar.web.entities.Clientes;
 import com.atar.web.entities.Equipamentos;
 
 public interface EquipamentoService {

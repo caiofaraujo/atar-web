@@ -11,7 +11,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.atar.web.entities.Clientes;
 import com.atar.web.entities.Servicos;
 
 @Transactional (readOnly = true)
@@ -22,11 +21,11 @@ public interface ServicoRepository extends JpaRepository<Servicos, Long> {
 	
 	// Metódo responsável por retornar todos os clientes
 	@Query
-	List<Clientes> findByClientesId(@Param("id") Long id);
+	List<Servicos> findByClientesId(@Param("id") Long id);
 	
 	// Metódo responsável por retornar todos os clientes de forma pageada (ex: do 01 ao 10 cliente)	
 	@Query
-	Page<Clientes> findByClientesId(@Param("id") Long id, Pageable pageable);
+	Page<Servicos> findByClientesId(@Param("id") Long id, Pageable pageable);
 
 }
 
