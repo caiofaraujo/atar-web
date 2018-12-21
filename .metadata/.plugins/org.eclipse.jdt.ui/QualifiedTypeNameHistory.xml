@@ -11,7 +11,6 @@
 <fullyQualifiedTypeName name="org.hibernate.annotations.LazyCollection"/>
 <fullyQualifiedTypeName name="org.hibernate.annotations.LazyCollectionOption"/>
 <fullyQualifiedTypeName name="org.springframework.transaction.annotation.Transactional"/>
-<fullyQualifiedTypeName name="com.atar.web.entities.Equipamentos"/>
 <fullyQualifiedTypeName name="com.atar.web.entities.Servicos"/>
 <fullyQualifiedTypeName name="org.hibernate.annotations.NamedQueries"/>
 <fullyQualifiedTypeName name="org.hibernate.annotations.NamedQuery"/>
@@ -23,14 +22,21 @@
 <fullyQualifiedTypeName name="org.springframework.test.context.junit4.SpringRunner"/>
 <fullyQualifiedTypeName name="org.springframework.boot.test.context.SpringBootTest"/>
 <fullyQualifiedTypeName name="org.springframework.test.context.ActiveProfiles"/>
-<fullyQualifiedTypeName name="com.atar.web.repositories.ClienteRepository"/>
-<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
 <fullyQualifiedTypeName name="org.junit.Before"/>
 <fullyQualifiedTypeName name="org.junit.After"/>
-<fullyQualifiedTypeName name="com.atar.web.entities.Clientes"/>
 <fullyQualifiedTypeName name="org.junit.Test"/>
 <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.Query"/>
 <fullyQualifiedTypeName name="org.springframework.data.querydsl.binding.QuerydslBindings"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
 <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.JpaRepository"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="com.atar.web.services.ClienteService"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+<fullyQualifiedTypeName name="org.hibernate.annotations.common.util.impl.LoggerFactory"/>
+<fullyQualifiedTypeName name="com.atar.web.repositories.ClienteRepository"/>
+<fullyQualifiedTypeName name="com.atar.web.entities.Clientes"/>
+<fullyQualifiedTypeName name="com.atar.web.services.EquipamentoService"/>
+<fullyQualifiedTypeName name="com.atar.web.repositories.EquipamentoRepository"/>
+<fullyQualifiedTypeName name="com.atar.web.entities.Equipamentos"/>
+<fullyQualifiedTypeName name="java.util.Optional"/>
 </qualifiedTypeNameHistroy>

@@ -10,6 +10,8 @@ import com.atar.web.entities.Equipamentos;
 @Transactional (readOnly = true)
 public interface EquipamentoRepository extends JpaRepository<Equipamentos, Long>{
 	
+	
+	
 	Equipamentos findByModelo(String modelo);
 	
 	Equipamentos findByMarca(String marca);

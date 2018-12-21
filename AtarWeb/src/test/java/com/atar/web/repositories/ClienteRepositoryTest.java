@@ -23,6 +23,7 @@ public class ClienteRepositoryTest {
 		@Autowired
 		private ClienteRepository clienteRepository;
 		
+		// Massa de dados
 		private static final String NOME = "Caio Fernandes";
 		
 		// 1. Antes do teste cadastra um cliente

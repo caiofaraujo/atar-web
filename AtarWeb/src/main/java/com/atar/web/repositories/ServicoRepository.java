@@ -17,16 +17,16 @@ import com.atar.web.entities.Servicos;
 @Transactional (readOnly = true)
 
 @NamedQueries({
-	@NamedQuery(name = "ServicoRepository.findByClienteId", query = "SELECT CLIE FROM TB_CLIENTES_CLIE CLIE WHERE CLIE.clientes.id = :id")})
+	@NamedQuery(name = "ServicoRepository.findByClientesId", query = "SELECT clie FROM tb_clientes_clie clie WHERE clie.clientes.id = :id")})
 public interface ServicoRepository extends JpaRepository<Servicos, Long> {
 	
 	// Metódo responsável por retornar todos os clientes
-	//@Query
-	//List<Clientes> findByClienteId(@Param("id") Long id);
+	@Query
+	List<Clientes> findByClientesId(@Param("id") Long id);
 	
-	//@Query
-	// Metódo responsável por retornar todos os clientes de forma pageada (ex: do 01 ao 10 cliente)
-	//Page<Clientes> findByClienteId(@Param("id") Long id, Pageable pageable);
+	// Metódo responsável por retornar todos os clientes de forma pageada (ex: do 01 ao 10 cliente)	
+	@Query
+	Page<Clientes> findByClientesId(@Param("id") Long id, Pageable pageable);
 
 }
 

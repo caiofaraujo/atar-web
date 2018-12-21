@@ -34,7 +34,7 @@ public class Equipamentos implements Serializable {
 	@Column(name = "DS_MODELO_EQUI", nullable = false)
 	private String modelo;
 	
-	@Column(name = "DH_INATIVACAO_EQUI", nullable = false)
+	@Column(name = "DH_INATIVACAO_EQUI")
 	private Date dtInativacao;
 	
 	@Column(name = "DH_CADASTRO_EQUI", nullable = false)
