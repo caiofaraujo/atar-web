@@ -12,6 +12,17 @@
 	<section name="SelfEncapsulateFieldWizard">
 		<item value="false" key="GenerateJavadoc"/>
 	</section>
+	<section name="ProblemSeveritiesConfigurationBlock">
+		<item value="false" key="expanded2"/>
+		<item value="false" key="expanded1"/>
+		<item value="false" key="expanded4"/>
+		<item value="true" key="expanded3"/>
+		<item value="false" key="expanded6"/>
+		<item value="false" key="expanded5"/>
+		<item value="false" key="expanded8"/>
+		<item value="false" key="expanded7"/>
+		<item value="false" key="expanded0"/>
+	</section>
 	<section name="NewClassWizardPage">
 		<item value="false" key="create_constructor"/>
 		<item value="true" key="create_unimplemented"/>

@@ -2,12 +2,16 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="Cliente" key="selection"/>
-		<item value="false" key="casesensitive"/>
+		<item value="cadastroClienteDto" key="selection"/>
+		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="cadastroPJDto"/>
+			<item value="CadastroPJDto"/>
+			<item value="ClienteDto"/>
+			<item value="hiber"/>
 			<item value="cliente"/>
 			<item value="findByClienteId"/>
 			<item value="tb_servicos_serv"/>
@@ -16,6 +20,9 @@
 			<item value="getSer"/>
 		</list>
 		<list key="replacehistory">
+			<item value="cadastroClienteDto"/>
+			<item value="CadastroClienteDto"/>
+			<item value="ClienteDto"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
