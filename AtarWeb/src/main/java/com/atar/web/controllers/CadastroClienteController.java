@@ -50,6 +50,7 @@ public class CadastroClienteController {
 	@PostMapping
 	public ResponseEntity<Response<CadastroClienteDto>> cadastrar(@Valid @RequestBody CadastroClienteDto cadastroClienteDto,
 			BindingResult result) throws NoSuchAlgorithmException {
+		
 		log.info("Cadastrando Cliente: {}", cadastroClienteDto.toString());
 		Response<CadastroClienteDto> response = new Response<CadastroClienteDto>();
 
@@ -91,6 +92,7 @@ public class CadastroClienteController {
 		Clientes cliente = new Clientes();
 		cliente.setNome(cadastroClienteDto.getNome());
 		cliente.setEndereco(cadastroClienteDto.getEndereco());
+		cliente.setNrTelefone(cadastroClienteDto.getTelefone());
 		
 		return cliente;
 	}

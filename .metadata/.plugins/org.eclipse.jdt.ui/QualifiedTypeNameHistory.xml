@@ -31,7 +31,6 @@
 <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
 <fullyQualifiedTypeName name="org.hibernate.annotations.common.util.impl.LoggerFactory"/>
 <fullyQualifiedTypeName name="com.atar.web.repositories.ClienteRepository"/>
-<fullyQualifiedTypeName name="com.atar.web.entities.Clientes"/>
 <fullyQualifiedTypeName name="com.atar.web.repositories.EquipamentoRepository"/>
 <fullyQualifiedTypeName name="com.atar.web.entities.Equipamentos"/>
 <fullyQualifiedTypeName name="org.springframework.data.domain.PageRequest"/>
@@ -46,4 +45,6 @@
 <fullyQualifiedTypeName name="javax.validation.Valid"/>
 <fullyQualifiedTypeName name="java.security.NoSuchAlgorithmException"/>
 <fullyQualifiedTypeName name="com.atar.web.response.Response"/>
+<fullyQualifiedTypeName name="com.atar.web.entities.Clientes"/>
+<fullyQualifiedTypeName name="java.math.BigInteger"/>
 </qualifiedTypeNameHistroy>

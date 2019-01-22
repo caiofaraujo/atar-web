@@ -17,6 +17,10 @@ public class CadastroClienteDto {
 	@Length(min = 3, max = 200, message = "Endereço deve conter entre 3 e 200 caracteres.")
 	private String endereco;
 	
+	@NotEmpty(message = "Telefone não pode ser vazio.")
+	@Length(min = 9, max = 11, message = "Telefone deve conter entre 9 e 11 caracteres.")
+	private String telefone;
+	
 	public CadastroClienteDto() {
 		
 	}
@@ -45,6 +49,14 @@ public class CadastroClienteDto {
 		this.endereco = endereco;
 	}
 	
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+
 	@Override
 	public String toString() {
 		return "Cliente [id=" + id + ", nome=" + nome + ", endereco=" + endereco + "]";

@@ -11,6 +11,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
@@ -42,6 +44,9 @@ public class Clientes implements Serializable {
 	@Column(name = "DH_CADASTRO_CLIE")
 	private Date dtCadastro;
 	
+	@Column(name = "NR_TELEFONE_CLIE")
+	private String nrTelefone;
+	
 	@OneToMany(cascade= CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "ID_EQUIPAMENTO_EQUI")
 	private List<Equipamentos> equipamentos;
@@ -50,11 +55,33 @@ public class Clientes implements Serializable {
 	@LazyCollection(LazyCollectionOption.FALSE)  
 	@JoinColumn(name = "ID_SERVICO_SERV")
 	private List<Servicos> servicos;
+	
+	@ManyToMany
+    @JoinTable(name="TB_CLIENTESEQUIPAMENTO_CLEQ", joinColumns=
+    {@JoinColumn(name="ID_CLIENTE_CLIE")}, inverseJoinColumns=
+      {@JoinColumn(name="ID_EQUIPAMENTO_EQUI")})
+    private List<Clientes> clientes;
 
 	public Clientes() {
 
 	}
-	
+
+	public List<Equipamentos> getEquipamentos() {
+		return equipamentos;
+	}
+
+	public void setEquipamentos(List<Equipamentos> equipamentos) {
+		this.equipamentos = equipamentos;
+	}
+
+	public List<Clientes> getClientes() {
+		return clientes;
+	}
+
+	public void setClientes(List<Clientes> clientes) {
+		this.clientes = clientes;
+	}
+
 	public List<Servicos> getServicos() {
 		return servicos;
 	}
@@ -63,13 +90,13 @@ public class Clientes implements Serializable {
 		this.servicos = servicos;
 	}
 	
-	public List<Equipamentos> getEquipamentos() {
-		return equipamentos;
-	}
-
-	public void setEquipamentos(List<Equipamentos> equipamentos) {
-		this.equipamentos = equipamentos;
-	}
+//	public List<Equipamentos> getEquipamentos() {
+//		return equipamentos;
+//	}
+//
+//	public void setEquipamentos(List<Equipamentos> equipamentos) {
+//		this.equipamentos = equipamentos;
+//	}
 
 	public Long getId() {
 		return id;
@@ -109,6 +136,14 @@ public class Clientes implements Serializable {
 
 	public void setDtCadastro(Date dtCadastro) {
 		this.dtCadastro = dtCadastro;
+	}
+	
+	public String getNrTelefone() {
+		return nrTelefone;
+	}
+
+	public void setNrTelefone(String nrTelefone) {
+		this.nrTelefone = nrTelefone;
 	}
 
 

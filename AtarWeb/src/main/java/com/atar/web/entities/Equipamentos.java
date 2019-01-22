@@ -40,10 +40,6 @@ public class Equipamentos implements Serializable {
 	@Column(name = "DH_CADASTRO_EQUI", nullable = false)
 	private Date dtCadastro;
 	
-	@ManyToOne(cascade= CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinColumn(name = "ID_CLIENTE_CLIE")
-	private Clientes cliente;
-	
 	public Equipamentos() {
 		
 	}
