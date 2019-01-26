@@ -47,20 +47,20 @@ public class Clientes implements Serializable {
 	@Column(name = "NR_TELEFONE_CLIE")
 	private String nrTelefone;
 	
-	@OneToMany(cascade= CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinColumn(name = "ID_EQUIPAMENTO_EQUI")
-	private List<Equipamentos> equipamentos;
-	
 	@OneToMany(cascade= CascadeType.ALL)
 	@LazyCollection(LazyCollectionOption.FALSE)  
 	@JoinColumn(name = "ID_SERVICO_SERV")
 	private List<Servicos> servicos;
 	
+	@OneToMany(cascade= CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinColumn(name = "ID_CLIENTE_CLIE")
+    private List<Clientes> clientes;
+	
 	@ManyToMany
     @JoinTable(name="TB_CLIENTESEQUIPAMENTO_CLEQ", joinColumns=
     {@JoinColumn(name="ID_CLIENTE_CLIE")}, inverseJoinColumns=
       {@JoinColumn(name="ID_EQUIPAMENTO_EQUI")})
-    private List<Clientes> clientes;
+	private List<Equipamentos> equipamentos;
 
 	public Clientes() {
 

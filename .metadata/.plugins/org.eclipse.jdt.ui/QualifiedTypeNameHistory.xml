@@ -32,14 +32,11 @@
 <fullyQualifiedTypeName name="org.hibernate.annotations.common.util.impl.LoggerFactory"/>
 <fullyQualifiedTypeName name="com.atar.web.repositories.ClienteRepository"/>
 <fullyQualifiedTypeName name="com.atar.web.repositories.EquipamentoRepository"/>
-<fullyQualifiedTypeName name="com.atar.web.entities.Equipamentos"/>
 <fullyQualifiedTypeName name="org.springframework.data.domain.PageRequest"/>
 <fullyQualifiedTypeName name="org.springframework.data.domain.Page"/>
 <fullyQualifiedTypeName name="com.atar.web.repositories.ServicoRepository"/>
 <fullyQualifiedTypeName name="com.atar.web.entities.Servicos"/>
-<fullyQualifiedTypeName name="java.util.Optional"/>
 <fullyQualifiedTypeName name="com.atar.web.services.ClienteService"/>
-<fullyQualifiedTypeName name="com.atar.web.services.EquipamentoService"/>
 <fullyQualifiedTypeName name="com.atar.web.controllers.CadastroClienteController"/>
 <fullyQualifiedTypeName name="com.atar.web.dtos.CadastroClienteDto"/>
 <fullyQualifiedTypeName name="javax.validation.Valid"/>
@@ -47,4 +44,10 @@
 <fullyQualifiedTypeName name="com.atar.web.response.Response"/>
 <fullyQualifiedTypeName name="com.atar.web.entities.Clientes"/>
 <fullyQualifiedTypeName name="java.math.BigInteger"/>
+<fullyQualifiedTypeName name="javax.persistence.ManyToMany"/>
+<fullyQualifiedTypeName name="javax.persistence.JoinTable"/>
+<fullyQualifiedTypeName name="com.atar.web.services.EquipamentoService"/>
+<fullyQualifiedTypeName name="com.atar.web.dtos.CadastroEquipamentoDto"/>
+<fullyQualifiedTypeName name="com.atar.web.entities.Equipamentos"/>
+<fullyQualifiedTypeName name="java.util.Optional"/>
 </qualifiedTypeNameHistroy>
