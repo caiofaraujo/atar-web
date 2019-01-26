@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <title>ATAR</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/service/services.js"></script>
+    <script src="js/controller/controllers.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+        <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
+        <a href="#" class="w3-bar-item w3-button">Link 1</a>
+        <a href="#" class="w3-bar-item w3-button">Link 2</a>
+        <a href="#" class="w3-bar-item w3-button">Link 3</a>
+    </div>
+
+    <!-- Page Content -->
+    <div class="w3-teal">
+        <button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰ ATAR</button>
+    </div>
+    <script>
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+        }
+
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+        }
+    </script>
+
+
+    <div class="container bg-light">
+        <div ng-controller="ClienteCRUDCtrl">
+            <h3>Cadastro Cliente</h3>
+            <form>
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="nome" class="form-control" id="nome" required placeholder="Digite o nome" ng-model="cliente.nome">
+                    <input type="hidden" class="form-control" id="id" ng-model="cliente.id">
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Endereço:</label>
+                    <input type="endereco" class="form-control" id="endereco" required placeholder="Digite o endereço" ng-model="cliente.endereco">
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Telefone:</label>
+                    <input type="endereco" class="form-control" id="endereco" required placeholder="Digite o telefone" ng-model="cliente.telefone">
+                    <!-- <label for="pwd">Data Nascimento:</label>
+                        <input type="date" class="form-control" id="nascimento" required placeholder="Selecione a data de nascimento" ng-model="cliente.nascimento"> -->
+                </div>
+                <button type="button" class="text-white-100 btn btn-dark" ng-click="addCliente(cliente)">Enviar</button>
+            </form>
+            <br>
+
+            <div class="alert alert-success alert-dismissible" ng-if="isExibirSucesso">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong>Successo!</strong>{{message}}.
+            </div>
+            <div class="alert alert-danger alert-dismissible" ng-if="isExibirErro">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong>Falha!</strong> {{errorMessage}}.
+            </div>
+
+            <br>
+            <br>
+            <!-- <div class="table-responsive-md table-stripped">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Nome</th>
+                                <th>Endereço</th>
+                                <th>Nascimento</th>
+                                <th>Editar</th>
+                                <th>Excluir</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="cliente in clientes">
+                                <td>{{cliente.nome}}</td>
+                                <td>{{cliente.endereco}}</td>
+                                <td>{{cliente.nascimento | date : "dd/MM/yyyy"}}</td>
+                                <td>
+                                    <a class="text-white-100  btn btn-dark" ng-click="updatecliente(cliente)">Editar</a>
+                                </td>
+                                <td>
+                                    <a class="text-white-100  btn btn-secondary" ng-click="deletecliente($index)">Excluir</a>
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <br>
+                    <br>
+                </div> -->
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

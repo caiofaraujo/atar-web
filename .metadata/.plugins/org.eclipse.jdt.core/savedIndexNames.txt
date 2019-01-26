@@ -43,7 +43,6 @@ INDEX VERSION 1.131+C:\eclipse-workspace\atar_web\.metadata\.plugins\org.eclipse
 387101943.index
 2516612729.index
 4252218367.index
-2730858931.index
 1355269803.index
 2438367448.index
 1838582342.index
