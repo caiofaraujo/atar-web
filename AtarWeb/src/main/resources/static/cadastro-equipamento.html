@@ -13,50 +13,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
     <script src="js/app.js"></script>
-    <script src="js/service/services.js"></script>
-    <script src="js/controller/controllers.js"></script>
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu" />
+    <script src="js/service/services-equipamento.js"></script>
+    <script src="js/controller/controllers-equipamento.js"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
-<script>
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
-</script>
-
 <body>
+    <!-- Sidebar -->
     <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
         <button onclick="w3_close()" class="w3-bar-item w3-large">Fechar &times;</button>
-	  <button onclick="myFunction()" class="w3-bar-item w3-button dropbtn menuPai" >Gerenciamento de Clientes</button>
-	  
-	  <div id="myDropdown" class="dropdown-content">
-	    <a href="/cadastro-cliente.html" class="w3-bar-item w3-button">Cadastro de Cliente</a>
+        <a href="/cadastro-cliente.html" class="w3-bar-item w3-button">Cadastro de Cliente</a>
         <a href="/cadastro-equipamento.html" class="w3-bar-item w3-button">Cadastro de Equipamento</a>
-	  </div>
-	  
-	  
-
     </div>
-    
-
-
 
     <!-- Page Content -->
     <div class="w3-teal">
@@ -74,25 +42,27 @@ window.onclick = function(event) {
 
 
     <div class="container bg-light">
-        <div ng-controller="ClienteCRUDCtrl" class="padraoContainer">
-            <h3>Cadastro de Clientes</h3>
+		
+
+   		
+    
+		   
+        <div ng-controller="EquipamentoCRUDCtrl" class="padraoContainer">
+        <br>
+
+        
+            <h3>Cadastro de Equipamentos</h3>
             <form>
                 <div class="form-group">
-                    <label for="nome">Nome:</label>
-                    <input type="nome" class="form-control" id="nome" required placeholder="Digite o nome" ng-model="cliente.nome">
-                    <input type="hidden" class="form-control" id="id" ng-model="cliente.id">
+                    <label for="marca">Marca:</label>
+                    <input type="marca" class="form-control" id="marca" required placeholder="Digite a marca" ng-model="equipamento.marca">
+                    <input type="hidden" class="form-control" id="id" ng-model="equipamento.marca">
                 </div>
                 <div class="form-group">
-                    <label for="pwd">Endereço:</label>
-                    <input type="endereco" class="form-control" id="endereco" required placeholder="Digite o endereço" ng-model="cliente.endereco">
+                    <label for="modelo">Modelo:</label>
+                    <input type="modelo" class="form-control" id="modelo" required placeholder="Digite o modelo" ng-model="equipamento.modelo">
                 </div>
-                <div class="form-group">
-                    <label for="pwd">Telefone:</label>
-                    <input type="endereco" class="form-control" id="endereco" required placeholder="Digite o telefone" ng-model="cliente.telefone">
-                    <!-- <label for="pwd">Data Nascimento:</label>
-                        <input type="date" class="form-control" id="nascimento" required placeholder="Selecione a data de nascimento" ng-model="cliente.nascimento"> -->
-                </div>
-                <button type="button" class="text-white-100 btn btn-dark" ng-click="addCliente(cliente)">Salvar</button>
+                <button type="button" class="text-white-100 btn btn-dark" ng-click="addEquipamento(equipamento)">Salvar</button>
             </form>
             <br>
 

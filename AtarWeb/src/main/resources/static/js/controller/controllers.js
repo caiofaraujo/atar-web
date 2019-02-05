@@ -9,7 +9,7 @@ app.controller('ClienteCRUDCtrl', ['$scope', '$http', 'ClienteCRUDService',
         	$scope.isExibirSucesso = false;
             $scope.message = '';
             
-            if ($scope.cliente != null && $scope.cliente.nome) {
+            if ($scope.cliente != null) {
 
                 ClienteCRUDService.addCliente($scope.cliente)
                     .then(function success(response) {
@@ -19,7 +19,7 @@ app.controller('ClienteCRUDCtrl', ['$scope', '$http', 'ClienteCRUDService',
 
                         $scope.cliente.nome = '';
                         $scope.cliente.endereco = '';
-                        $scope.cliente.nascimento = '';
+                        $scope.cliente.telefone = '';
                         $scope.cliente.id = '';
                         // $scope.getAllClientes();
 
