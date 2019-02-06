@@ -5,7 +5,46 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2019-02-04T19:59:16Z</updated>
+  <updated>2019-02-06T00:00:00Z</updated>
+  <entry>
+    <title>Spring Tips: Testing Reactive Code</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/02/06/spring-tips-testing-reactive-code" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2019-01-17:3542</id>
+    <updated>2019-02-06T00:00:00Z</updated>
+    <content type="html">&lt;p&gt;Hi Spring fans! In this installment of Spring Tips, we look at how to test reactive applications and microservices with TDD style, inside-out testing from component to contract.&lt;/p&gt;
+&lt;p&gt;speaker: &lt;a href="http://twitter.com/Starbuxman"&gt;Josh Long&lt;/a&gt;&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/RPmTXiw-dHA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;</content>
+  </entry>
+  <entry>
+    <title>This Week in Spring - February 5th, 2019</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/02/05/this-week-in-spring-february-5th-2019" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2019-02-05:3555</id>
+    <updated>2019-02-05T16:52:23Z</updated>
+    <content type="html">&lt;p&gt;Hi Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! First of all, &lt;a href="https://www.bbc.com/news/world-asia-47121421"&gt;Happy Lunar New Year&lt;/a&gt;, if you celebrate! (More than a billion people around the world do celebrate&amp;hellip;) &lt;/p&gt;
+&lt;p&gt;Today I&amp;rsquo;m going to be giving a 4-hour presentation, &lt;a href="https://www.safaribooksonline.com/live-training/courses/reactive-spring-boot/0636920240426/"&gt;&lt;em&gt;Reactive Spring&lt;/em&gt;&lt;/a&gt;, for Safari members. &lt;/p&gt;
+&lt;p&gt;So, without further ado, let&amp;rsquo;s get to it!&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/02/04/spring-session-for-apache-geode-pivotal-gemfire-2-0-8-release-available"&gt;Spring Session for Apache Geode/Pivotal GemFire 2.0.8.RELEASE available!&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Last week in &lt;em&gt;A Bootiful Podcast&lt;/em&gt;, I interviewed Spring messaging and integration maestro, and one of my oldest friends on the Spring team, &lt;a href="https://spring.io/blog/2019/02/01/a-bootiful-podcast-oleg-zhurakousky"&gt;Oleg Zhurakousky&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Hi Spring fans! In last week&amp;rsquo;s installment of &lt;em&gt;Spring Tips&lt;/em&gt;, &lt;a href="https://spring.io/blog/2019/01/30/spring-tips-the-reactor-context"&gt;&lt;em&gt;The Reactor Context&lt;/em&gt;&lt;/a&gt;, I look at how you can perpetuate state across thread execution jumps.&lt;/li&gt;
+  &lt;li&gt;If you&amp;rsquo;re using older versions of Cloud Foundry then you might be using &lt;a href="https://www.cloudfoundry.org/vulnerable-jdk-8u182/"&gt;a vulnerable version of Java&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;I really liked this response from Kenny Bastani on &lt;a href="https://twitter.com/springcentral/status/1092022447606362113"&gt;eventual consistency&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;This is an interesting post on using &lt;a href="https://banzaicloud.com/blog/vault-java-spotguide/"&gt;Spring Boot with Vault on Kubernetes&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;I love this - a look at using &lt;a href="https://twitter.com/springcentral/status/1091362057629417474"&gt;Neo4j and Spring Data Neo4j&lt;/a&gt; with the epic Mark Heckler and Jennifer Reif, among others&lt;/li&gt;
+  &lt;li&gt;I loved this look at Spring Data Redis and &lt;a href="https://twitter.com/springcentral/status/1090682564799549442"&gt;high-availability with Sentinel&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Check out this replay of the &lt;a href="https://www.brighttalk.com/webcast/14893/345709"&gt;Securing Microservices with Spring and Pivotal Cloud Foundry&lt;/a&gt; webinar&lt;/li&gt;
+  &lt;li&gt;Hey check this out - it&amp;rsquo;s a third-party thing you can use to get lightweight administration of Spring Batch jobs, &lt;a href="https://github.com/tuxdevelop/spring-batch-lightmin"&gt;Spring Batch Lightmin&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;This is interesting - it&amp;rsquo;s a program from &lt;code&gt;pacphi&lt;/code&gt; called &lt;code&gt;cf-butler&lt;/code&gt; that cleans stale apps and services on &lt;a href="https://github.com/pacphi/cf-butler"&gt;a Cloud Foundry foundation&lt;/a&gt;. It can be configured to report on and remove orphaned services and stopped app instances older than a configurable duration.&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
   <entry>
     <title>Spring Session for Apache Geode/Pivotal GemFire 2.0.8.RELEASE available!</title>
     <link rel="alternate" href="https://spring.io/blog/2019/02/04/spring-session-for-apache-geode-pivotal-gemfire-2-0-8-release-available" />
@@ -1368,142 +1407,5 @@ class ObjectStorageServiceDemo {&#xD;
   &lt;li&gt;An interesting post on &lt;a href="https://www.developer.com/java/data/understanding-spring-boot-starters-and-tools.html"&gt;understanding Spring Boot starters and tools&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;Another fine installment of &lt;a href="http://www.rabbitmq.com/blog/2019/01/08/this-month-in-rabbitmq-jan-8-2019/"&gt;this Month in RabbitMQ — Jan 8, 2019&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Framework's Migration from Jira to GitHub Issues</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/01/15/spring-framework-s-migration-from-jira-to-github-issues" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Rossen Stoyanchev</name>
-    </author>
-    <id>tag:spring.io,2019-01-15:3536</id>
-    <updated>2019-01-15T22:12:00Z</updated>
-    <content type="html">&lt;p&gt;The Spring Framework has migrated its entire history of issues from Jira to GitHub. The goal of this blog post is to provide you with context and details about this move.&lt;/p&gt;&lt;h1&gt;&lt;a href="#migration-details" class="anchor" name="migration-details"&gt;&lt;/a&gt;Migration Details&lt;/h1&gt;
-&lt;hr/&gt;
-&lt;p&gt;The entire 15+ year history of every Spring Framework issue, and every comment, has been imported into GitHub. There is a lot to consider in such a move, so let&amp;rsquo;s take a tour and go over some details.&lt;/p&gt;&lt;h3&gt;&lt;a href="#links" class="anchor" name="links"&gt;&lt;/a&gt;Links&lt;/h3&gt;
-&lt;p&gt;If you have a link to an existing issue, e.g. &lt;a href="https://jira.spring.io/browse/SPR-16751"&gt;https://jira.spring.io/browse/SPR-16751&lt;/a&gt;, you&amp;rsquo;ll be redirected to the corresponding GitHub issue. If you actually mean to go to the Jira issue, append the query parameter &lt;code&gt;redirect=false&lt;/code&gt;. On the GitHub side, the imported issue has a link back to its Jira issue origin.&lt;/p&gt;
-&lt;p&gt;Jira issue keys that appear in text, e.g. &amp;ldquo;SPR-16751&amp;rdquo;, have been replaced with GitHub &lt;a href="https://help.github.com/articles/autolinked-references-and-urls/"&gt;issue references&lt;/a&gt; which has the benefit of inserting links in the timelines of issues on both sides. Another benefit is the mini-preview when you mouse over the link.&lt;/p&gt;
-&lt;p&gt;Jira issues keys to other Spring projects that appear in text, e.g. &amp;ldquo;DATAJPA-813&amp;rdquo;, have been replaced with links. For example see &lt;a href="https://github.com/spring-projects/spring-framework/issues/18558"&gt;#18558&lt;/a&gt; with a link to Spring Data JPA, &lt;a href="https://github.com/spring-projects/spring-framework/issues/20904"&gt;#20904&lt;/a&gt; to Spring Data MongoDB, and &lt;a href="https://github.com/spring-projects/spring-framework/issues/16906"&gt;#16906&lt;/a&gt; to Spring Integration Extensions.&lt;/p&gt;
-&lt;p&gt;Links to other GitHub project issues and pull requests that appear in text, get automatic benefits. After the migration, there are links in the timelines of the referenced issues that point back to the Spring Framework, and you get a preview of the link with a mouse over. For example see &lt;a href="https://github.com/spring-projects/spring-framework/issues/21362"&gt;#21362&lt;/a&gt; with a link to Spring Boot, &lt;a href="https://github.com/spring-projects/spring-framework/issues/20849#issuecomment-453465173"&gt;#20849&lt;/a&gt; to JUnit, &lt;a href="https://github.com/spring-projects/spring-framework/issues/20256"&gt;#20256&lt;/a&gt; to Jackson.&lt;/p&gt;
-&lt;p&gt;Links to commits and source code of any project on GitHub, get automatic benefits too. For example see the link to a source code range in issue &lt;a href="https://github.com/spring-projects/spring-framework/issues/18463"&gt;#18463&lt;/a&gt;.&lt;/p&gt;&lt;h3&gt;&lt;a href="#jira-details" class="anchor" name="jira-details"&gt;&lt;/a&gt;Jira Details&lt;/h3&gt;
-&lt;p&gt;Every imported issue displays information from Jira in the bottom half of its description. The idea is that all information from Jira is available on GitHub and you don&amp;rsquo;t have to go back and forth between the two. You may see one or more of the following, when available:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Affected versions&lt;/li&gt;
-  &lt;li&gt;Reference URL&lt;/li&gt;
-  &lt;li&gt;Attachments&lt;/li&gt;
-  &lt;li&gt;Sub-tasks and related issues&lt;/li&gt;
-  &lt;li&gt;Pull requests and commit references&lt;/li&gt;
-  &lt;li&gt;Backport versions&lt;/li&gt;
-  &lt;li&gt;Vote and watcher counts&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Note that votes and watch subscriptions could not be carried over to GitHub. Even if spring-issuemaster has full privileges, it can only vote once. So please visit GitHub issues and re-apply reactions and subscribe to receive updates for specific issues.&lt;/p&gt;&lt;h3&gt;&lt;a href="#labels" class="anchor" name="labels"&gt;&lt;/a&gt;Labels&lt;/h3&gt;
-&lt;p&gt;Some Jira fields were converted to GitHub issue labels:&lt;/p&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Jira Field &lt;/th&gt;
-      &lt;th&gt;Label&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Issue Type &lt;/td&gt;
-      &lt;td&gt;&lt;code&gt;&amp;quot;type: *&amp;quot;&lt;/code&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Status &lt;/td&gt;
-      &lt;td&gt;&lt;code&gt;&amp;quot;status: *&amp;quot;&lt;/code&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Resolution &lt;/td&gt;
-      &lt;td&gt;&lt;code&gt;&amp;quot;status: *&amp;quot;&lt;/code&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Component &lt;/td&gt;
-      &lt;td&gt;&lt;code&gt;&amp;quot;in: *&amp;quot;&lt;/code&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;Two extra labels were also applied to imported issues:&lt;/p&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Label &lt;/th&gt;
-      &lt;th&gt;Description&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code&gt;&amp;quot;has: votes-jira&amp;quot;&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;imported issues with 10+ votes&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code&gt;&amp;quot;has: backports&amp;quot;&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;issues with backport versions&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;We used the opportunity to streamline the Jira field values, so for example 25 component values in Jira correspond to 5 &lt;code&gt;&amp;quot;in: *&amp;quot;&lt;/code&gt; labels on GitHub. The &lt;code&gt;&amp;quot;status: *&amp;quot;&lt;/code&gt; and the &lt;code&gt;&amp;quot;type: *&amp;quot;&lt;/code&gt; labels have also been given extra through and revised.&lt;/p&gt;
-&lt;p&gt;Our choice of labels is aligned with the labels used in Spring Boot. The Boot team has given their process and labels a lot of thought, and we know the consistency will be appreciated by many. See the complete &lt;a href="https://github.com/spring-projects/spring-framework/labels"&gt;set of labels&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;In Jira, many fields and labels are modifiable. In GitHub, only contributors can add or remove labels. This makes perfect sense. Reporters simply describe the issue, while contributors categorize it. Both developers and contributors can use the labels to search.&lt;/p&gt;&lt;h3&gt;&lt;a href="#fix-versions" class="anchor" name="fix-versions"&gt;&lt;/a&gt;Fix Versions&lt;/h3&gt;
-&lt;p&gt;A Jira issue can have multiple fix versions, while a GitHub issue can have only one target milestone. This feels like a drawback but there is more than is apparent to the eye, and the constraint has forced us to consider some meaningful adjustments.&lt;/p&gt;
-&lt;p&gt;Take &lt;a href="https://jira.spring.io/browse/SPR-17226?redirect=false"&gt;SPR-17226&lt;/a&gt; for example with fix versions &amp;ldquo;4.3.19&amp;rdquo;, &amp;ldquo;5.0.9&amp;rdquo;, and &amp;ldquo;5.1 RC3&amp;rdquo;. While the issue was fixed in all 3 versions, there is no need to pollute the release notes of &amp;ldquo;5.1 RC3&amp;rdquo; which was still in development at the time. We can instead say it was fixed in 5.0.9 and backported to 4.3.19, and it&amp;rsquo;s a contributors&amp;rsquo; concern to make sure the fix is propagated to the next version that&amp;rsquo;s still in development. This is how it shows on the GitHub issue &lt;a href="https://github.com/spring-projects/spring-framework/issues/21759"&gt;#21759&lt;/a&gt; Could we have made this adjustment in the past? Sure, but the support for multiple fix versions in Jira didn&amp;rsquo;t force us to consider.&lt;/p&gt;
-&lt;p&gt;This is a small adjustment that will result in cleaner release notes, but it will also impact the way we commit fixes. When the next version is in development on master, we will apply the fix to the current production branch first, then forward merge to master, and then cherry-pick from the older production branch. As opposed to apply the fix to master, and then cherry-pick from the production branches. The result is a cleaner commit history since forward merges help git to be aware or related changes.&lt;/p&gt;
-&lt;p&gt;As for backports, since an issue can have only one target milestone, we must create separate issues to represent the backporting of a fix. To use the same example, it pays to pick &amp;ldquo;5.0.9&amp;rdquo; as the target milestone because we&amp;rsquo;d have one backport issue only. If we picked &amp;ldquo;5.1 RC3&amp;rdquo;, we would need two backport issues instead. To give you sense of the huge difference this makes, say the Spring Framework was on GitHub Issues from day 1. If we used the latter approach we&amp;rsquo;d have about 2,500 backport issues today. If we used the former, we would have about a 1000.&lt;/p&gt;
-&lt;p&gt;For historic backports, we&amp;rsquo;ve created one issue holder per release. There are about &lt;a href="https://github.com/spring-projects/spring-framework/issues?utf8=%E2%9C%93&amp;q=in%3Atitle+%22backported+issues%22"&gt;45 of those&lt;/a&gt;. Going forward we&amp;rsquo;ll have individual issues for all backported fixes which will be created automatically and used mainly for release tracking. As for discussions, the majority of conversations should happen on the main issue, while backport issues will be used only for discussions specific to the backport.&lt;/p&gt;&lt;h3&gt;&lt;a href="#markup" class="anchor" name="markup"&gt;&lt;/a&gt;Markup&lt;/h3&gt;
-&lt;p&gt;The markup was without a doubt the biggest and most painful part of the migration. A 15 year history of issue tracking reflects big shifts in programming styles styles that in turn determine what shows up in comments. &lt;/p&gt;
-&lt;p&gt;For example lots of XML was pasted in comments in the beginning, and Markdown treats that as &lt;a href="https://spec.commonmark.org/0.28/#html-blocks"&gt;HTML blocks&lt;/a&gt; which results in the tags not showing at all. Of course if those were surrounded with &lt;code&gt;{code:xml}...{code}&lt;/code&gt;, it would look fine, but in those days markup wasn&amp;rsquo;t commonly used and the XML snippets showed up anyway, not forcing the issue, and consequently making it impossible to migrate properly.&lt;/p&gt;
-&lt;p&gt;There are lots of other intricacies such as the escaping of curly braces, to avoid the effect of monospacing, or the escaping of asterisks to prevent them from disappearing as markup for bold. I&amp;rsquo;ll spare you the details. Suffice to say we put a lot of effort into making sure the quality of markup conversion is reasonably high.&lt;/p&gt;
-&lt;p&gt;One specific issue to highlight is the use of &amp;ldquo;@&amp;rdquo; in plain text (i.e. outside of code blocks). Those are user mentions on GitHub that trigger notifications. You might be surprised that &lt;a href="https://github.com/bean"&gt;@Bean&lt;/a&gt;, &lt;a href="https://github.com/configuration"&gt;@Configuration&lt;/a&gt;, &lt;a href="https://github.com/component"&gt;@Component&lt;/a&gt; are actual GitHub users. First name references like @andy, @arjen, @brian colliding with GitHub user names were also common at some point, and all of those are a huge nuisance in an import of 17K+ issues with comments. This is why we&amp;rsquo;ve taken care to escape them. Going forward, when creating new issues or comments, please, be a good GitHub citizen and use backticks, e.g. `@Foo` (yes, &lt;a href="https://github.com/foo"&gt;https://github.com/foo&lt;/a&gt; does exist).&lt;/p&gt;&lt;h1&gt;&lt;a href="#background" class="anchor" name="background"&gt;&lt;/a&gt;Background&lt;/h1&gt;
-&lt;hr/&gt;
-&lt;p&gt;I&amp;rsquo;ve used and liked Jira for a long time. The idea of migrating to GitHub Issues did not come to me immediately. It seemed too basic by comparison. What turned me around completely has little to do with a feature-by-feature comparison, although I must admit GitHub Issues has really grown on me since the move. What I&amp;rsquo;m hinting at are larger forces at work.&lt;/p&gt;
-&lt;p&gt;GitHub is the home of just about every open source project, including &lt;em&gt;every&lt;/em&gt; Spring project, and all users can be reasonably expected to have GitHub credentials. As a result it has become untenable today to expect developers to maintain a separate login for the issue tracker of every open source project they depend on or want to report an issue against.&lt;/p&gt;
-&lt;p&gt;Then there are the benefits of co-locating source code and issues. I&amp;rsquo;ve mentioned many of those earlier, like the &lt;a href="https://help.github.com/articles/autolinked-references-and-urls/"&gt;autolinked references&lt;/a&gt; across issues, pull requests, source code and commits, within a single project and across all projects on GitHub. The ability to mention and notify any GitHub user. All of those are very powerful benefits that are simply not possible with siloed issue tracking. I doubt anyone wants to go back to the days when open source projects were hosted in different places. The same is true for issue tracking.&lt;/p&gt;
-&lt;p&gt;There are deeper, less obvious benefits for co-located source code and issues. GitHub treats issues and pull requests as equal. They are assigned numbers from the same sequence. They look the same (description, comments, labels, and target milestone). They appear in release notes without distinction. A pull request is nothing but an issue with commits attached.&lt;/p&gt;
-&lt;p&gt;Historically in the Spring Framework, we&amp;rsquo;ve insisted on a Jira issue for every pull request. We didn&amp;rsquo;t like the burden either but we needed a single place of record for all issues. As a consequence of this split situation, it was never too clear what should be discussed under the pull request and how much belongs in the Jira issue. &lt;/p&gt;
-&lt;p&gt;Going forward this is no longer a problem. We expect either an issue or a pull request, not both. If you need to start with a discussion first, which we &lt;em&gt;do&lt;/em&gt; encourage, create an issue, and later, if you submit a pull request, the PR will supersede the issue. The two are linked still and nothing is lost. The conversation simply follows the action.&lt;/p&gt;
-&lt;p&gt;Not to be overlooked is the markup question. There is no doubt in my mind that Wiki markup is painful for code related discussions. I&amp;rsquo;ve used it for years on a daily basis. I&amp;rsquo;m used to it but some things are just hard, and require too much effort. Here is a reminder of what it takes to display something as common as curly braces and asterisks in code snippets:&lt;br/&gt;&lt;code&gt;{{/endpoint/\{server-id\}/\{session-id\}/\{transport/\*\}}}&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;There is no question that Markdown is easier for code related comments. It requires less typing and it just works when it comes to formatting code because it&amp;rsquo;s simpler and does not clash with symbols that commonly appear in code. This has looked obvious to me from the start, since I&amp;rsquo;ve also used GitHub and Markdown in parallel for years too. I never understood why Jira still doesn&amp;rsquo;t support Markdown. To be clear this wasn&amp;rsquo;t a decisive factor. It&amp;rsquo;s just one of those things you learn to live with that later can become extra incentive for change.&lt;/p&gt;
-&lt;p&gt;Last but not least, today most developers use Spring through Spring Boot which has always used GitHub Issues. From that perspective alone, there is enough incentive for the Spring Framework to migrate, since Spring Boot isn&amp;rsquo;t about to migrate to Jira, and that would be the only other way to create a more consistent experience for Spring users.&lt;/p&gt;&lt;h1&gt;&lt;a href="#the-actual-migration" class="anchor" name="the-actual-migration"&gt;&lt;/a&gt;The Actual Migration&lt;/h1&gt;
-&lt;hr/&gt;
-&lt;p&gt;Despite a lot of preparation there is nothing like the day of the actual migration. We used GitHub&amp;rsquo;s unofficial &lt;a href="https://gist.github.com/jonmagic/5282384165e0f86ef105"&gt;import API&lt;/a&gt; which is documented to not trigger any notifications. We hadn&amp;rsquo;t noticed any problem with that during testing. Once the actual migration started, notifications for every issue and every comment started pouring in.&lt;/p&gt;
-&lt;p&gt;We began to reach out to GitHub support using every available channel available. Fortunately for us they noticed too. How could they not? By my estimate, the 2,600 issues that were imported before we pulled the breaks must have generated tens of millions of emails, not surprisingly causing notification disruptions.&lt;/p&gt;
-&lt;p&gt;A day later, after GitHub support had corrected the issues and turned off all notifications for the Spring Framework project to be on the safe side, we were onto a smoother path to importing all issues over the course of 8-9 hours. It took another few hours to make a second pass over all issues and comments, to replace Jira issue keys with GitHub reference numbers, and then several more days to check and clean up markup conversion issues.&lt;/p&gt;
-&lt;p&gt;All of that is now complete, and it is my pleasure to announce we are now open for business on &lt;a href="https://github.com/spring-projects/spring-framework/issues"&gt;GitHub Issues&lt;/a&gt;.&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Session Bean-SR2, Apple-SR8, and 1.3.5 Released</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/01/15/spring-session-bean-sr2-apple-sr8-and-1-3-5-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Rob Winch</name>
-    </author>
-    <id>tag:spring.io,2019-01-15:3535</id>
-    <updated>2019-01-15T19:10:30Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;em&gt;This post was authored by &lt;a href="https://github.com/vpavic"&gt;Vedran Pavi?&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;On behalf of the community I’m pleased to announce the releases of Spring Session BOM &lt;code&gt;Bean-SR2&lt;/code&gt; (based on Spring Session &lt;code&gt;2.1.3.RELEASE&lt;/code&gt;), &lt;code&gt;Apple-SR8&lt;/code&gt; (based on &lt;code&gt;2.0.9.RELEASE&lt;/code&gt;), and &lt;code&gt;1.3.5.RELEASE&lt;/code&gt;. These maintenance releases bring a couple of bug fixes together with the usual dependency upgrades.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Complete details of these releases can be found in the following changelogs:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-session/milestone/50?closed=1"&gt;&lt;code&gt;2.1.3.RELEASE&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-session/milestone/51?closed=1"&gt;&lt;code&gt;2.0.9.RELEASE&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-session/milestone/49?closed=1"&gt;&lt;code&gt;1.3.5.RELEASE&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;a href="https://projects.spring.io/spring-session/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-session/docs/2.1.3.RELEASE/reference/html5/"&gt;Documentation&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-session/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-session"&gt;Gitter&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-session"&gt;Stack Overflow&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;</content>
   </entry>
 </feed>

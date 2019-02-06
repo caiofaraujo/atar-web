@@ -7,14 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-    <link href="css/simple-sidebar.css" rel="stylesheet">
+    
     <link href="css/layout.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
     <script src="js/app.js"></script>
-    <script src="js/service/services-equipamento.js"></script>
-    <script src="js/controller/controllers-equipamento.js"></script>
+    <script src="js/service/services-servico.js"></script>
+    <script src="js/controller/controllers-servico.js"></script>
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
@@ -68,6 +68,9 @@ window.onclick = function(event) {
             document.getElementById("mySidebar").style.display = "none";
         }
         
+        function formataDtServ(data) {   
+    		console.log(data);
+        }
     </script>
 
 
@@ -77,50 +80,56 @@ window.onclick = function(event) {
    		
     
 		   
-        <div ng-controller="EquipamentoCRUDCtrl" class="padraoContainer">
+        <div ng-controller="ServicoCRUDCtrl" class="padraoContainer">
         <br>
 
         
-            <h3>Cadastro de Equipamentos</h3>
+            <h3>Cadastro de Serviços</h3>
             <form>
-<!--                 <div class="form-group"> -->
-<!--                     <label for="marca">Marca:</label> -->
-<!--                     <input type="marca" class="form-control" id="marca" required placeholder="Digite a marca" ng-model="equipamento.marca"> -->
-<!--                     <input type="hidden" class="form-control" id="id" ng-model="equipamento.marca"> -->
-<!--                 </div> -->
-                
-                <div class="form-groupp">
-					<label for="marca">Marca: </label><br>
-					<select class="form-control" name="singleSelect" ng-model="equipamento.marca" value="Selecione...">
+               
+				<!--Basic textarea-->
+				<div class="form-groupp">
+				  <label for="descricao">Descrição do Serviço:</label>
+				  <textarea ng-model="servico.descricao" type="text" id="descricao" class="md-textarea form-control" mdbInputDirective placeholder="Digite a descrição..."></textarea>
+				</div><br>
+				
+				<div class="form-groupp">
+					<label for="tipo">Tipo: </label><br>
+					<select class="form-control" name="singleSelect" ng-model="servico.tipo" value="Selecione...">
 						<option value="" selected="selected">Selecione...</option>
-	 					<option value="BRASTEMP">BRASTEMP</option>
-						<option value="CARRIER">CARRIER</option>
-						<option value="CONSUL">CONSUL</option>
-						<option value="DAIKIN">DAIKIN</option>
-						<option value="ELECTROLUX">ELECTROLUX</option>
-						<option value="ELGIN">ELGIN</option>
-						<option value="FUJITSU">FUJITSU</option>
-						<option value="GREE">GREE</option>
-						<option value="HITACHI">HITACHI</option>
-						<option value="KOMECO">KOMECO</option>
-						<option value="LG">LG</option>
-						<option value="MIDEO">MIDEO</option>
-						<option value="PANASONIC">PANASONIC</option>
-						<option value="RHEEM">RHEEM</option>
-						<option value="SAMSUNG">SAMSUNG</option>
-						<option value="SPRINGER">SPRINGER</option>
-						<option value="TRANE">TRANE</option>
-						<option value="YORK">YORK</option>
+	 					<option value="INSTALAÇÃO">INSTALAÇÃO</option>
+						<option value="MANUTENÇÃO CORRETIVA">MANUTENÇÃO CORRETIVA</option>
+						<option value="MANUTENÇÃO PREVENTIVA">MANUTENÇÃO PREVENTIVA</option>
 						<option value="OUTROS">OUTROS</option>
 					</select>
 				</div><br>
                 
+				<!--Basic textarea-->
+				<div class="form-groupp">
+				  <label for="observacao">Observação:</label>
+				  <textarea ng-model="servico.observacao" type="text" id="observacao" class="md-textarea form-control" mdbInputDirective placeholder="Digite a observação..."></textarea>
+				</div><br>
+				
 				<div class="form-group">
-				    <label for="modelo">Modelo:</label>
-				   <input type="modelo" class="form-control" id="modelo" required placeholder="Digite o modelo" ng-model="equipamento.modelo">
-				</div>
+			       <label for="dtInicioServ" class="control-label">Data de Início: </label>
+			       <div class="control">
+			           <input ng-model="servico.dtInicioServico" id="dtInicioServ" class="form-control" type="date" date-model="dtInicioServ">
+			       </div>
+			   </div>
+			   
+			   <div class="form-group">
+			       <label for="dtFimServ" class="control-label">Data de Finalização: </label>
+			       <div class="control">
+			           <input ng-model="servico.dtFimServico" id="dtFimServ" class="form-control" type="date" date-model="dtFimServ">
+			       </div>
+			   </div>
+				
+				
+				
+          
+        			
                 
-                <button type="button" class="text-white-100 btn btn-dark" ng-click="addEquipamento(equipamento)">Salvar</button>
+                <button type="button" class="text-white-100 btn btn-dark" onclick= "formataDtServ(dtInicioServ);formataDtServ(dtFimServ)" ng-click="addServico(servico)">Salvar</button>
             </form>
             <br>
 
@@ -135,36 +144,7 @@ window.onclick = function(event) {
 
             <br>
             <br>
-            <!-- <div class="table-responsive-md table-stripped">
-                    <table class="table">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th>Nome</th>
-                                <th>Endereço</th>
-                                <th>Nascimento</th>
-                                <th>Editar</th>
-                                <th>Excluir</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr ng-repeat="cliente in clientes">
-                                <td>{{cliente.nome}}</td>
-                                <td>{{cliente.endereco}}</td>
-                                <td>{{cliente.nascimento | date : "dd/MM/yyyy"}}</td>
-                                <td>
-                                    <a class="text-white-100  btn btn-dark" ng-click="updatecliente(cliente)">Editar</a>
-                                </td>
-                                <td>
-                                    <a class="text-white-100  btn btn-secondary" ng-click="deletecliente($index)">Excluir</a>
-                                </td>
 
-                            </tr>
-                        </tbody>
-                    </table>
-                    <br>
-                    <br>
-                    <br>
-                </div> -->
         </div>
     </div>
     </div>

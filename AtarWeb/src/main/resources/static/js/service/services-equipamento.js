@@ -12,14 +12,14 @@ app.service('EquipamentoCRUDService', ['$http', function ($http) {
         });
     }
 
-    this.getAllEquipamentos = function getAllEquipamentos() {
+    this.getAllServicos = function getAllServicos() {
         return $http({
             method: 'GET',
             url: '/api/student'
         });
     } 
 
-    this.deleteEquipamento = function deleteEquipamento(equipamento) {
+    this.deleteServico = function deleteServico(servico) {
         $http({
             method: 'POST',
             url: 'api/student/delete',
