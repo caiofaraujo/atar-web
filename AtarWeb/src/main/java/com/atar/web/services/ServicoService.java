@@ -27,24 +27,16 @@ public interface ServicoService {
 	 * @return Page<Servicos>
 	 * @author @Caio Fernandes
 	 */
-	Page<Servicos> buscarPorFuncionarioId(Long clienteId, PageRequest pageRequest);
+	//Page<Servicos> buscarPorFuncionarioId(Long clienteId, PageRequest pageRequest);
 	
 	/**
-	 * Retorna um lançamento por ID.
+	 * Retorna uma descricao.
 	 * 
-	 * @param id
+	 * @param descricao
 	 * @return Optional<Servicos>
 	 * @author @Caio Fernandes
 	 */
-	Optional<Servicos> buscarPorId(Long id);
-	
-	/**
-	 * Remove um serviço da base de dados.
-	 * 
-	 * @param id
-	 * @author @Caio Fernandes
-	 */
-	void remover(Long id);
+	Optional<Servicos> buscarPorDescricao(String descricao);
 	
 	
 }

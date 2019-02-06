@@ -25,17 +25,14 @@
 <fullyQualifiedTypeName name="org.junit.Test"/>
 <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.Query"/>
 <fullyQualifiedTypeName name="org.springframework.data.querydsl.binding.QuerydslBindings"/>
-<fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
 <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.JpaRepository"/>
 <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
-<fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
 <fullyQualifiedTypeName name="org.hibernate.annotations.common.util.impl.LoggerFactory"/>
 <fullyQualifiedTypeName name="com.atar.web.repositories.ClienteRepository"/>
 <fullyQualifiedTypeName name="com.atar.web.repositories.EquipamentoRepository"/>
 <fullyQualifiedTypeName name="org.springframework.data.domain.PageRequest"/>
 <fullyQualifiedTypeName name="org.springframework.data.domain.Page"/>
 <fullyQualifiedTypeName name="com.atar.web.repositories.ServicoRepository"/>
-<fullyQualifiedTypeName name="com.atar.web.entities.Servicos"/>
 <fullyQualifiedTypeName name="com.atar.web.services.ClienteService"/>
 <fullyQualifiedTypeName name="com.atar.web.controllers.CadastroClienteController"/>
 <fullyQualifiedTypeName name="com.atar.web.dtos.CadastroClienteDto"/>
@@ -49,5 +46,11 @@
 <fullyQualifiedTypeName name="com.atar.web.services.EquipamentoService"/>
 <fullyQualifiedTypeName name="com.atar.web.dtos.CadastroEquipamentoDto"/>
 <fullyQualifiedTypeName name="com.atar.web.entities.Equipamentos"/>
+<fullyQualifiedTypeName name="java.sql.Date"/>
 <fullyQualifiedTypeName name="java.util.Optional"/>
+<fullyQualifiedTypeName name="com.atar.web.dtos.CadastroServicoDto"/>
+<fullyQualifiedTypeName name="com.atar.web.entities.Servicos"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
+<fullyQualifiedTypeName name="com.atar.web.services.ServicoService"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
 </qualifiedTypeNameHistroy>

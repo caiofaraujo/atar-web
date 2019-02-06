@@ -38,16 +38,16 @@ public class Servicos implements Serializable {
 	@Column(name = "DS_OBSERVACAO_SERV", nullable = false)
 	private String observacao;
 	
-	@Column(name = "DH_INICIO_SERV", nullable = false)
+	@Column(name = "DH_INICIO_SERV")
 	private Date dtInicioServ;
 	
-	@Column(name = "DH_FINAL_SERV", nullable = false)
+	@Column(name = "DH_FINAL_SERV")
 	private Date dtFinalServ;
 	
-	@Column(name = "DH_INATIVACAO_SERV", nullable = false)
+	@Column(name = "DH_INATIVACAO_SERV")
 	private Date dtInativacao;
 	
-	@Column(name = "DH_CADASTRO_SERV", nullable = false)
+	@Column(name = "DH_CADASTRO_SERV")
 	private Date dtCadastro;	
 	
 	@ManyToOne(cascade= CascadeType.ALL, fetch = FetchType.EAGER)
