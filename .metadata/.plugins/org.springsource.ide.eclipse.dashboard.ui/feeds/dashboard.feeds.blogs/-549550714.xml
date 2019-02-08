@@ -5,7 +5,172 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2019-02-06T00:00:00Z</updated>
+  <updated>2019-02-06T21:17:35Z</updated>
+  <entry>
+    <title>Spring Cloud Data Flow and Skipper 2.0 M2 Released</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/02/06/spring-cloud-data-flow-and-skipper-2-0-m2-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Mark Pollack</name>
+    </author>
+    <id>tag:spring.io,2019-02-06:3557</id>
+    <updated>2019-02-06T21:17:35Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;The &lt;a href="https://cloud.spring.io/spring-cloud-dataflow/"&gt;Spring Cloud Data Flow&lt;/a&gt; team is pleased to announce the release of &lt;code&gt;2.0 M2&lt;/code&gt; of Data Flow.  Follow the &lt;em&gt;Getting Started&lt;/em&gt; guides for running on &lt;a href="https://docs.spring.io/spring-cloud-dataflow/docs/2.0.0.M2/reference/htmlsingle/#getting-started-local"&gt;Local&lt;/a&gt;, &lt;a href="https://docs.spring.io/spring-cloud-dataflow/docs/2.0.0.M2/reference/htmlsingle/#getting-started-cloudfoundry"&gt;Cloud Foundry&lt;/a&gt;, and &lt;a href="https://docs.spring.io/spring-cloud-dataflow/docs/2.0.0.M2/reference/htmlsingle/#getting-started-kubernetes"&gt;Kubernetes&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Hand in hand is the &lt;code&gt;2.0 M2&lt;/code&gt; release of &lt;a href="https://cloud.spring.io/spring-cloud-skipper/"&gt;Spring Cloud Skipper&lt;/a&gt;. The &lt;a href="https://docs.spring.io/spring-cloud-skipper/docs/2.0.0.M2/reference/htmlsingle/#getting-started"&gt;getting started section&lt;/a&gt; in the reference guide is the best place to start if you want to use Skipper separately from Data Flow.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="here-are-the-highlights-for-data-flow"&gt;&lt;a class="anchor" href="#here-are-the-highlights-for-data-flow"&gt;&lt;/a&gt;Here are the highlights for Data Flow&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Launch tasks against multiple platforms&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Revamped metrics and monitoring of deployed applications&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Additional security roles&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Dashboard improvements&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Database migration support&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="launch-tasks-against-multiple-platforms"&gt;&lt;a class="anchor" href="#launch-tasks-against-multiple-platforms"&gt;&lt;/a&gt;Launch tasks against multiple platforms&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;When a task is launched you can specify the platform where it will execute.
+The Data Flow server lets you configure multiple Kubernetes and Cloud Foundry task platforms.
+This is particularly useful when you want to orchestrate data pipelines against multiple platforms, but manage them all from a central location.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;For example, if you are running Data Flow on Cloud Foundry in &lt;code&gt;org1/space1&lt;/code&gt;, you can launch tasks in &lt;code&gt;org2/space2&lt;/code&gt;.
+If running the Data Flow server locally, you can specify different local task platforms, say with different JVM properties, as an alternative to using task deployment properties.
+The docs describe how to configure multiple task platforms for &lt;a href="http://docs.spring.io/spring-cloud-dataflow/docs/2.0.0.M2/reference/htmlsingle/#configuration-local-tasks"&gt;Local&lt;/a&gt;, &lt;a href="http://docs.spring.io/spring-cloud-dataflow/docs/2.0.0.M2/reference/htmlsingle/#configuration-cloudfoundry-tasks"&gt;Cloud Foundry&lt;/a&gt;, and &lt;a href="http://docs.spring.io/spring-cloud-dataflow/docs/2.0.0.M2/reference/htmlsingle/#configuration-kubernetes-tasks"&gt;Kubernetes&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="revamped-metrics-and-monitoring-of-deployed-applications"&gt;&lt;a class="anchor" href="#revamped-metrics-and-monitoring-of-deployed-applications"&gt;&lt;/a&gt;Revamped metrics and monitoring of deployed applications&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Data Flow 2.0 introduces a new architecture for collecting and displaying application metrics for Streams.  The Data Flow Metrics Collector introduced in Data Flow 1.4 has been removed.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="imageblock"&gt;
+&lt;div class="content"&gt;
+&lt;img src="https://raw.githubusercontent.com/spring-cloud/spring-cloud-dataflow/master/spring-cloud-dataflow-docs/src/main/asciidoc/images/micrometer-arch.png" alt="Monitoring Architecture"&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;This new architecture is based on using the Micrometer library in the deployed applications to send metrics to popular monitoring systems and then visualizing the metrics with &lt;a href="https://grafana.com/"&gt;Grafana&lt;/a&gt;.
+Each application in the &lt;a href="https://cloud.spring.io/spring-cloud-stream-app-starters/"&gt;Einstein release train of the application starters&lt;/a&gt; contains Micrometer libraries for Prometheus, InfluxDB and DataDog.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;We have provided instructions on how to get started using &lt;a href="http://docs.spring.io/spring-cloud-dataflow/docs/2.0.0.M2/reference/htmlsingle/#streams-monitoring-local-prometheus"&gt;Prometheus&lt;/a&gt; and &lt;a href="http://docs.spring.io/spring-cloud-dataflow/docs/2.0.0.M2/reference/htmlsingle/#streams-monitoring-local-influx"&gt;InfluxDB&lt;/a&gt; as the monitoring system for Data Flow running locally on your laptop.
+Instructions for CloudFoundry and Kubernetes will be available in the 2.0 RC1 release in a few weeks.
+Links to the Grafana dashboard from the Data Flow UI are also provided.
+Two Grafana dashboards are also provided, one that shows a more application centric view and other that show a more stream based view.  Here is a screenshot of the Grafana dashboard based on Prometheus showing the message rates for the applications in a stream.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="imageblock"&gt;
+&lt;div class="content"&gt;
+&lt;img src="https://raw.githubusercontent.com/spring-cloud/spring-cloud-dataflow/master/spring-cloud-dataflow-docs/src/main/asciidoc/images/grafana-prometheus-scdf-applications-dashboard.png" alt="Grafana Dashboard for applications in a stream"&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Selectors for applications and streams allows you to navigate down to specific areas of interest.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="additional-security-roles"&gt;&lt;a class="anchor" href="#additional-security-roles"&gt;&lt;/a&gt;Additional security roles.&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Data Flow 2.0 is entirely OAuth2/OpenIDConnect compatible.
+The token-based authorization, password-grant type validation, and LDAP integration are a few options, and they are consistently supported with the help of UAA as the backend.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Building on this foundation, in this milestone, we also added &lt;a href="http://docs.spring.io/spring-cloud-dataflow/docs/2.0.0.M2/reference/htmlsingle/#configuration-security-customizing-authorization"&gt;new granular roles&lt;/a&gt; to govern the stream/task deployment operations.
+The granularity brings better alignment with the intended action, and the client-tools (Shell and Dashboard) automatically also adapt to it.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="dashboard-improvements"&gt;&lt;a class="anchor" href="#dashboard-improvements"&gt;&lt;/a&gt;Dashboard improvements&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The UI supports launching a Task against a collection of backend platforms.
+The UI/UX is built with a consistent experience for both Stream and Task launches.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Building upon another important feature-set, it is now possible to automatically enable/disable Dashboard functionality based on granular roles defined in Data Flow.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A Grafana launch-icon is natively integrated in Dashboard’s Streams and Runtime pages.
+With Data Flow configured against the available Micrometer backends, monitoring streaming-pipeline metrics such as message-rates, error-counts, and latency is just a click away!&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A new button to rollback to the previous version of a stream is now supported.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The analytics tab has been removed and it will be replaced with Micrometer-based Grafana dashboard in the 2.0 RC1 release.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="database-migration-support"&gt;&lt;a class="anchor" href="#database-migration-support"&gt;&lt;/a&gt;Database migration support&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Schema changes were introduced in moving from Data Flow 1.7 to Data Flow 2.0.
+A flyway based migration is now included allowing you to easily update your existing stream/task definitions to the new format when starting up the 2.0 Data Flow server.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="what-is-next"&gt;&lt;a class="anchor" href="#what-is-next"&gt;&lt;/a&gt;What is next&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;We are planning to release 2.0 RC1 in a couple weeks.  Most of the feature development has been completed, but in addition to the monitoring improvements mentioned above, we will be adding support for getting the detailed history of Task deployments - application properties, deployment properties, much like is available today for Streams.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Also note that the 1.x line of Spring Cloud Data Flow will cease maintenance twelve months from the 2.0 GA announcement date. The 2.0 GA is tentatively planned for February 2019, so in February 2020, the 1.x line would reach end-of-general-support status.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="stay-in-touch"&gt;&lt;a class="anchor" href="#stay-in-touch"&gt;&lt;/a&gt;Stay in touch&amp;#8230;&amp;#8203;&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;As always, we welcome feedback and contributions, so please reach out to us on &lt;a href="https://stackoverflow.com/questions/tagged/spring-cloud-dataflow"&gt;Stackoverflow&lt;/a&gt; or &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow/issues"&gt;GitHub&lt;/a&gt; or via &lt;a href="https://gitter.im/spring-cloud/spring-cloud-dataflow"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</content>
+  </entry>
+  <entry>
+    <title>Legacy forums will be shutdown February 28</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/02/06/legacy-forums-will-be-shutdown-february-28" />
+    <category term="news" label="News and Events" />
+    <author>
+      <name>Brian Dussault</name>
+    </author>
+    <id>tag:spring.io,2019-02-06:3556</id>
+    <updated>2019-02-06T12:51:00Z</updated>
+    <content type="html">&lt;p&gt;In 2014, we &lt;a href="https://spring.io/blog/2014/06/18/retiring-the-forum-spring-io-website"&gt;announced the retirement of our legacy forum&lt;/a&gt;, forum.spring.io, in favor of providing an improved community experience on stackoverflow.com. As part of that announcement, we put our forum into read-only mode, preserving forum posts that were referenced in various Spring issue trackers. &lt;/p&gt;
+&lt;p&gt;On February 28, 2019, we plan to take the forum completely offline. In preparation for this end-of-life activity, we have gone through our issue trackers and identified links to forum.spring.io that contain supplementary information related to an issue. Based on this analysis, we have either copied such text directly into the issue tracker or otherwise ensured that no essential information is lost. &lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>Spring Tips: Testing Reactive Code</title>
     <link rel="alternate" href="https://spring.io/blog/2019/02/06/spring-tips-testing-reactive-code" />
@@ -1347,65 +1512,5 @@ class ObjectStorageServiceDemo {&#xD;
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The Microsoft Azure-specific bits are less than trivial. We obtain a reference to a container and then write to it and then log out the addressable URI of the resource. How &lt;em&gt;mundane&lt;/em&gt;! And that&amp;rsquo;s exactly what you want in a computing system primitive like a filesystem. It should be &lt;em&gt;mundane&lt;/em&gt;. To be very honest, I was more pleased with getting to use Java 7&amp;rsquo;s try-with-resources syntax for the &lt;code&gt;Autocloseable&lt;/code&gt; &lt;code&gt;InputStream&lt;/code&gt; reference! &lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Tips: JavaFX</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/01/16/spring-tips-javafx" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2019-01-16:3538</id>
-    <updated>2019-01-16T08:03:58Z</updated>
-    <content type="html">&lt;p&gt;Hi Spring fans! In this installment of Spring Tips, we look at how to integrate Spring with JavaFX, a UI framework that supports building rich desktop applications.&lt;/p&gt;
-&lt;p&gt;speaker: &lt;a href="http://twitter.com/Starbuxman"&gt;Josh Long&lt;/a&gt;&lt;/p&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/lPy9mc_O_gU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;</content>
-  </entry>
-  <entry>
-    <title>This Week in Spring - January 15th, 2019</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/01/15/this-week-in-spring-january-15th-2019" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2019-01-15:3537</id>
-    <updated>2019-01-15T22:48:00Z</updated>
-    <content type="html">&lt;p&gt;Hi Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;. I&amp;rsquo;ve just returned from Montreal, Canada and tomorrow I&amp;rsquo;m off to Dallas, Texas for customer visits. This time of year is marked by pronounced climate changes and the optimism for a new year ahead. I love it. That optimism is certainly visible in today&amp;rsquo;s roundup. We&amp;rsquo;ve got a lot to cover so let&amp;rsquo;s get to it! &lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;You know, I never know what people will find interesting in our wonderful community! It&amp;rsquo;s for this reason that I try to cover as many topics as possible in the Spring Tips series. The latest installment has proven to be popular! Almost 100 likes no YouTube as of this writing. In it, I look at &lt;a href="https://spring.io/blog/2019/01/09/spring-tips-business-process-management-with-flowable"&gt;business process management with the Apache 2 licensed Flowable BPMN and CMMN engine&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;The Spring Framework team just migrated from JIRA to Github issues. It was &lt;em&gt;not&lt;/em&gt; easy. Read here to learn about &lt;a href="https://spring.io/blog/2019/01/15/spring-framework-s-migration-from-jira-to-github-issues"&gt;what happened and how it happened&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/01/15/spring-session-bean-sr2-apple-sr8-and-1-3-5-released"&gt;Spring Session Bean-SR2, Apple-SR8, and 1.3.5 Released&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/01/15/spring-cloud-task-2-1-0-rc1-is-now-available"&gt;Spring Cloud Task 2.1.0.RC1 is now available&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;I&amp;rsquo;m continuing my six part series looking at how to use Spring with Azure. &lt;a href="https://spring.io/blog/2019/01/10/bootiful-azure-global-scale-data-access-with-cosmosdb-3-6"&gt;This is the third of six installments looking at how to scale data access with CosmosDB&lt;/a&gt;. In the fourth installment, published yesterday, we looked at &lt;a href="https://spring.io/blog/2019/01/14/bootiful-azure-integration-with-azure-service-bus-4-6"&gt;Messaging and Integration with Azure Service Bus&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/01/12/spring-boot-2-1-2-released"&gt;Spring Boot 2.1.2 released&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/01/11/spring-boot-2-0-8-released"&gt;Spring Boot 2.0.8 Released&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/01/11/spring-boot-1-5-19"&gt;Spring Boot 1.5.19&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/01/11/spring-security-5-1-3-5-0-11-4-2-11-released"&gt;Spring Security 5.1.3, 5.0.11, 4.2.11 Released&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/01/10/spring-credhub-2-0-0-released"&gt;Spring CredHub 2.0.0 released&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/01/10/spring-data-lovelace-sr4-kay-sr13-and-ingalls-sr18-released"&gt;Spring Data Lovelace SR4, Kay SR13, and Ingalls SR18 released&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/01/09/composed-function-support-in-spring-cloud-data-flow"&gt;Composed Function Support in Spring Cloud Data Flow&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/01/09/spring-framework-5-1-4-5-0-12-and-4-3-22-available-now"&gt;Spring Framework 5.1.4, 5.0.12 and 4.3.22 available now&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://twitter.com/springcloud/status/1085259389341220864"&gt;We&amp;rsquo;d love it if you&amp;rsquo;d take our survey on Spring Cloud Stream&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://twitter.com/springcentral/status/1085191154251968513"&gt;Ditto for our survey on Spring Cloud Data Flow&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://connect.pivotal.io/QA-Panel-Session-with-the-Spring-Team.html"&gt;Want to meet the Spring Boot team? They&amp;rsquo;re in NYC and hanging out tomorrow!&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://piotrminkowski.wordpress.com/2019/01/15/kotlin-microservice-with-spring-boot/"&gt;Piotr has a nice post on building microservices with Spring Boot and Kotlin&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Steven van Beelen has updated the Axon article on the Baeldung blog &lt;a href="https://twitter.com/smcvbeelen/status/1084838866736082944?s=12"&gt;to reflect version 4.0 of Axon. Check it out!&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;An interesting post by Arnold Galovics on &lt;a href="https://blog.arnoldgalovics.com/deploying-a-simple-spring-boot-with-mysql-app-to-aws-using-elastic-beanstalk/"&gt;deploying a simple Spring Boot with MySQL app to AWS using Elastic Beanstalk&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://aboullaite.me/spring-cloud-gateway/amp/?__twitter_impression=true"&gt;A look into Spring Cloud Gateway&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;You know what will be fun? &lt;a href="https://twitter.com/springcentral/status/1084868756956987398"&gt;The SpringOne Tour in London, on March 18-19. Join us!&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://github.com/testcontainers/testcontainers-java/pull/1141"&gt; Spring Data ninja Mark Paluch has chimed in with some good news: Test Containers is working on R2DBC support.&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.baeldung.com/spring-classpath-file-access"&gt;An oldie but a goodie from the Baeldung blog: how to access a &lt;code&gt;File&lt;/code&gt; from the classpath in a Spring Application&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;the Apache RocketMQ looks at the roadmap of &lt;a href="https://twitter.com/ApacheRocketMQ/status/1083975389737738241"&gt;Spring and Apache RocketMQ integration, thanks to the work of the Spring community&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://twitter.com/vaadin/status/1083432033651695616"&gt;How do you build reactive webapps using Spring Boot and Vaadin? This tutorial shows you from scratch. &lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;I love this ultimate guide to &lt;a href="https://medium.com/@brunoborges/visual-studio-code-for-java-the-ultimate-guide-2019-8de7d2b59902"&gt;Visual Studio Code for Java in 2019 by Microsoft&amp;rsquo;s Bruno Borges&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;How to deploy your &lt;a href="https://medium.freecodecamp.org/how-to-deploy-your-cloud-foundry-app-with-almost-zero-fear-using-travis-ci-926697fff8f6"&gt;Cloud Foundry app with (almost) zero fear using Travis CI&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;A friendly reminder that people are seeing &lt;a href="https://twitter.com/tiaanlouw/status/1083412161832071169?s=12"&gt;significant performance improvements in Spring Boot 2.1&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;This is super cool: Eirini enables pluggable scheduling. &lt;a href="https://www.youtube.com/watch?list=PLhuMOCWn4P9gTEg3oKWOu4KRY1ui_Hm6K&amp;v=wT1ZImIYkrs"&gt;Choose whether Cloud Foundry Applicatio runtime should use Diego or Kubernetes to orchestrate applications&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Marco Behler looks at &lt;a href="https://www.marcobehler.com/episodes/174-spring-boot-properties-magic-part-1"&gt;Spring Boot &amp;ldquo;Properties&amp;rdquo; magic&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://content.pivotal.io/webinars/jan-29-securing-microservices-spring-and-pivotal-cloud-foundry-webinar?utm_source=promo&amp;utm_medium=webinar&amp;utm_campaign=spring-pcf&amp;utm_term=q119&amp;utm_content=1547125036"&gt;Don&amp;rsquo;t miss this upcoming webinar on application security on Pivotal CF&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;This is an oldie-but-a-goodie: check out Rob Winch&amp;rsquo;s &lt;a href="https://www.infoq.com/presentations/reactive-spring-security-5-1"&gt;awesome talk about Reactive Spring Security&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;An interesting post on &lt;a href="https://www.developer.com/java/data/understanding-spring-boot-starters-and-tools.html"&gt;understanding Spring Boot starters and tools&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Another fine installment of &lt;a href="http://www.rabbitmq.com/blog/2019/01/08/this-month-in-rabbitmq-jan-8-2019/"&gt;this Month in RabbitMQ — Jan 8, 2019&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content>
   </entry>
 </feed>

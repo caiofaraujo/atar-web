@@ -1,6 +1,7 @@
 package com.atar.web.entities;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.CascadeType;
@@ -96,6 +97,8 @@ public class Servicos implements Serializable {
 	}
 
 	public void setDtInicioServ(Date dtInicioServ) {
+		dtInicioServ = formatarData(dtInicioServ);
+		System.out.println(dtInicioServ);
 		this.dtInicioServ = dtInicioServ;
 	}
 
@@ -104,6 +107,8 @@ public class Servicos implements Serializable {
 	}
 
 	public void setDtFinalServ(Date dtFinalServ) {
+		dtFinalServ = formatarData(dtFinalServ);
+		System.out.println(dtFinalServ);
 		this.dtFinalServ = dtFinalServ;
 	}
 
@@ -137,4 +142,16 @@ public class Servicos implements Serializable {
 	public String toString() {
 		return "Servico [id=" + id + ", tipo=" + tipo + ", descricao=" + descricao + ", observacao=" + observacao + ", dtInicioServ" + dtInicioServ + ", dtFinalServ" + dtFinalServ + ", dtCadastro" + dtCadastro + "]";
 	}
+	
+	public Date formatarData(Date dt) {
+		String pattern = "yyyy-MM-dd HH:mm:ss";
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+
+		String date = simpleDateFormat.format(new Date());
+		System.out.println(date);
+		
+		return dt;
+	}
+	
+	
 }

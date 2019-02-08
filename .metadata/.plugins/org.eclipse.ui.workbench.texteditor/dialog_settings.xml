@@ -2,24 +2,27 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="Equipame" key="selection"/>
+		<item value="https://code.getmdl.io/1.3.0/material.min.js" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="https://code.getmdl.io/1.3.0/material.min.js"/>
+			<item value="material.indigo-pink.min.css"/>
+			<item value="https://fonts.googleapis.com"/>
+			<item value=".css"/>
+			<item value="button"/>
+			<item value="dtInicioServico"/>
+			<item value="servico.dtInicioServico"/>
+			<item value="dtFimServico"/>
+			<item value="dtCadastro"/>
 			<item value="equipame"/>
 			<item value="Equipame"/>
 			<item value="clien"/>
 			<item value="cliente"/>
 			<item value="converterDtoParaServico"/>
 			<item value="converterCadastroClienteDto"/>
-			<item value="converterCadastroServicoDto"/>
-			<item value="myDropdown"/>
-			<item value="hover"/>
-			<item value="w3-teal"/>
-			<item value="255, 255, 255, 0.2"/>
-			<item value="#ccc"/>
 		</list>
 		<list key="replacehistory">
 			<item value="Equipamentos"/>
@@ -33,7 +36,7 @@
 		<item value="284" key="DIALOG_WIDTH"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 		<item value="391" key="DIALOG_HEIGHT"/>
-		<item value="906" key="DIALOG_X_ORIGIN"/>
-		<item value="216" key="DIALOG_Y_ORIGIN"/>
+		<item value="1090" key="DIALOG_X_ORIGIN"/>
+		<item value="306" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

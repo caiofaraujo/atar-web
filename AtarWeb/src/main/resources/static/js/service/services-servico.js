@@ -9,8 +9,8 @@ app.service('ServicoCRUDService', ['$http', function ($http) {
             	descricao : servico.descricao,
             	tipo : servico.tipo,
             	observacao : servico.observacao,
-            	dtInicio : servico.servicoDtInicioServ,
-            	dtFim : servico.servicoDtFimServ
+            	dtInicioServico : servico.dtInicioServico,
+            	dtFinalServico : servico.dtFinalServico
             }
         });
     }

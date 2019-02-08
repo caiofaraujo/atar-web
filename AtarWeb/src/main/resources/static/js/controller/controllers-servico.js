@@ -20,8 +20,8 @@ app.controller('ServicoCRUDCtrl', ['$scope', '$http', 'ServicoCRUDService',
                         $scope.servico.descricao = '';
                         $scope.servico.tipo = '';
                         $scope.servico.observacao = '';
-                        $scope.servico.dtInicioServ = '';
-                        $scope.servico.dtFimServ = '';
+                        $scope.servico.dtInicioServico = '';
+                        $scope.servico.dtFinalServico = '';
                         $scope.servico.id = '';
                         // $scope.getAllEquipamentos();
 

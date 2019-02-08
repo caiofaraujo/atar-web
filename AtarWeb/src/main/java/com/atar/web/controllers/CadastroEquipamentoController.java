@@ -76,8 +76,8 @@ public class CadastroEquipamentoController {
 	 */
 	private void validarDadosExistentes(CadastroEquipamentoDto cadastroEquipamentoDto, BindingResult result) {
 		
-		this.equipamentoService.buscarPorMarca(cadastroEquipamentoDto.getMarca())
-				.ifPresent(cli -> result.addError(new ObjectError("marca", "Marca já existente.")));
+//		this.equipamentoService.buscarPorMarca(cadastroEquipamentoDto.getMarca())
+//				.ifPresent(cli -> result.addError(new ObjectError("marca", "Marca já existente.")));
 		
 		this.equipamentoService.buscarPorModelo(cadastroEquipamentoDto.getModelo())
 		.ifPresent(cli -> result.addError(new ObjectError("modelo", "Modelo já existente.")));
