@@ -1,6 +1,8 @@
 package com.atar.web.services;
 
+import java.util.List;
 import java.util.Optional;
+
 import com.atar.web.entities.Clientes;
 
 public interface ClienteService {
@@ -33,6 +35,8 @@ public interface ClienteService {
 	 * @author @Caio Fernandes
 	 */
 	Optional<Clientes> buscarPorEndereco(String endereco);
+	
+	List<Clientes> listarClientes();
 	
 	
 }

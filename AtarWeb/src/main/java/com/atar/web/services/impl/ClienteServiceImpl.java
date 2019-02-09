@@ -1,5 +1,6 @@
 package com.atar.web.services.impl;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.slf4j.Logger;
@@ -35,6 +36,12 @@ public class ClienteServiceImpl implements ClienteService {
 	public Optional<Clientes> buscarPorEndereco(String endereco) {
 		log.info("[ClienteServiceImpl : buscarPorEndereco] - Buscando um cliente por endereco {}", endereco);
 		return Optional.ofNullable(clienteRepository.findByEndereco(endereco));
+	}
+
+	@Override
+	public List<Clientes> listarClientes() {
+		// TODO Auto-generated method stub
+		return clienteRepository.findAll();			
 	}
 		
 }

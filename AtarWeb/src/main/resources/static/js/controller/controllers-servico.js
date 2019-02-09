@@ -1,9 +1,12 @@
 
 
-app.controller('ServicoCRUDCtrl', ['$scope', '$http', 'ServicoCRUDService',
-    function ($scope, $http, ServicoCRUDService) {
+app.controller('ServicoCRUDCtrl', ['$scope', '$http', 'ServicoCRUDService','ClienteCRUDService',
+    function ($scope, $http, ServicoCRUDService,ClienteCRUDService) {
         $scope.isExibirSucesso = false;
         $scope.isExibirErro = false;
+        $scope.lstClientes = [];
+        
+
         $scope.addServico = function () {
         	$scope.isExibirErro = false;
         	$scope.isExibirSucesso = false;
@@ -60,8 +63,21 @@ app.controller('ServicoCRUDCtrl', ['$scope', '$http', 'ServicoCRUDService',
 
             $scope.servico = servico;
             //$scope.equipamento.marca = new Date(equipamento.marca);
-            console.log
+            //console.log
         }
+
+        $scope.getClientes = function(){            
+            ClienteCRUDService.getAllClientes().then(function success(res){
+                console.log(res);  
+                $scope.lstClientes = res.data.data;     
+                        
+            }, function error(res){
+                console.log(res);
+                
+            });
+        }
+
+        $scope.getClientes();
 
         // $scope.getAllEquipamentos();
 

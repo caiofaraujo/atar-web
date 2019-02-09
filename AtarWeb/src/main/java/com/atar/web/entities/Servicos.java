@@ -51,6 +51,7 @@ public class Servicos implements Serializable {
 	@Column(name = "DH_CADASTRO_SERV")
 	private Date dtCadastro;	
 	
+	//TODO CLIENTE 
 	@ManyToOne(cascade= CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "ID_CLIENTE_CLIE")
 	private Clientes clientes;

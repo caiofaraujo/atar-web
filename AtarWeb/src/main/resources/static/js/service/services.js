@@ -8,7 +8,8 @@ app.service('ClienteCRUDService', ['$http', function ($http) {
             data: {
             	nome : cliente.nome,
             	endereco : cliente.endereco,
-            	telefone : cliente.telefone
+                telefone : cliente.telefone
+                
             }
         });
     }
@@ -16,7 +17,7 @@ app.service('ClienteCRUDService', ['$http', function ($http) {
     this.getAllClientes = function getAllClientes() {
         return $http({
             method: 'GET',
-            url: '/api/student'
+            url: '/atar/cadastrar-cliente/listar-cliente'
         });
     } 
 

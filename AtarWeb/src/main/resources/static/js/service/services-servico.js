@@ -22,6 +22,14 @@ app.service('ServicoCRUDService', ['$http', function ($http) {
         });
     } 
 
+    // this.getAllClientes = function getAllClientes() {
+        
+    //     return $http({
+    //         method: 'GET',
+    //         url: '/atar/cadastrar-cliente/listar-cliente'
+    //     });
+    // } 
+
     this.deleteServico = function deleteServico(servico) {
         $http({
             method: 'POST',
