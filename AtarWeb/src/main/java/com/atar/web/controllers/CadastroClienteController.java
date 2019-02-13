@@ -121,6 +121,7 @@ public class CadastroClienteController {
 		cadastroClienteDto.setId(cliente.getId());
 		cadastroClienteDto.setNome(cliente.getNome());
 		cadastroClienteDto.setEndereco(cliente.getEndereco());
+		cadastroClienteDto.setTelefone(cliente.getNrTelefone());
 		return cadastroClienteDto;
 	}
 

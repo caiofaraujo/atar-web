@@ -45,7 +45,6 @@
 <fullyQualifiedTypeName name="javax.persistence.JoinTable"/>
 <fullyQualifiedTypeName name="com.atar.web.services.EquipamentoService"/>
 <fullyQualifiedTypeName name="com.atar.web.dtos.CadastroEquipamentoDto"/>
-<fullyQualifiedTypeName name="com.atar.web.entities.Equipamentos"/>
 <fullyQualifiedTypeName name="java.sql.Date"/>
 <fullyQualifiedTypeName name="java.util.Optional"/>
 <fullyQualifiedTypeName name="com.atar.web.dtos.CadastroServicoDto"/>
@@ -54,4 +53,5 @@
 <fullyQualifiedTypeName name="com.atar.web.services.ServicoService"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
 <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+<fullyQualifiedTypeName name="com.atar.web.entities.Equipamentos"/>
 </qualifiedTypeNameHistroy>

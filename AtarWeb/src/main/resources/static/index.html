@@ -8,22 +8,27 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
     <link href="css/simple-sidebar.css" rel="stylesheet">
+    <link href="css/layout.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/service/services.js"></script>
     <script src="js/controller/controllers.js"></script>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
 <body>
-    <!-- Sidebar -->
     <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
-        <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
-        <a href="/cadastro-cliente.html" class="w3-bar-item w3-button">Cliente</a>
-        <a href="#" class="w3-bar-item w3-button">Link 2</a>
-        <a href="#" class="w3-bar-item w3-button">Link 3</a>
+      <button onclick="w3_close()" class="w3-bar-item w3-large">Fechar &times;</button>
+	  <button onclick="myFunction()" class="w3-bar-item w3-button dropbtn menuPai" >Gerenciamentos</button>
+	  
+	  <div id="myDropdown" class="dropdown-content">
+	    <a href="/cadastro-cliente.html" class="w3-bar-item w3-button">Cadastro de Cliente</a>
+        <a href="/cadastro-equipamento.html" class="w3-bar-item w3-button">Cadastro de Equipamento</a>
+        <a href="/cadastro-servico.html" class="w3-bar-item w3-button">Cadastro de Servico</a>
+	  </div>
     </div>
 
     <!-- Page Content -->
@@ -31,6 +36,9 @@
         <button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰ ATAR</button>
     </div>
     <script>
+    	function myFunction() {
+    	  document.getElementById("myDropdown").classList.toggle("show");
+    	}
         function w3_open() {
             document.getElementById("mySidebar").style.display = "block";
         }
