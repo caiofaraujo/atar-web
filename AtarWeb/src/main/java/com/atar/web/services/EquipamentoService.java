@@ -1,5 +1,6 @@
 package com.atar.web.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import com.atar.web.entities.Equipamentos;
@@ -40,6 +41,14 @@ public interface EquipamentoService {
 	 * @return Optional<Equipamentos>
 	 * @author @Caio Fernandes
 	 */
+	
+	/**
+	 * Retorna uma lista de equipamentos.
+	 * 
+	 * @return List<Equipamentos>
+	 * @author @Caio Fernandes
+	 */
+	List<Equipamentos> listarEquipamentos();
 	
 	
 }

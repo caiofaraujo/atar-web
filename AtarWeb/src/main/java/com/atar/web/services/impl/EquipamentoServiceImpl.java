@@ -1,5 +1,6 @@
 package com.atar.web.services.impl;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.slf4j.Logger;
@@ -32,6 +33,12 @@ public class EquipamentoServiceImpl implements EquipamentoService {
 	public Optional<Equipamentos> buscarPorModelo(String modelo) {
 		log.info("[EquipamentoServiceImpl : buscarPorModelo] - Buscando um equipamento por modelo {}", modelo);
 		return Optional.ofNullable(equipamentoRepository.findByModelo(modelo));
+	}
+
+	@Override
+	public List<Equipamentos> listarEquipamentos() {
+		// TODO Auto-generated method stub
+		return equipamentoRepository.findAll();	
 	}
 
 }
