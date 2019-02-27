@@ -54,6 +54,7 @@ window.onclick = function(event) {
 	    <a href="/cadastro-cliente.html" class="w3-bar-item w3-button">Cadastro de Cliente</a>
         <a href="/cadastro-equipamento.html" class="w3-bar-item w3-button">Cadastro de Equipamento</a>
         <a href="/cadastro-servico.html" class="w3-bar-item w3-button">Cadastro de Servico</a>
+        <a href="html/listar-servico.html" class="w3-bar-item w3-button">Listar Serviços</a>
 	  </div>
 	  
 	  <!-- Uses a header that scrolls with the text, rather than staying
@@ -83,14 +84,9 @@ window.onclick = function(event) {
     </script> 
 
 
-    <div class="container bg-light">
+    <div ng-controller="ServicoCRUDCtrl" class="container">
 		
 
-   		
-    
-		   
-        <div ng-controller="ServicoCRUDCtrl" class="padraoContainer">
-        <br>
 
         
             <h3>Cadastro de Serviços</h3>
@@ -136,9 +132,10 @@ window.onclick = function(event) {
 			       </div>
                </div>
                
-               <div class="form-groupp">
-                <label for="tipo">Cliente: </label><br>                
-                <select ng-model="servico.idCliente" ng-options="c.id as c.nome for c in lstClientes">
+               <div class="form-group">
+                <label class="control-label" for="tipo">Cliente: </label><br>                
+                <select ng-model="servico.idCliente" class="form-control" ng-options="c.id as c.nome for c in lstClientes">
+                <option>Selecione...</option>
                 </select>
             </div><br>
 				 

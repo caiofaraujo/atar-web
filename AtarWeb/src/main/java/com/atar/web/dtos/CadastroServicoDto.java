@@ -24,6 +24,8 @@ public class CadastroServicoDto {
 	private Date dtInicioServico;
 	
 	private Date dtFinalServico;
+	
+	private Long idCliente; 
 
 	public CadastroServicoDto() {
 		
@@ -31,6 +33,14 @@ public class CadastroServicoDto {
 
 	public Long getId() {
 		return id;
+	}
+
+	public Long getIdCliente() {
+		return idCliente;
+	}
+
+	public void setIdCliente(Long idCliente) {
+		this.idCliente = idCliente;
 	}
 
 	public void setId(Long id) {

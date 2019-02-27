@@ -1,18 +1,14 @@
 package com.atar.web.services.impl;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
-import com.atar.web.entities.Clientes;
-import com.atar.web.entities.Equipamentos;
 import com.atar.web.entities.Servicos;
-import com.atar.web.repositories.ClienteRepository;
 import com.atar.web.repositories.ServicoRepository;
 import com.atar.web.services.ServicoService;
 
@@ -34,6 +30,11 @@ public class ServicoServiceImpl implements ServicoService{
 	public Optional<Servicos> buscarPorDescricao(String descricao) {
 		log.info("[EquipamentoServiceImpl : buscarPorMarca] - Buscando um equipamento por marca {}", descricao);
 		return Optional.ofNullable(servicoRepository.findByDescricao(descricao));
+	}
+	
+	public List<Servicos> listarServicos(){
+		return this.servicoRepository.findAll();
+		
 	}
 
 	
