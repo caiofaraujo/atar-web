@@ -132,10 +132,12 @@ window.onclick = function(event) {
 			       </div>
                </div>
                
-               <div class="form-group">
-                <label class="control-label" for="tipo">Cliente: </label><br>                
-                <select ng-model="servico.idCliente" class="form-control" ng-options="c.id as c.nome for c in lstClientes">
-                <option>Selecione...</option>
+ 
+               <div class="form-groupp">
+                <label for="cliente">Cliente: </label><br>                
+                <select class="form-control" ng-model="servico.idCliente" ng-options="c.id as c.nome for c in lstClientes">
+                	<option value="" selected="selected">Selecione...</option>
+ 
                 </select>
             </div><br>
 				 

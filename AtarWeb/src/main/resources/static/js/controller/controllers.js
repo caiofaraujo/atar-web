@@ -38,7 +38,6 @@ app.controller('ClienteCRUDCtrl', ['$scope', '$http', 'ClienteCRUDService',
         }
 
         $scope.getAllClientes = function () {
-
             ClienteCRUDService.getAllClientes().then(function success(response) {
                 $scope.clientes = response.data.data;
             }, function error(response) {

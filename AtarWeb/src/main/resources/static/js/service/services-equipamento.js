@@ -12,10 +12,10 @@ app.service('EquipamentoCRUDService', ['$http', function ($http) {
         });
     }
 
-    this.getAllServicos = function getAllServicos() {
+    this.getAllEquipamentos = function getAllEquipamentos() {
         return $http({
             method: 'GET',
-            url: '/api/student'
+            url: '/atar/cadastrar-equipamento/listar-equipamento'
         });
     } 
 

@@ -3,6 +3,12 @@ package com.atar.web.services;
 import java.util.List;
 import java.util.Optional;
 
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+
+import com.atar.web.entities.Equipamentos;
+ 
 import com.atar.web.entities.Servicos;
 
 public interface ServicoService {

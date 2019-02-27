@@ -1,6 +1,8 @@
 package com.atar.web.controllers;
 
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.validation.Valid;
 
@@ -11,6 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -37,6 +40,25 @@ public class CadastroEquipamentoController {
 			
 	}
 	
+	/**
+	 * Listagem de clientes no sistema.
+	 * 
+	 * @return ResponseEntity<Response<EquipamentoDto>>
+	 * @throws NoSuchAlgorithmException
+	 */
+	@GetMapping
+	@RequestMapping("/listar-equipamento")
+	public ResponseEntity<Response<List<CadastroEquipamentoDto>>> listarEquipamentos() throws NoSuchAlgorithmException {
+		log.info("Listando Equipamentos..");
+		Response<List<CadastroEquipamentoDto>> response = new Response<List<CadastroEquipamentoDto>>();
+		List<Equipamentos> lst = equipamentoService.listarEquipamentos();
+		List<CadastroEquipamentoDto> lstDto = new ArrayList<>();
+		for (Equipamentos equipamentos : lst) {
+			lstDto.add(converterCadastroEquipamentoDto(equipamentos));
+		}			
+		 response.setData(lstDto);		
+		return ResponseEntity.ok(response);
+	}
 	
 	/**
 	 * Cadastra um equipamento no sistema.

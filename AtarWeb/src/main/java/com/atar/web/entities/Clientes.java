@@ -56,7 +56,7 @@ public class Clientes implements Serializable {
 	@JoinColumn(name = "ID_CLIENTE_CLIE")
     private List<Clientes> clientes;
 	
-	@ManyToMany
+	@ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name="TB_CLIENTESEQUIPAMENTO_CLEQ", joinColumns=
     {@JoinColumn(name="ID_CLIENTE_CLIE")}, inverseJoinColumns=
       {@JoinColumn(name="ID_EQUIPAMENTO_EQUI")})
