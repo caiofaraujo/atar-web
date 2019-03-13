@@ -52,9 +52,17 @@ public class Servicos implements Serializable {
 	private Date dtCadastro;	
 	
 	//TODO CLIENTE 
-	@ManyToOne(cascade= CascadeType.ALL, fetch = FetchType.EAGER)
+	
 	@JoinColumn(name = "ID_CLIENTE_CLIE")
-	private Clientes clientes;
+	private Long clienteId;
+
+	public Long getClienteId() {
+		return clienteId;
+	}
+
+	public void setClienteId(Long clienteId) {
+		this.clienteId = clienteId;
+	}
 
 	public Servicos() {
 		

@@ -10,25 +10,19 @@ app.service('ServicoCRUDService', ['$http', function ($http) {
             	tipo : servico.tipo,
             	observacao : servico.observacao,
             	dtInicioServico : servico.dtInicioServico,
-            	dtFinalServico : servico.dtFinalServico
+            	dtFinalServico : servico.dtFinalServico,
+            	idCliente: servico.idCliente
             }
         });
     }
 
-    this.getAllEquipamentos = function getAllEquipamentos() {
+    this.getAllServicos = function getAllServicos() {
         return $http({
             method: 'GET',
-            url: '/api/student'
+            url: '/atar/cadastrar-servico/listar'
         });
     } 
 
-    // this.getAllClientes = function getAllClientes() {
-        
-    //     return $http({
-    //         method: 'GET',
-    //         url: '/atar/cadastrar-cliente/listar-cliente'
-    //     });
-    // } 
 
     this.deleteServico = function deleteServico(servico) {
         $http({
