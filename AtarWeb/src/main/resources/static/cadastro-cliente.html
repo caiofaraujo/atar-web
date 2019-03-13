@@ -90,6 +90,8 @@ window.onclick = function(event) {
                     <label for="txttelefone">Telefone:</label>
                     <input type="tel" name="txttelefone" class="form-control" id="txttelefone" required placeholder="Digite o telefone" ng-model="cliente.telefone" pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4,5}">
                     
+                    
+                    
 					<script type="text/javascript">$("#txttelefone").mask("(00) 0000-00009");</script>
                 </div>
                 <button type="button" class="text-white-100 btn btn-dark" ng-click="addCliente(cliente)">Salvar</button>

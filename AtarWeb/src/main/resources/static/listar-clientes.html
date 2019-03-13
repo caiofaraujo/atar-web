@@ -81,6 +81,8 @@ app.controller('ClienteCRUDCtrl', function ($scope, $http, $window) {
         <button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰ ATAR</button>
     </div>
     <script>
+    
+    
         function w3_open() {
             document.getElementById("mySidebar").style.display = "block";
         }
@@ -103,6 +105,7 @@ app.controller('ClienteCRUDCtrl', function ($scope, $http, $window) {
 			      <th style="text-align:left">Endereço</th>
 			      <th style="text-align:left">Telefone</th>
 			      <th style="text-align:center">Ações</th>
+			      
 			    </tr>
 			  </thead>
 			  <tbody>
@@ -110,7 +113,7 @@ app.controller('ClienteCRUDCtrl', function ($scope, $http, $window) {
                     <td style="text-align:center">{{c.id}}</td>
                     <td style="text-align:left" class="mdl-data-table__cell--non-numeric">{{c.nome}}</td>
                     <td style="text-align:left">{{c.endereco}}</td>
-                    <td style="text-align:left">{{c.telefone}}</td>
+                    <td style="text-align:left" ui-mask="{{'(999) 999-9999'}}">{{c.telefone}}</td>
                     <td>
 					<button type="button" class="btn" value="Update" ng-click="UpdateEmp(Emp)">
 											<i class="fas fa-edit"></i>											
@@ -142,36 +145,6 @@ app.controller('ClienteCRUDCtrl', function ($scope, $http, $window) {
 
             <br>
             <br>
-            <!-- <div class="table-responsive-md table-stripped">
-                    <table class="table">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th>Nome</th>
-                                <th>Endereço</th>
-                                <th>Nascimento</th>
-                                <th>Editar</th>
-                                <th>Excluir</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr ng-repeat="cliente in clientes">
-                                <td>{{cliente.nome}}</td>
-                                <td>{{cliente.endereco}}</td>
-                                <td>{{cliente.nascimento | date : "dd/MM/yyyy"}}</td>
-                                <td>
-                                    <a class="text-white-100  btn btn-dark" ng-click="updatecliente(cliente)">Editar</a>
-                                </td>
-                                <td>
-                                    <a class="text-white-100  btn btn-secondary" ng-click="deletecliente($index)">Excluir</a>
-                                </td>
-
-                            </tr>
-                        </tbody>
-                    </table>
-                    <br>
-                    <br>
-                    <br>
-                </div> -->
         </div>
     </div>
     </div>
