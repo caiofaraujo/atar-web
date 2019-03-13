@@ -66,7 +66,7 @@ public class CadastroClienteController {
 			throws NoSuchAlgorithmException {
 
 		log.info("Cadastrando Cliente: {}", cadastroClienteDto.toString());
-		Response<CadastroClienteDto> response = new Response<CadastroClienteDto>();
+      		Response<CadastroClienteDto> response = new Response<CadastroClienteDto>();
 
 		validarDadosExistentes(cadastroClienteDto, result);
 		Clientes cliente = this.converterDtoParaCliente(cadastroClienteDto);
