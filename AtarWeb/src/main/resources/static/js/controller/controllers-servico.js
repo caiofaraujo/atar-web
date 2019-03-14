@@ -6,6 +6,14 @@ app.controller('ServicoCRUDCtrl', ['$scope', '$http', 'ServicoCRUDService','Clie
         $scope.isExibirErro = false;
         $scope.lstClientes = [];
         
+        $scope.editar = function(servico){
+        	$scope.servico = {};
+        	$scope.servico = servico;
+        	$scope.servico.dtFinalServico = servico.dtFinalServico != null ? new Date(servico.dtFinalServico) : null;
+        	$scope.servico.dtInicioServico = servico.dtInicioServico != null ? new Date(servico.dtInicioServico) : null;
+        	
+        }
+        
 
         $scope.addServico = function () {
         	$scope.isExibirErro = false;
@@ -41,6 +49,41 @@ app.controller('ServicoCRUDCtrl', ['$scope', '$http', 'ServicoCRUDService','Clie
                 $scope.message = '';
             }
         }
+        
+        $scope.updateServico = function () {
+        	$scope.isExibirErro = false;
+        	$scope.isExibirSucesso = false;
+            $scope.message = '';
+            
+            if ($scope.servico != null) {
+
+            	ServicoCRUDService.updateServico($scope.servico)
+                    .then(function success(response) {
+                        $scope.message = ' Serviço Alterado!';
+                        $scope.isExibirSucesso = true;
+                        $scope.errorMessage = '';
+
+                        $scope.servico.descricao = '';
+                        $scope.servico.tipo = '';
+                        $scope.servico.observacao = '';
+                        $scope.servico.dtInicioServico = '';
+                        $scope.servico.dtFinalServico = '';
+                        $scope.servico.id = '';
+                        $scope.getAllServicos();
+
+                    },
+                        function error(response) {
+                            $scope.errorMessage = response.data.errors[0];
+                            $scope.isExibirErro = true;
+                            $scope.message = '';
+                        });
+            }
+            else {
+                $scope.errorMessage = 'Preencha os campos corretamente';
+                $scope.isExibirErro = true;
+                $scope.message = '';
+            }
+        }
 
         $scope.getAllServicos = function () {
 
@@ -59,12 +102,7 @@ app.controller('ServicoCRUDCtrl', ['$scope', '$http', 'ServicoCRUDService','Clie
             $scope.getAllServicos();
         }
 
-        $scope.updateServico = function (Servico) {
-
-            $scope.servico = servico;
-            //$scope.equipamento.marca = new Date(equipamento.marca);
-            //console.log
-        }
+    
 
         $scope.getClientes = function(){            
             ClienteCRUDService.getAllClientes().then(function success(res){

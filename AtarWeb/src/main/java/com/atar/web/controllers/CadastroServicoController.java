@@ -14,12 +14,14 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.atar.web.dtos.CadastroServicoDto;
 import com.atar.web.entities.Servicos;
+import com.atar.web.repositories.ClienteRepository;
 import com.atar.web.response.Response;
 import com.atar.web.services.ServicoService;
 
@@ -32,6 +34,9 @@ public class CadastroServicoController {
 
 	@Autowired
 	private ServicoService servicoService;
+	
+	@Autowired
+	private ClienteRepository clienteRepository;
 
 	public CadastroServicoController() {
 
@@ -58,6 +63,29 @@ public class CadastroServicoController {
 
 		if (result.hasErrors()) {
 			log.error("Erro validando dados de cadastro de servico: {}", result.getAllErrors());
+			result.getAllErrors().forEach(error -> response.getErrors().add(error.getDefaultMessage()));
+			return ResponseEntity.badRequest().body(response);
+		}
+
+		this.servicoService.persistir(servico);
+
+		response.setData(this.converterCadastroServicoDto(servico));
+		return ResponseEntity.ok(response);
+	}
+	
+	@PostMapping("alterar")
+	public ResponseEntity<Response<CadastroServicoDto>> update(
+			@Valid @RequestBody CadastroServicoDto cadastroServicoDto, BindingResult result)
+			throws NoSuchAlgorithmException {
+
+		log.info("Alterando Servico: {}", cadastroServicoDto.toString());
+		Response<CadastroServicoDto> response = new Response<CadastroServicoDto>();
+
+		// validarDadosExistentes(cadastroServicoDto, result);
+		Servicos servico = this.converterDtoParaServico(cadastroServicoDto);
+
+		if (result.hasErrors()) {
+			log.error("Erro validando dados de alteração de servico: {}", result.getAllErrors());
 			result.getAllErrors().forEach(error -> response.getErrors().add(error.getDefaultMessage()));
 			return ResponseEntity.badRequest().body(response);
 		}
@@ -112,6 +140,7 @@ public class CadastroServicoController {
 		servico.setDtInicioServ(cadastroServicoDto.getDtInicioServico());
 		servico.setDtFinalServ(cadastroServicoDto.getDtFinalServico());
 		servico.setClienteId(cadastroServicoDto.getIdCliente());
+		servico.setId(cadastroServicoDto.getId());
 
 		return servico;
 
@@ -131,6 +160,9 @@ public class CadastroServicoController {
 		cadastroServicoDto.setObservacao(servico.getObservacao());
 		cadastroServicoDto.setDtInicioServico(servico.getDtInicioServ());
 		cadastroServicoDto.setDtFinalServico(servico.getDtFinalServ());
+		cadastroServicoDto.setNomeCliente(clienteRepository.findById(servico.getClienteId()).get().getNome());
+		cadastroServicoDto.setIdCliente(servico.getClienteId());
+		cadastroServicoDto.setId(servico.getId());
 		return cadastroServicoDto;
 	}
 

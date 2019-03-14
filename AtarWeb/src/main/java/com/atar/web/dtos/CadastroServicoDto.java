@@ -26,6 +26,8 @@ public class CadastroServicoDto {
 	private Date dtFinalServico;
 	
 	private Long idCliente; 
+	
+	private String nomeCliente;
 
 	public CadastroServicoDto() {
 		
@@ -90,6 +92,14 @@ public class CadastroServicoDto {
 	@Override
 	public String toString() {
 		return "Servico [id=" + id + ", descricao=" + descricao + ", tipo=" + tipo + "observacao" + observacao + "dtInicioServico" + dtInicioServico + "dtFinalServico" + dtFinalServico + "]";
+	}
+
+	public String getNomeCliente() {
+		return nomeCliente;
+	}
+
+	public void setNomeCliente(String nomeCliente) {
+		this.nomeCliente = nomeCliente;
 	}
 	
 	
