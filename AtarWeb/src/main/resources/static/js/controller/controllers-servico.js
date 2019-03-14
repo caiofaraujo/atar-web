@@ -59,7 +59,7 @@ app.controller('ServicoCRUDCtrl', ['$scope', '$http', 'ServicoCRUDService','Clie
 
             	ServicoCRUDService.updateServico($scope.servico)
                     .then(function success(response) {
-                        $scope.message = ' Serviço Alterado!';
+                        $scope.message = ' Serviço alterado!';
                         $scope.isExibirSucesso = true;
                         $scope.errorMessage = '';
 
