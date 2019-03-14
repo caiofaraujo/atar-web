@@ -18,58 +18,51 @@
     <script src="js/controller/controllers-servico.js"></script>
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    
-    
 </head>
 
 <script>
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
+	<!-- SCRIPT MENU -->
+	/* When the user clicks on the button, 
+	toggle between hiding and showing the dropdown content */
+	function myFunction() {
+	  document.getElementById("myDropdown").classList.toggle("show");
+	}
+	
+	// Close the dropdown menu if the user clicks outside of it
+	window.onclick = function(event) {
+	  if (!event.target.matches('.dropbtn')) {
+	    var dropdowns = document.getElementsByClassName("dropdown-content");
+	    var i;
+	    for (i = 0; i < dropdowns.length; i++) {
+	      var openDropdown = dropdowns[i];
+	      if (openDropdown.classList.contains('show')) {
+	        openDropdown.classList.remove('show');
+	      }
+	    }
+	  }
+	}
+	<!-- FIM SCRIPT MENU -->
 </script>
 
 <body>
-
+	<!-- MENU -->
     <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
-        <button onclick="w3_close()" class="w3-bar-item w3-large">Fechar &times;</button>
-	  <button onclick="myFunction()" class="w3-bar-item w3-button dropbtn menuPai" >Gerenciamentos</button>
-	  
+      <button onclick="w3_close()" class="w3-bar-item w3-large">Fechar &times;</button>
+	  <button onclick="myFunction()" class="w3-bar-item w3-button dropbtn menuPai" >Gerenciamento</button>
 	  <div id="myDropdown" class="dropdown-content">
-	    <a href="/cadastro-cliente.html" class="w3-bar-item w3-button">Cadastro de Cliente</a>
-        <a href="/cadastro-equipamento.html" class="w3-bar-item w3-button">Cadastro de Equipamento</a>
-        <a href="/cadastro-servico.html" class="w3-bar-item w3-button">Cadastro de Servico</a>
-        <a href="html/listar-servico.html" class="w3-bar-item w3-button">Listar Serviços</a>
+	    <a href="/cadastro-cliente.html" class="w3-bar-item w3-button">Cadastrar Cliente</a>
+        <a href="/cadastro-equipamento.html" class="w3-bar-item w3-button">Cadastrar Equipamento</a>
+        <a href="/cadastro-servico.html" class="w3-bar-item w3-button">Cadastrar Serviço</a>
+        <a href="/listar-clientes.html" class="w3-bar-item w3-button">Listar Clientes</a>
+        <a href="/listar-equipamentos.html" class="w3-bar-item w3-button">Listar Equipamentos</a>
+        <a href="/listar-servicos.html" class="w3-bar-item w3-button">Listar Serviços</a>
 	  </div>
-	  
-	  <!-- Uses a header that scrolls with the text, rather than staying
-  locked at the top -->
+    </div>
 
-
-  
-  
-</div>
-
-<!--     Page Content -->
-     <div class="w3-teal">
-         <button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰ ATAR</button>
-     </div>
-     <script>
+    <div class="w3-teal">
+        <button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰ ATAR</button>
+    </div>
+    <script>
         function w3_open() {
             document.getElementById("mySidebar").style.display = "block";
         }
@@ -77,32 +70,24 @@ window.onclick = function(event) {
         function w3_close() {
             document.getElementById("mySidebar").style.display = "none";
         }
-        
-        function formataDtServ(data) {   
-    		console.log(data);
-        }
-    </script> 
+    </script>
+	<!-- FIM MENU -->
 
-
-    <div ng-controller="ServicoCRUDCtrl" class="container">
+	<div class="container bg-light">
+    	<div ng-controller="ServicoCRUDCtrl" class="padraoContainer">
+		<br>
 		
-
-
-        
             <h3>Cadastro de Serviços</h3>
+            <br>
             <form>
-               <!-- Textfield with Floating Label -->
-
-
-
 				<!--Basic textarea-->
-				<div class="form-groupp">
+				<div class="form-group">
 				  <label for="descricao">Descrição do Serviço:</label>
 				  <textarea ng-model="servico.descricao" type="text" id="descricao" class="md-textarea form-control" mdbInputDirective placeholder="Digite a descrição..."></textarea>
-				</div><br>
+				</div>
 				
-				<div class="form-groupp">
-					<label for="tipo">Tipo: </label><br>
+				<div class="form-group">
+					<label for="tipo">Tipo: </label>
 					<select class="form-control" name="singleSelect" ng-model="servico.tipo" value="Selecione...">
 						<option value="" selected="selected">Selecione...</option>
 	 					<option value="INSTALAÇÃO">INSTALAÇÃO</option>
@@ -110,13 +95,13 @@ window.onclick = function(event) {
 						<option value="MANUTENÇÃO PREVENTIVA">MANUTENÇÃO PREVENTIVA</option>
 						<option value="OUTROS">OUTROS</option>
 					</select>
-				</div><br>
+				</div>
                 
 				<!--Basic textarea-->
-				<div class="form-groupp">
+				<div class="form-group">
 				  <label for="observacao">Observação:</label>
 				  <textarea ng-model="servico.observacao" type="text" id="observacao" class="md-textarea form-control" mdbInputDirective placeholder="Digite a observação..."></textarea>
-				</div><br>
+				</div>
 				
 				<div class="form-group">
 			       <label for="dtInicioServ" class="control-label">Data de Início: </label>
@@ -131,22 +116,14 @@ window.onclick = function(event) {
 			           <input ng-model="servico.dtFinalServico" id="dtFimServ" class="form-control" type="date" date-model="dtFinalServico">
 			       </div>
                </div>
-               
  
-               <div class="form-groupp">
-                <label for="cliente">Cliente: </label><br>                
-                <select class="form-control" ng-model="servico.idCliente" ng-options="c.id as c.nome for c in lstClientes">
-                	<option value="" selected="selected">Selecione...</option>
- 
-                </select>
-            </div><br>
-				 
-				
-				
-          
-        			
-                
-                <button type="button" class="mdl-button mdl-button--colored mdl-button--raised mdl-js-button mdl-js-ripple-effect" ng-click="addServico(servico)">Salvar</button>
+				<div class="form-group">
+	                <label for="cliente">Cliente: </label>                
+	                <select class="form-control" ng-model="servico.idCliente" ng-options="c.id as c.nome for c in lstClientes">
+	                	<option value="" selected="selected">Selecione...</option>
+	                </select>
+            	</div><br>
+                <button type="button" class="text-white-100 btn btn-dark" ng-click="addServico(servico)">Salvar</button>
             </form>
             <br>
 
@@ -158,13 +135,11 @@ window.onclick = function(event) {
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
                 <strong>Falha!</strong> {{errorMessage}}
             </div>
-
-            <br>
-            <br>
-
+            
         </div>
     </div>
-    </div>
+    <br>
+    <br>
 </body>
 
 </html>

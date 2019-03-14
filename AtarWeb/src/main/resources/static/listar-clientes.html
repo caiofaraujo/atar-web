@@ -26,26 +26,29 @@
 </head>
 
 <script>
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
+	<!-- SCRIPT MENU -->
+	/* When the user clicks on the button, 
+	toggle between hiding and showing the dropdown content */
+	function myFunction() {
+	  document.getElementById("myDropdown").classList.toggle("show");
+	}
+	
+	// Close the dropdown menu if the user clicks outside of it
+	window.onclick = function(event) {
+	  if (!event.target.matches('.dropbtn')) {
+	    var dropdowns = document.getElementsByClassName("dropdown-content");
+	    var i;
+	    for (i = 0; i < dropdowns.length; i++) {
+	      var openDropdown = dropdowns[i];
+	      if (openDropdown.classList.contains('show')) {
+	        openDropdown.classList.remove('show');
+	      }
+	    }
+	  }
+	}
+	<!-- FIM SCRIPT MENU -->
 </script>
+
 <script>
 var app = angular.module('app', [])
 app.controller('ClienteCRUDCtrl', function ($scope, $http, $window) {
@@ -65,18 +68,20 @@ app.controller('ClienteCRUDCtrl', function ($scope, $http, $window) {
 });
 </script>
 <body>
+	<!-- MENU -->
     <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
-        <button onclick="w3_close()" class="w3-bar-item w3-large">Fechar &times;</button>
-	  <button onclick="myFunction()" class="w3-bar-item w3-button dropbtn menuPai" >Gerenciamentos</button>
-	  
+      <button onclick="w3_close()" class="w3-bar-item w3-large">Fechar &times;</button>
+	  <button onclick="myFunction()" class="w3-bar-item w3-button dropbtn menuPai" >Gerenciamento</button>
 	  <div id="myDropdown" class="dropdown-content">
-	    <a href="/cadastro-cliente.html" class="w3-bar-item w3-button">Cadastro de Cliente</a>
-        <a href="/cadastro-equipamento.html" class="w3-bar-item w3-button">Cadastro de Equipamento</a>
-        <a href="/cadastro-servico.html" class="w3-bar-item w3-button">Cadastro de Servico</a>
+	    <a href="/cadastro-cliente.html" class="w3-bar-item w3-button">Cadastrar Cliente</a>
+        <a href="/cadastro-equipamento.html" class="w3-bar-item w3-button">Cadastrar Equipamento</a>
+        <a href="/cadastro-servico.html" class="w3-bar-item w3-button">Cadastrar Serviço</a>
+        <a href="/listar-clientes.html" class="w3-bar-item w3-button">Listar Clientes</a>
+        <a href="/listar-equipamentos.html" class="w3-bar-item w3-button">Listar Equipamentos</a>
+        <a href="/listar-servicos.html" class="w3-bar-item w3-button">Listar Serviços</a>
 	  </div>
     </div>
 
-    <!-- Page Content -->
     <div class="w3-teal">
         <button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰ ATAR</button>
     </div>
@@ -89,11 +94,12 @@ app.controller('ClienteCRUDCtrl', function ($scope, $http, $window) {
             document.getElementById("mySidebar").style.display = "none";
         }
     </script>
+	<!-- FIM MENU -->
 
 
     <div class="container bg-light">
         <div ng-controller="ClienteCRUDCtrl" ng-app="app" ng-init="getAllClientes()" class="padraoContainer">
-            <h3>Listagem de Clientes</h3><br>
+            <h3>Listagem de Clientes</h3>
             <div class="table-responsive">
 			<table class="container mdl-data-table mdl-js-data-table mdl-shadow--2dp" >
 			  <thead>
@@ -103,6 +109,7 @@ app.controller('ClienteCRUDCtrl', function ($scope, $http, $window) {
 			      <th style="text-align:left">Endereço</th>
 			      <th style="text-align:left">Telefone</th>
 			      <th style="text-align:center">Ações</th>
+			      
 			    </tr>
 			  </thead>
 			  <tbody>
@@ -110,12 +117,12 @@ app.controller('ClienteCRUDCtrl', function ($scope, $http, $window) {
                     <td style="text-align:center">{{c.id}}</td>
                     <td style="text-align:left" class="mdl-data-table__cell--non-numeric">{{c.nome}}</td>
                     <td style="text-align:left">{{c.endereco}}</td>
-                    <td style="text-align:left">{{c.telefone}}</td>
+                    <td style="text-align:left" ui-mask="{{'(999) 999-9999'}}">{{c.telefone}}</td>
                     <td>
-					<button type="button" class="btn" value="Update" ng-click="UpdateEmp(Emp)">
+					<button type="button" class="btn" value="Update" ng-click="UpdateEmp(Emp)" title="Alterar">
 											<i class="fas fa-edit"></i>											
 					</button>
-					<button type="button" class="btn" value="Delete" ng-click="DeleteEmp(Emp)">
+					<button type="button" class="btn" value="Delete" ng-click="DeleteEmp(Emp)" title="Excluir">
 											<i class="fas fa-trash-alt"></i>											
 					</button>
                     </td>
@@ -127,7 +134,7 @@ app.controller('ClienteCRUDCtrl', function ($scope, $http, $window) {
 			
 			<div id="btnIncluir" align="right">
 				<form action="/cadastro-cliente.html">
-				    <input type="submit" class="text-white-100 btn btn-dark" value="INCLUIR"/>
+				    <input type="submit" class="text-white-100 btn btn-dark" value="INCLUIR" title="Incluir"/>
 				</form>
 			</div>
 
@@ -142,36 +149,6 @@ app.controller('ClienteCRUDCtrl', function ($scope, $http, $window) {
 
             <br>
             <br>
-            <!-- <div class="table-responsive-md table-stripped">
-                    <table class="table">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th>Nome</th>
-                                <th>Endereço</th>
-                                <th>Nascimento</th>
-                                <th>Editar</th>
-                                <th>Excluir</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr ng-repeat="cliente in clientes">
-                                <td>{{cliente.nome}}</td>
-                                <td>{{cliente.endereco}}</td>
-                                <td>{{cliente.nascimento | date : "dd/MM/yyyy"}}</td>
-                                <td>
-                                    <a class="text-white-100  btn btn-dark" ng-click="updatecliente(cliente)">Editar</a>
-                                </td>
-                                <td>
-                                    <a class="text-white-100  btn btn-secondary" ng-click="deletecliente($index)">Excluir</a>
-                                </td>
-
-                            </tr>
-                        </tbody>
-                    </table>
-                    <br>
-                    <br>
-                    <br>
-                </div> -->
         </div>
     </div>
     </div>

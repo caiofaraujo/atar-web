@@ -15,48 +15,49 @@
     <script src="js/app.js"></script>
     <script src="js/service/services-equipamento.js"></script>
     <script src="js/controller/controllers-equipamento.js"></script>
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu" />
 </head>
 
 <script>
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
+	<!-- SCRIPT MENU -->
+	/* When the user clicks on the button, 
+	toggle between hiding and showing the dropdown content */
+	function myFunction() {
+	  document.getElementById("myDropdown").classList.toggle("show");
+	}
+	
+	// Close the dropdown menu if the user clicks outside of it
+	window.onclick = function(event) {
+	  if (!event.target.matches('.dropbtn')) {
+	    var dropdowns = document.getElementsByClassName("dropdown-content");
+	    var i;
+	    for (i = 0; i < dropdowns.length; i++) {
+	      var openDropdown = dropdowns[i];
+	      if (openDropdown.classList.contains('show')) {
+	        openDropdown.classList.remove('show');
+	      }
+	    }
+	  }
+	}
+	<!-- FIM SCRIPT MENU -->
 </script>
 
 <body>
+	<!-- MENU -->
     <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
-        <button onclick="w3_close()" class="w3-bar-item w3-large">Fechar &times;</button>
-	  <button onclick="myFunction()" class="w3-bar-item w3-button dropbtn menuPai" >Gerenciamentos</button>
-	  
+      <button onclick="w3_close()" class="w3-bar-item w3-large">Fechar &times;</button>
+	  <button onclick="myFunction()" class="w3-bar-item w3-button dropbtn menuPai" >Gerenciamento</button>
 	  <div id="myDropdown" class="dropdown-content">
-	    <a href="/cadastro-cliente.html" class="w3-bar-item w3-button">Cadastro de Cliente</a>
-        <a href="/cadastro-equipamento.html" class="w3-bar-item w3-button">Cadastro de Equipamento</a>
-        <a href="/cadastro-servico.html" class="w3-bar-item w3-button">Cadastro de Servico</a>
+	    <a href="/cadastro-cliente.html" class="w3-bar-item w3-button">Cadastrar Cliente</a>
+        <a href="/cadastro-equipamento.html" class="w3-bar-item w3-button">Cadastrar Equipamento</a>
+        <a href="/cadastro-servico.html" class="w3-bar-item w3-button">Cadastrar Serviço</a>
+        <a href="/listar-clientes.html" class="w3-bar-item w3-button">Listar Clientes</a>
+        <a href="/listar-equipamentos.html" class="w3-bar-item w3-button">Listar Equipamentos</a>
+        <a href="/listar-servicos.html" class="w3-bar-item w3-button">Listar Serviços</a>
 	  </div>
-	  
-	  
-
     </div>
 
-    <!-- Page Content -->
     <div class="w3-teal">
         <button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰ ATAR</button>
     </div>
@@ -68,30 +69,19 @@ window.onclick = function(event) {
         function w3_close() {
             document.getElementById("mySidebar").style.display = "none";
         }
-        
     </script>
+	<!-- FIM MENU -->
 
 
-     
-		
-
-   		
-    
-		   
-        <div ng-controller="EquipamentoCRUDCtrl" class="container">
-        <br>
-
+    <div class="container bg-light">
+    	<div ng-controller="EquipamentoCRUDCtrl" class="padraoContainer">
+    	<br>
         
             <h3>Cadastro de Equipamentos</h3>
+            <br>
             <form>
-<!--                 <div class="form-group"> -->
-<!--                     <label for="marca">Marca:</label> -->
-<!--                     <input type="marca" class="form-control" id="marca" required placeholder="Digite a marca" ng-model="equipamento.marca"> -->
-<!--                     <input type="hidden" class="form-control" id="id" ng-model="equipamento.marca"> -->
-<!--                 </div> -->
-                
-                <div class="form-groupp">
-					<label for="marca">Marca: </label><br>
+				<div class="form-group">
+				<label for="marca">Marca: </label><br>
 					<select class="form-control" name="singleSelect" ng-model="equipamento.marca" value="Selecione...">
 						<option value="" selected="selected">Selecione...</option>
 	 					<option value="BRASTEMP">BRASTEMP</option>
@@ -114,13 +104,12 @@ window.onclick = function(event) {
 						<option value="YORK">YORK</option>
 						<option value="OUTROS">OUTROS</option>
 					</select>
-				</div><br>
-                
+				</div>                
 				<div class="form-group">
 				    <label for="modelo">Modelo:</label>
 				   <input type="modelo" class="form-control" id="modelo" required placeholder="Digite o modelo" ng-model="equipamento.modelo">
 				</div>
-                
+				<br>
                 <button type="button" class="text-white-100 btn btn-dark" ng-click="addEquipamento(equipamento)">Salvar</button>
             </form>
             <br>
@@ -133,42 +122,8 @@ window.onclick = function(event) {
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
                 <strong>Falha!</strong> {{errorMessage}}
             </div>
-
-            <br>
-            <br>
-            <!-- <div class="table-responsive-md table-stripped">
-                    <table class="table">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th>Nome</th>
-                                <th>Endereço</th>
-                                <th>Nascimento</th>
-                                <th>Editar</th>
-                                <th>Excluir</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr ng-repeat="cliente in clientes">
-                                <td>{{cliente.nome}}</td>
-                                <td>{{cliente.endereco}}</td>
-                                <td>{{cliente.nascimento | date : "dd/MM/yyyy"}}</td>
-                                <td>
-                                    <a class="text-white-100  btn btn-dark" ng-click="updatecliente(cliente)">Editar</a>
-                                </td>
-                                <td>
-                                    <a class="text-white-100  btn btn-secondary" ng-click="deletecliente($index)">Excluir</a>
-                                </td>
-
-                            </tr>
-                        </tbody>
-                    </table>
-                    <br>
-                    <br>
-                    <br>
-                </div> -->
-        </div>
-     
+            
+    	</div>
     </div>
 </body>
-
 </html>

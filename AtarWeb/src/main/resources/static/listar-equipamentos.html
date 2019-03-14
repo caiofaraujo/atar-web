@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-<!--     <link href="css/simple-sidebar.css" rel="stylesheet"> -->
     <link href="css/layout.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
@@ -26,26 +25,29 @@
 </head>
 
 <script>
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
+	<!-- SCRIPT MENU -->
+	/* When the user clicks on the button, 
+	toggle between hiding and showing the dropdown content */
+	function myFunction() {
+	  document.getElementById("myDropdown").classList.toggle("show");
+	}
+	
+	// Close the dropdown menu if the user clicks outside of it
+	window.onclick = function(event) {
+	  if (!event.target.matches('.dropbtn')) {
+	    var dropdowns = document.getElementsByClassName("dropdown-content");
+	    var i;
+	    for (i = 0; i < dropdowns.length; i++) {
+	      var openDropdown = dropdowns[i];
+	      if (openDropdown.classList.contains('show')) {
+	        openDropdown.classList.remove('show');
+	      }
+	    }
+	  }
+	}
+	<!-- FIM SCRIPT MENU -->
 </script>
+
 <script>
 var app = angular.module('app', [])
 app.controller('EquipamentoCRUDCtrl', function ($scope, $http, $window) {
@@ -65,18 +67,20 @@ app.controller('EquipamentoCRUDCtrl', function ($scope, $http, $window) {
 });
 </script>
 <body>
+	<!-- MENU -->
     <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
-        <button onclick="w3_close()" class="w3-bar-item w3-large">Fechar &times;</button>
-	  <button onclick="myFunction()" class="w3-bar-item w3-button dropbtn menuPai" >Gerenciamentos</button>
-	  
+      <button onclick="w3_close()" class="w3-bar-item w3-large">Fechar &times;</button>
+	  <button onclick="myFunction()" class="w3-bar-item w3-button dropbtn menuPai" >Gerenciamento</button>
 	  <div id="myDropdown" class="dropdown-content">
-	    <a href="/cadastro-cliente.html" class="w3-bar-item w3-button">Cadastro de Cliente</a>
-        <a href="/cadastro-equipamento.html" class="w3-bar-item w3-button">Cadastro de Equipamento</a>
-        <a href="/cadastro-servico.html" class="w3-bar-item w3-button">Cadastro de Servico</a>
+	    <a href="/cadastro-cliente.html" class="w3-bar-item w3-button">Cadastrar Cliente</a>
+        <a href="/cadastro-equipamento.html" class="w3-bar-item w3-button">Cadastrar Equipamento</a>
+        <a href="/cadastro-servico.html" class="w3-bar-item w3-button">Cadastrar Serviço</a>
+        <a href="/listar-clientes.html" class="w3-bar-item w3-button">Listar Clientes</a>
+        <a href="/listar-equipamentos.html" class="w3-bar-item w3-button">Listar Equipamentos</a>
+        <a href="/listar-servicos.html" class="w3-bar-item w3-button">Listar Serviços</a>
 	  </div>
     </div>
 
-    <!-- Page Content -->
     <div class="w3-teal">
         <button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰ ATAR</button>
     </div>
@@ -89,11 +93,12 @@ app.controller('EquipamentoCRUDCtrl', function ($scope, $http, $window) {
             document.getElementById("mySidebar").style.display = "none";
         }
     </script>
+	<!-- FIM MENU -->
 
 
     <div class="container bg-light">
         <div ng-controller="EquipamentoCRUDCtrl" ng-app="app" ng-init="getAllEquipamentos()" class="padraoContainer">
-            <h3>Listagem de Equipamentos</h3><br>
+            <h3>Listagem de Equipamentos</h3>
             <div class="table-responsive">
 			<table class="container mdl-data-table mdl-js-data-table mdl-shadow--2dp" >
 			  <thead>
@@ -110,10 +115,10 @@ app.controller('EquipamentoCRUDCtrl', function ($scope, $http, $window) {
                     <td style="text-align:left" class="mdl-data-table__cell--non-numeric">{{e.marca}}</td>
                     <td style="text-align:left" class="mdl-data-table__cell--non-numeric">{{e.modelo}}</td>
                     <td>
-						<button type="button" class="btn" value="Update" ng-click="UpdateEmp(Emp)">
+						<button type="button" class="btn" value="Update" ng-click="UpdateEmp(Emp)" title="Alterar">
 												<i class="fas fa-edit"></i>											
 						</button>
-						<button type="button" class="btn" value="Delete" ng-click="DeleteEmp(Emp)">
+						<button type="button" class="btn" value="Delete" ng-click="DeleteEmp(Emp)" title="Excluir">
 												<i class="fas fa-trash-alt"></i>											
 						</button>
                     </td>
@@ -125,51 +130,13 @@ app.controller('EquipamentoCRUDCtrl', function ($scope, $http, $window) {
 			
 			<div id="btnIncluir" align="right">
 				<form action="/cadastro-equipamento.html">
-				    <input type="submit" class="text-white-100 btn btn-dark" value="INCLUIR"/>
+				    <input type="submit" class="text-white-100 btn btn-dark" value="INCLUIR" title="Incluir"/>
 				</form>
 			</div>
 
-            <div class="alert alert-success alert-dismissible" ng-if="isExibirSucesso">
-                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                <strong>Successo!</strong>{{message}}
-            </div>
-            <div class="alert alert-danger alert-dismissible" ng-if="isExibirErro">
-                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                <strong>Falha!</strong> {{errorMessage}}
-            </div>
 
             <br>
             <br>
-            <!-- <div class="table-responsive-md table-stripped">
-                    <table class="table">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th>Nome</th>
-                                <th>Endereço</th>
-                                <th>Nascimento</th>
-                                <th>Editar</th>
-                                <th>Excluir</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr ng-repeat="cliente in clientes">
-                                <td>{{cliente.nome}}</td>
-                                <td>{{cliente.endereco}}</td>
-                                <td>{{cliente.nascimento | date : "dd/MM/yyyy"}}</td>
-                                <td>
-                                    <a class="text-white-100  btn btn-dark" ng-click="updatecliente(cliente)">Editar</a>
-                                </td>
-                                <td>
-                                    <a class="text-white-100  btn btn-secondary" ng-click="deletecliente($index)">Excluir</a>
-                                </td>
-
-                            </tr>
-                        </tbody>
-                    </table>
-                    <br>
-                    <br>
-                    <br>
-                </div> -->
         </div>
     </div>
     </div>

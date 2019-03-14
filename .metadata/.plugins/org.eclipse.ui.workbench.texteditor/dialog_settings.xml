@@ -2,27 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="https://maxcdn.bootstrapcdn" key="selection"/>
+		<item value="txttelefone" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="txttelefone"/>
+			<item value="myFunc"/>
+			<item value="simple"/>
+			<item value="lstDto"/>
 			<item value="https://maxcdn.bootstrapcdn"/>
 			<item value="https://ajax.googleapis.com/ajax/"/>
 			<item value="https://code.getmdl.io/1.3.0/material.min.js"/>
 			<item value="material.indigo-pink.min.css"/>
-			<item value="https://fonts.googleapis.com"/>
-			<item value=".css"/>
-			<item value="button"/>
-			<item value="dtInicioServico"/>
-			<item value="servico.dtInicioServico"/>
-			<item value="dtFimServico"/>
-			<item value="dtCadastro"/>
-			<item value="equipame"/>
-			<item value="Equipame"/>
-			<item value="clien"/>
-			<item value="cliente"/>
 		</list>
 		<list key="replacehistory">
 			<item value="Equipamentos"/>

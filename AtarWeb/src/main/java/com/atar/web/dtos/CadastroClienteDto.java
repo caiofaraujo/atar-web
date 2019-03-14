@@ -18,7 +18,7 @@ public class CadastroClienteDto {
 	private String endereco;
 	
 	@NotEmpty(message = "Telefone não pode ser vazio.")
-	@Length(min = 9, max = 11, message = "Telefone deve conter entre 9 e 11 caracteres.")
+	//@Length(min = 9, max = 11, message = "Telefone deve conter entre 9 e 11 caracteres.")
 	private String telefone;
 	
 	public CadastroClienteDto() {
@@ -61,6 +61,5 @@ public class CadastroClienteDto {
 	public String toString() {
 		return "Cliente [id=" + id + ", nome=" + nome + ", endereco=" + endereco + "]";
 	}
-	
 	
 }
