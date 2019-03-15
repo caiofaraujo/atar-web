@@ -4,6 +4,13 @@ app.controller('EquipamentoCRUDCtrl', ['$scope', '$http', 'EquipamentoCRUDServic
     function ($scope, $http, EquipamentoCRUDService) {
         $scope.isExibirSucesso = false;
         $scope.isExibirErro = false;
+        
+        $scope.editar = function(equipamento){
+        	$scope.equipamento = {};
+        	$scope.equipamento = equipamento;
+        }
+        
+        
         $scope.addEquipamento = function () {
         	$scope.isExibirErro = false;
         	$scope.isExibirSucesso = false;
@@ -21,6 +28,38 @@ app.controller('EquipamentoCRUDCtrl', ['$scope', '$http', 'EquipamentoCRUDServic
                         $scope.equipamento.modelo = '';
                         $scope.equipamento.id = '';
                         // $scope.getAllEquipamentos();
+
+                    },
+                        function error(response) {
+                            $scope.errorMessage = response.data.errors[0];
+                            $scope.isExibirErro = true;
+                            $scope.message = '';
+                        });
+            }
+            else {
+                $scope.errorMessage = 'Preencha os campos corretamente';
+                $scope.isExibirErro = true;
+                $scope.message = '';
+            }
+        }
+        
+        $scope.updateEquipamento = function () {
+        	$scope.isExibirErro = false;
+        	$scope.isExibirSucesso = false;
+            $scope.message = '';
+            
+            if ($scope.equipamento != null) {
+
+            	EquipamentoCRUDService.updateEquipamento($scope.equipamento)
+                    .then(function success(response) {
+                        $scope.message = ' Equipamento alterado!';
+                        $scope.isExibirSucesso = true;
+                        $scope.errorMessage = '';
+
+                        $scope.equipamento.marca = '';
+                        $scope.equipamento.modelo = '';
+                        $scope.equipamento.id = '';
+                        $scope.getAllEquipamentos();
 
                     },
                         function error(response) {
@@ -53,14 +92,7 @@ app.controller('EquipamentoCRUDCtrl', ['$scope', '$http', 'EquipamentoCRUDServic
             $scope.getAllEquipamentos();
         }
 
-        $scope.updateEquipamento = function (Equipamento) {
-
-            $scope.equipamento = equipamento;
-            //$scope.equipamento.marca = new Date(equipamento.marca);
-            console.log
-        }
-
-        // $scope.getAllEquipamentos();
+        $scope.getAllEquipamentos();
 
     }]);
 

@@ -48,24 +48,6 @@
 	<!-- FIM SCRIPT MENU -->
 </script>
 
-<script>
-var app = angular.module('app', [])
-app.controller('EquipamentoCRUDCtrl', function ($scope, $http, $window) {
-    $scope.getAllEquipamentos = function () {
-        $http({
-            method: "POST",
-            url: "/atar/cadastrar-equipamento/listar-equipamento",
-            dataType: 'json',
-            data: {},
-            headers: { "Content-Type": "application/json" }
-        }).then(function (response) {
-            $scope.equipamentos = response.data.data;
-        }, function () {
-            $window.alert(response.Message);
-        });
-    }
-});
-</script>
 <body>
 	<!-- MENU -->
     <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
@@ -92,12 +74,16 @@ app.controller('EquipamentoCRUDCtrl', function ($scope, $http, $window) {
         function w3_close() {
             document.getElementById("mySidebar").style.display = "none";
         }
+        
+        function formataDtServ(data) {
+			console.log(data);
+		}
     </script>
 	<!-- FIM MENU -->
 
 
     <div class="container bg-light">
-        <div ng-controller="EquipamentoCRUDCtrl" ng-app="app" ng-init="getAllEquipamentos()" class="padraoContainer">
+        <div ng-controller="EquipamentoCRUDCtrl" class="padraoContainer">
             <h3>Listagem de Equipamentos</h3>
             <div class="table-responsive">
 			<table class="container mdl-data-table mdl-js-data-table mdl-shadow--2dp" >
@@ -106,20 +92,20 @@ app.controller('EquipamentoCRUDCtrl', function ($scope, $http, $window) {
 			      <th style="text-align:center" class="mdl-data-table__cell--non-numeric">Código</th>
 			      <th style="text-align:left" class="mdl-data-table__cell--non-numeric">Marca</th>
 			      <th style="text-align:left">Modelo</th>
-			      <th style="text-align:center">Ações</th>
+			      <th style="text-align:left">Ações</th>
 			    </tr>
 			  </thead>
 			  <tbody>
-				<tr ng-repeat="e in equipamentos">
-                    <td style="text-align:center">{{e.id}}</td>
-                    <td style="text-align:left" class="mdl-data-table__cell--non-numeric">{{e.marca}}</td>
-                    <td style="text-align:left" class="mdl-data-table__cell--non-numeric">{{e.modelo}}</td>
-                    <td>
-						<button type="button" class="btn" value="Update" ng-click="UpdateEmp(Emp)" title="Alterar">
-												<i class="fas fa-edit"></i>											
+				<tr ng-repeat="equipamento in equipamentos">
+                    <td style="text-align:center">{{equipamento.id}}</td>
+                    <td style="text-align:left" class="mdl-data-table__cell--non-numeric">{{equipamento.marca}}</td>
+                    <td style="text-align:left" class="mdl-data-table__cell--non-numeric">{{equipamento.modelo}}</td>
+                    <td style="text-align:left">
+						<button data-toggle="modal" data-target="#myModal" type="button" class="btn" value="Update" title="Alterar" ng-click="editar(equipamento)" >
+													<i class="fas fa-edit"></i>											
 						</button>
-						<button type="button" class="btn" value="Delete" ng-click="DeleteEmp(Emp)" title="Excluir">
-												<i class="fas fa-trash-alt"></i>											
+						<button type="button" class="btn" value="Delete" title="Excluir">
+													<i class="fas fa-trash-alt"></i>											
 						</button>
                     </td>
 				</tr>
@@ -132,13 +118,76 @@ app.controller('EquipamentoCRUDCtrl', function ($scope, $http, $window) {
 				<form action="/cadastro-equipamento.html">
 				    <input type="submit" class="text-white-100 btn btn-dark" value="INCLUIR" title="Incluir"/>
 				</form>
+			</div><br>
+			
+			<div class="alert alert-success alert-dismissible" ng-if="isExibirSucesso">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				<strong>Successo!</strong>{{message}}
 			</div>
+			<div class="alert alert-danger alert-dismissible" ng-if="isExibirErro">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				<strong>Falha!</strong> {{errorMessage}}
+			</div>
+			
+	<div class="modal" id="myModal">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
 
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Alterar Equipamento</h4>
+ 
+        <button type="button" class="close" data-dismiss="modal">&times;</button>        
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+				<div class="form-group">
+					<label for="abc">Marca: </label><br>
+					<select class="form-control" name="singleSelect" ng-model="equipamento.marca" value="Selecione...">
+						<option value="" selected="selected">Selecione...</option>
+	 					<option value="BRASTEMP">BRASTEMP</option>
+						<option value="CARRIER">CARRIER</option>
+						<option value="CONSUL">CONSUL</option>
+						<option value="DAIKIN">DAIKIN</option>
+						<option value="ELECTROLUX">ELECTROLUX</option>
+						<option value="ELGIN">ELGIN</option>
+						<option value="FUJITSU">FUJITSU</option>
+						<option value="GREE">GREE</option>
+						<option value="HITACHI">HITACHI</option>
+						<option value="KOMECO">KOMECO</option>
+						<option value="LG">LG</option>
+						<option value="MIDEO">MIDEO</option>
+						<option value="PANASONIC">PANASONIC</option>
+						<option value="RHEEM">RHEEM</option>
+						<option value="SAMSUNG">SAMSUNG</option>
+						<option value="SPRINGER">SPRINGER</option>
+						<option value="TRANE">TRANE</option>
+						<option value="YORK">YORK</option>
+						<option value="OUTROS">OUTROS</option>
+					</select>
+				</div><br>
+				
+				<div class="form-group">
+				    <label for="modelo">Modelo:</label>
+				   	<input type="text" class="form-control" id="modelo2" required="required" placeholder="Digite o modelo" ng-model="equipamento.modelo">
+				</div>
+				<br>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="text-white-100 btn btn-dark" title="Salvar" data-dismiss="modal" ng-click="updateEquipamento()">Salvar</button>
+      </div>
+
+    </div>
+  </div>
+  </div>
 
             <br>
             <br>
         </div>
-    </div>
     </div>
 </body>
 

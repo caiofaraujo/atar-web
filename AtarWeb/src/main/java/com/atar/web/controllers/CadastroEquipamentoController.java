@@ -46,8 +46,7 @@ public class CadastroEquipamentoController {
 	 * @return ResponseEntity<Response<EquipamentoDto>>
 	 * @throws NoSuchAlgorithmException
 	 */
-	@GetMapping
-	@RequestMapping("/listar-equipamento")
+	@GetMapping("/listar-equipamento")
 	public ResponseEntity<Response<List<CadastroEquipamentoDto>>> listarEquipamentos() throws NoSuchAlgorithmException {
 		log.info("Listando Equipamentos..");
 		Response<List<CadastroEquipamentoDto>> response = new Response<List<CadastroEquipamentoDto>>();
@@ -57,6 +56,38 @@ public class CadastroEquipamentoController {
 			lstDto.add(converterCadastroEquipamentoDto(equipamentos));
 		}			
 		 response.setData(lstDto);		
+		return ResponseEntity.ok(response);
+	}
+	
+	/**
+	 * Alteração de equipamentos no sistema.
+	 * 
+	 * @param cadastroServicoDto
+	 * @param result
+	 * @return ResponseEntity<Response<EquipamentoDto>>
+	 * @throws NoSuchAlgorithmException
+	 */
+	@PostMapping("alterar")
+	public ResponseEntity<Response<CadastroEquipamentoDto>> update(
+			@Valid @RequestBody CadastroEquipamentoDto cadastroEquipamentoDto, BindingResult result)
+			throws NoSuchAlgorithmException {
+
+		log.info("Alterando Equipamento: {}", cadastroEquipamentoDto.toString());
+		Response<CadastroEquipamentoDto> response = new Response<CadastroEquipamentoDto>();
+
+		// validarDadosExistentes(cadastroServicoDto, result);
+		//Servicos servico = this.converterDtoParaServico(cadastroServicoDto);
+		Equipamentos equipamento = this.converterDtoParaEquipamento(cadastroEquipamentoDto);
+
+		if (result.hasErrors()) {
+			log.error("Erro validando dados de alteração de equipamento: {}", result.getAllErrors());
+			result.getAllErrors().forEach(error -> response.getErrors().add(error.getDefaultMessage()));
+			return ResponseEntity.badRequest().body(response);
+		}
+
+		this.equipamentoService.persistir(equipamento);
+
+		response.setData(this.converterCadastroEquipamentoDto(equipamento));
 		return ResponseEntity.ok(response);
 	}
 	
@@ -116,6 +147,7 @@ public class CadastroEquipamentoController {
 		Equipamentos equipamento = new Equipamentos();		
 		equipamento.setMarca(cadastroEquipamentoDto.getMarca());
 		equipamento.setModelo(cadastroEquipamentoDto.getModelo());
+		equipamento.setId(cadastroEquipamentoDto.getId());
 		
 		return equipamento;
 	}
