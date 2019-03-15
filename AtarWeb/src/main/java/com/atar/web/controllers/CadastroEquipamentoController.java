@@ -75,8 +75,6 @@ public class CadastroEquipamentoController {
 		log.info("Alterando Equipamento: {}", cadastroEquipamentoDto.toString());
 		Response<CadastroEquipamentoDto> response = new Response<CadastroEquipamentoDto>();
 
-		// validarDadosExistentes(cadastroServicoDto, result);
-		//Servicos servico = this.converterDtoParaServico(cadastroServicoDto);
 		Equipamentos equipamento = this.converterDtoParaEquipamento(cadastroEquipamentoDto);
 
 		if (result.hasErrors()) {

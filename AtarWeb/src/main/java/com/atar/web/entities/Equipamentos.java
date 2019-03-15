@@ -37,7 +37,7 @@ public class Equipamentos implements Serializable {
 	@Column(name = "DH_INATIVACAO_EQUI")
 	private Date dtInativacao;
 	
-	@Column(name = "DH_CADASTRO_EQUI", nullable = true)
+	@Column(name = "DH_CADASTRO_EQUI")
 	private Date dtCadastro;
 	
 	public Equipamentos() {
