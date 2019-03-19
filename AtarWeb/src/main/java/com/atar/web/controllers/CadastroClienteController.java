@@ -1,7 +1,9 @@
 package com.atar.web.controllers;
 
 import java.security.NoSuchAlgorithmException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -82,7 +84,37 @@ public class CadastroClienteController {
 		response.setData(this.converterCadastroClienteDto(cliente));
 		return ResponseEntity.ok(response);
 	}
+	
+	/**
+	 * Alteração de clientes no sistema.
+	 * 
+	 * @param cadastroClienteDto
+	 * @param result
+	 * @return ResponseEntity<Response<ClienteDto>>
+	 * @throws NoSuchAlgorithmException
+	 */
+	@PostMapping("alterar")
+	public ResponseEntity<Response<CadastroClienteDto>> update(
+			@Valid @RequestBody CadastroClienteDto cadastroClienteDto, BindingResult result)
+			throws NoSuchAlgorithmException {
 
+		log.info("Alterando Cliente: {}", cadastroClienteDto.toString());
+		Response<CadastroClienteDto> response = new Response<CadastroClienteDto>();
+
+		Clientes cliente = this.converterDtoParaCliente(cadastroClienteDto);
+
+		if (result.hasErrors()) {
+			log.error("Erro validando dados de alteração de cliente: {}", result.getAllErrors());
+			result.getAllErrors().forEach(error -> response.getErrors().add(error.getDefaultMessage()));
+			return ResponseEntity.badRequest().body(response);
+		}
+
+		this.clienteService.persistir(cliente);
+
+		response.setData(this.converterCadastroClienteDto(cliente));
+		return ResponseEntity.ok(response);
+	}
+	
 	/**
 	 * Verifica se o cliente já existe na base de dados.
 	 * 
@@ -106,6 +138,8 @@ public class CadastroClienteController {
 		cliente.setNome(cadastroClienteDto.getNome());
 		cliente.setEndereco(cadastroClienteDto.getEndereco());
 		cliente.setNrTelefone(cadastroClienteDto.getTelefone());
+		cliente.setDtCadastro(dataAtual());
+		cliente.setId(cadastroClienteDto.getId());
 
 		return cliente;
 	}
@@ -123,6 +157,11 @@ public class CadastroClienteController {
 		cadastroClienteDto.setEndereco(cliente.getEndereco());
 		cadastroClienteDto.setTelefone(cliente.getNrTelefone());
 		return cadastroClienteDto;
+	}
+	
+	public Date dataAtual() {
+		Date dataAtual = new Date();
+		return dataAtual;
 	}
 
 }

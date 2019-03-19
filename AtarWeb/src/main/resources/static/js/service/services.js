@@ -13,6 +13,19 @@ app.service('ClienteCRUDService', ['$http', function ($http) {
             }
         });
     }
+    
+    this.updateCliente = function addClie(cliente) {   
+        return $http({
+            method: 'POST',
+            url: '/atar/cadastrar-cliente/alterar',
+            data: {
+            	nome : cliente.nome,
+            	endereco : cliente.endereco,
+            	telefone : cliente.telefone,
+            	id : cliente.id
+            }
+        });
+    }
 
     this.getAllClientes = function getAllClientes() {
         return $http({

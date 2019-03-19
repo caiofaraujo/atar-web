@@ -62,7 +62,7 @@ public class CadastroEquipamentoController {
 	/**
 	 * Alteração de equipamentos no sistema.
 	 * 
-	 * @param cadastroServicoDto
+	 * @param cadastroEquipamentoDto
 	 * @param result
 	 * @return ResponseEntity<Response<EquipamentoDto>>
 	 * @throws NoSuchAlgorithmException

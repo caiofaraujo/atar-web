@@ -12,11 +12,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-    <link href="css/simple-sidebar.css" rel="stylesheet">
     <link href="css/layout.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mask.min.js"/></script>
     <script src="js/app.js"></script>
     <script src="js/service/services.js"></script>
     <script src="js/controller/controllers.js"></script>
@@ -49,24 +49,6 @@
 	<!-- FIM SCRIPT MENU -->
 </script>
 
-<script>
-var app = angular.module('app', [])
-app.controller('ClienteCRUDCtrl', function ($scope, $http, $window) {
-    $scope.getAllClientes = function () {
-        $http({
-            method: "POST",
-            url: "/atar/cadastrar-cliente/listar-cliente",
-            dataType: 'json',
-            data: {},
-            headers: { "Content-Type": "application/json" }
-        }).then(function (response) {
-            $scope.clientes = response.data.data;
-        }, function () {
-            $window.alert(response.Message);
-        });
-    }
-});
-</script>
 <body>
 	<!-- MENU -->
     <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
@@ -93,12 +75,16 @@ app.controller('ClienteCRUDCtrl', function ($scope, $http, $window) {
         function w3_close() {
             document.getElementById("mySidebar").style.display = "none";
         }
+        
+		function formataDtServ(data) {
+			console.log(data);
+		}
     </script>
 	<!-- FIM MENU -->
 
 
     <div class="container bg-light">
-        <div ng-controller="ClienteCRUDCtrl" ng-app="app" ng-init="getAllClientes()" class="padraoContainer">
+        <div ng-controller="ClienteCRUDCtrl" ng-app="app" class="padraoContainer">
             <h3>Listagem de Clientes</h3>
             <div class="table-responsive">
 			<table class="container mdl-data-table mdl-js-data-table mdl-shadow--2dp" >
@@ -109,22 +95,21 @@ app.controller('ClienteCRUDCtrl', function ($scope, $http, $window) {
 			      <th style="text-align:left">Endereço</th>
 			      <th style="text-align:left">Telefone</th>
 			      <th style="text-align:center">Ações</th>
-			      
 			    </tr>
 			  </thead>
 			  <tbody>
-				<tr ng-repeat="c in clientes">
-                    <td style="text-align:center">{{c.id}}</td>
-                    <td style="text-align:left" class="mdl-data-table__cell--non-numeric">{{c.nome}}</td>
-                    <td style="text-align:left">{{c.endereco}}</td>
-                    <td style="text-align:left" ui-mask="{{'(999) 999-9999'}}">{{c.telefone}}</td>
+				<tr ng-repeat="cliente in clientes">
+                    <td style="text-align:center">{{cliente.id}}</td>
+                    <td style="text-align:left" class="mdl-data-table__cell--non-numeric">{{cliente.nome}}</td>
+                    <td style="text-align:left">{{cliente.endereco}}</td>
+                    <td style="text-align:left">{{cliente.telefone}}</td>
                     <td>
-					<button type="button" class="btn" value="Update" ng-click="UpdateEmp(Emp)" title="Alterar">
-											<i class="fas fa-edit"></i>											
-					</button>
-					<button type="button" class="btn" value="Delete" ng-click="DeleteEmp(Emp)" title="Excluir">
-											<i class="fas fa-trash-alt"></i>											
-					</button>
+						<button data-toggle="modal" data-target="#myModal" type="button" class="btn" value="Update" title="Alterar" ng-click="editar(cliente)" >
+													<i class="fas fa-edit"></i>											
+						</button>
+						<button type="button" class="btn" value="Delete" title="Excluir">
+													<i class="fas fa-trash-alt"></i>											
+						</button>
                     </td>
 				</tr>
 			  </tbody>
@@ -136,21 +121,62 @@ app.controller('ClienteCRUDCtrl', function ($scope, $http, $window) {
 				<form action="/cadastro-cliente.html">
 				    <input type="submit" class="text-white-100 btn btn-dark" value="INCLUIR" title="Incluir"/>
 				</form>
+			</div><br>
+
+			<div class="alert alert-success alert-dismissible" ng-if="isExibirSucesso">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				<strong>Successo!</strong>{{message}}
+			</div>
+			<div class="alert alert-danger alert-dismissible" ng-if="isExibirErro">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				<strong>Falha!</strong> {{errorMessage}}
 			</div>
 
-            <div class="alert alert-success alert-dismissible" ng-if="isExibirSucesso">
-                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                <strong>Successo!</strong>{{message}}
-            </div>
-            <div class="alert alert-danger alert-dismissible" ng-if="isExibirErro">
-                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                <strong>Falha!</strong> {{errorMessage}}
-            </div>
+			<div class="modal" id="myModal">
+		  	<div class="modal-dialog modal-lg">
+		    <div class="modal-content">
 
-            <br>
-            <br>
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h4 class="modal-title">Alterar Cliente</h4>
+	
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+	
+				<!-- Modal body -->
+				<div class="modal-body">
+					<div class="form-group">
+						<label for="nome">Nome:</label> 
+						<input type="text" class="form-control" id="nome" placeholder="Digite o nome" ng-model="cliente.nome"> 
+					</div>
+	
+	                <div class="form-group">
+	                    <label for="pwd">Endereço:</label>
+	                    <input type="text" class="form-control" id="endereco" required placeholder="Digite o endereço" ng-model="cliente.endereco">
+	                </div>
+	                
+<!--                   	<div class="form-group"> -->
+<!-- 	                    <label for="telefone">Telefone:</label> -->
+<!-- 	                    <input type="text"  class="form-control" id="telefone" required placeholder="Digite o telefone" ng-model="cliente.telefone"> -->
+<!--                 	</div> -->
+	                
+                   	<div class="form-group">
+	                    <label for="telefone">Telefone:</label>
+	                    <input type="text" name="txttelefone" class="form-control" id="txttelefone" required placeholder="Digite o telefone" ng-model="cliente.telefone" >
+						<script type="text/javascript">$("#txttelefone").mask("(00) 00000-0009");</script>
+                	</div>
+				</div>
+	
+				<!-- Modal footer -->
+				<div class="modal-footer">
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+					<button type="button" class="text-white-100 btn btn-dark" title="Salvar" data-dismiss="modal" ng-click="updateCliente()">Salvar</button>
+				</div>
+	
+			</div>
+		  </div>
+		  </div>
         </div>
-    </div>
     </div>
 </body>
 

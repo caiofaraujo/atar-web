@@ -1,6 +1,10 @@
 package com.atar.web.dtos;
 
 import org.hibernate.validator.constraints.Length;
+
+import java.util.Date;
+
+import javax.persistence.PrePersist;
 import javax.validation.constraints.NotEmpty;
 
 
@@ -21,6 +25,16 @@ public class CadastroClienteDto {
 	//@Length(min = 9, max = 11, message = "Telefone deve conter entre 9 e 11 caracteres.")
 	private String telefone;
 	
+	private Date dtCadastro;
+	
+	public Date getDtCadastro() {
+		return dtCadastro;
+	}
+
+	public void setDtCadastro(Date dtCadastro) {
+		this.dtCadastro = dtCadastro;
+	}
+
 	public CadastroClienteDto() {
 		
 	}
@@ -56,10 +70,16 @@ public class CadastroClienteDto {
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
+	
+	@PrePersist
+	public void prePersist() {
+		final Date atual = new Date();
+		dtCadastro = atual;
+	}
 
 	@Override
 	public String toString() {
-		return "Cliente [id=" + id + ", nome=" + nome + ", endereco=" + endereco + "]";
+		return "Cliente [id=" + id + ", nome=" + nome + ", endereco=" + endereco + ", telefone=" + telefone + ", dataCadastro" + dtCadastro + " ]";
 	}
 	
 }
