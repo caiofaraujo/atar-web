@@ -37,6 +37,15 @@ public class ServicoServiceImpl implements ServicoService{
 		
 	}
 
+	@Override
+	public void deletar(Servicos servico) {
+		// TODO Auto-generated method stub
+		this.servicoRepository.delete(servico);
+		
+	}
+
+ 
+
 	
 	
 }

@@ -21,7 +21,6 @@ app.controller('ServicoCRUDCtrl', ['$scope', '$http', 'ServicoCRUDService','Clie
             $scope.message = '';
             
             if ($scope.servico != null) {
-
             	ServicoCRUDService.addServico($scope.servico)
                     .then(function success(response) {
                         $scope.message = ' Serviço adicionado!';
@@ -56,13 +55,11 @@ app.controller('ServicoCRUDCtrl', ['$scope', '$http', 'ServicoCRUDService','Clie
             $scope.message = '';
             
             if ($scope.servico != null) {
-
             	ServicoCRUDService.updateServico($scope.servico)
                     .then(function success(response) {
                         $scope.message = ' Serviço alterado!';
                         $scope.isExibirSucesso = true;
                         $scope.errorMessage = '';
-
                         $scope.servico.descricao = '';
                         $scope.servico.tipo = '';
                         $scope.servico.observacao = '';
@@ -70,7 +67,6 @@ app.controller('ServicoCRUDCtrl', ['$scope', '$http', 'ServicoCRUDService','Clie
                         $scope.servico.dtFinalServico = '';
                         $scope.servico.id = '';
                         $scope.getAllServicos();
-
                     },
                         function error(response) {
                             $scope.errorMessage = response.data.errors[0];
@@ -86,7 +82,6 @@ app.controller('ServicoCRUDCtrl', ['$scope', '$http', 'ServicoCRUDService','Clie
         }
 
         $scope.getAllServicos = function () {
-
         	ServicoCRUDService.getAllServicos().then(function success(response) {
                 $scope.servicos = response.data.data;
             }, function error(response) {
@@ -94,14 +89,28 @@ app.controller('ServicoCRUDCtrl', ['$scope', '$http', 'ServicoCRUDService','Clie
                 $scope.message = '';
             });
         }
-
-        $scope.deleteServico = function (index) {
-
-            $scope.aux = $scope.servicos.shift(index);
-            ServicoCRUDService.deleteServico($scope.aux)
-            $scope.getAllServicos();
-        }
-
+        
+        $scope.deletar = function(servico) {
+        	$scope.servico = servico;
+		}
+        
+        $scope.cancelar = function() {
+        	$scope.servico = {};
+		}
+        
+        $scope.deleteServico = function (servico) {            
+            ServicoCRUDService.deleteServico(servico).then(function success(res){
+            	 $scope.errorMessage = '';
+                 $scope.message = 'Serviço Excluído';
+                 $scope.isExibirSucesso = true;
+                 $scope.isExibirErro = false;
+                 $scope.getAllServicos();
+            	}, function error(res){
+            		 $scope.errorMessage = 'Falha na consulta!';
+                     $scope.message = '';
+                     $scope.isExibirErro = true;
+            	});
+            }
     
 
         $scope.getClientes = function(){            

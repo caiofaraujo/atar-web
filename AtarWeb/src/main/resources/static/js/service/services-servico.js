@@ -41,13 +41,13 @@ app.service('ServicoCRUDService', ['$http', function ($http) {
 
 
     this.deleteServico = function deleteServico(servico) {
-        $http({
-            method: 'POST',
-            url: 'api/student/delete',
-            data: {
-                id: student.id
-            }
-        });
+    	  return $http({
+              method: 'POST',
+              url: '/atar/cadastrar-servico/excluir',
+              data: {
+              	id : servico.id
+              }
+          });
     }
 
 

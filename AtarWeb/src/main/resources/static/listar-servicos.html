@@ -80,6 +80,13 @@
 	<div class="container bg-light">
 		<div ng-controller="ServicoCRUDCtrl" class="padraoContainer">
 			<h3>Listagem de Serviços</h3>
+			<div class="alert alert-success alert-dismissible" ng-if="isExibirSucesso">
+		                <button type="button" class="close" data-dismiss="alert">&times;</button>
+		                <strong>Successo!</strong>{{message}}
+		            </div>
+		            <div class="alert alert-danger alert-dismissible" ng-if="isExibirErro">
+		                <button type="button" class="close" data-dismiss="alert">&times;</button>
+		                </div>
 			<div class="table-responsive">
 				<table class="container mdl-data-table mdl-js-data-table mdl-shadow--2dp">
 					<thead class="thead">
@@ -100,12 +107,12 @@
 							<td style="text-align:left">{{servico.tipo}}</td>
 							<td style="text-align:left">{{servico.observacao | date : "dd/MM/yyyy"}}</td>
 							<td style="text-align:left">{{servico.dtInicioServico | date : "dd/MM/yyyy"}}</td>
-							<td style="text-align:left">{{servico.dtInicioServico | date : "dd/MM/yyyy"}}</td>
+							<td style="text-align:left">{{servico.dtFinalServico | date : "dd/MM/yyyy"}}</td>
 		                    <td>
-								<button type="button" class="btn" value="Update" ng-click="UpdateEmp(Emp)" title="Editar">
+								<button type="button" data-toggle="modal" data-target="#myModal"  class="btn" value="Update" ng-click="editar(servico)" title="Editar">
 														<i class="fas fa-edit"></i>											
 								</button>
-								<button type="button" class="btn" value="Delete" ng-click="DeleteEmp(Emp)" title="Deletar">
+								<button type="button" data-toggle="modal" data-target="#modalDelete" class="btn" value="Delete" ng-click="deletar(servico)"  title="Deletar">
 														<i class="fas fa-trash-alt"></i>											
 								</button>
 		                    </td>							
@@ -119,9 +126,94 @@
 				    <input type="submit" class="text-white-100 btn btn-dark" value="INCLUIR" title="Incluir"/>
 				</form>
 			</div>
+	<div class="modal" id="myModal">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Editar</h4>
+ 
+        <button type="button" class="close" data-dismiss="modal">&times;</button>        
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+         <div class="form-group">
+				  <label for="descricao">Descrição do Serviço:</label>
+				  <textarea ng-model="servico.descricao" type="text" id="descricao" class="md-textarea form-control" mdbInputDirective placeholder="Digite a descrição..."></textarea>
+				</div><br>
 				
-		</div>
+				<div class="form-group">
+					<label for="tipo">Tipo: </label><br>
+					<select class="form-control" name="singleSelect" ng-model="servico.tipo" value="Selecione...">
+						<option value="" selected="selected">Selecione...</option>
+	 					<option value="INSTALAÇÃO">INSTALAÇÃO</option>
+						<option value="MANUTENÇÃO CORRETIVA">MANUTENÇÃO CORRETIVA</option>
+						<option value="MANUTENÇÃO PREVENTIVA">MANUTENÇÃO PREVENTIVA</option>
+						<option value="OUTROS">OUTROS</option>
+					</select>
+				</div><br>
+                
+				<!--Basic textarea-->
+				<div class="form-group">
+				  <label for="observacao">Observação:</label>
+				  <textarea ng-model="servico.observacao" type="text" id="observacao" class="md-textarea form-control" mdbInputDirective placeholder="Digite a observação..."></textarea>
+				</div><br>
+				
+				<div class="form-group">
+			       <label for="dtInicioServ" class="control-label">Data de Início: </label>
+			       <div class="control">
+			           <input ng-model="servico.dtInicioServico" id="dtInicioServ" class="form-control" type="date" date-model="dtInicioServ">
+			       </div>
+			   </div>
+			   
+			   <div class="form-group">
+			       <label for="dtFinalServico" class="control-label">Data de Finalização: </label>
+			       <div class="control">
+			           <input ng-model="servico.dtFinalServico" id="dtFimServ" class="form-control" type="date" date-model="dtFinalServico">
+			       </div>
+               </div>
+               
+ 
+               <div class="form-group">
+                <label for="cliente">Cliente: </label><br>                
+                <select class="form-control" ng-model="servico.idCliente" ng-options="c.id as c.nome for c in lstClientes" ng-value="servico.nomeCliente">
+                	<option value="" selected="selected">Selecione...</option>
+ 
+                </select>
+            </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn" data-dismiss="modal" ng-click="updateServico()">Confirmar</button>
+      </div>
+
+    </div>
 	</div><br><br>
+	</div>
+	
+	<div class="modal fade" id="modalDelete" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"> </h4>
+        </div>
+        <div class="modal-body">
+          <p>Confirmar Operação</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="cancelar()">Cancelar</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="deleteServico(servico)">Confirmar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+	</div>
+	</div>
 </body>
 
 </html>

@@ -110,6 +110,28 @@ public class CadastroServicoController {
 		 
 
 	}
+	
+	@PostMapping("excluir")
+	public ResponseEntity<Response<CadastroServicoDto>> excluir(
+			  @RequestBody CadastroServicoDto cadastroServicoDto)
+			throws NoSuchAlgorithmException {
+
+		log.info("Deletando Servico: {}", cadastroServicoDto.toString());
+		Response<CadastroServicoDto> response = new Response<CadastroServicoDto>();
+		
+
+		Servicos servico = this.converterDtoParaServico(cadastroServicoDto);
+		servicoService.deletar(servico);
+
+//		if (result.hasErrors()) {
+//			log.error("Erro no método excluir: {}", result.getAllErrors());
+//			result.getAllErrors().forEach(error -> response.getErrors().add(error.getDefaultMessage()));
+//			return ResponseEntity.badRequest().body(response);
+//		}
+
+		 
+		return ResponseEntity.ok(response);
+	}
 
 	/**
 	 * Verifica se o servico já existe na base de dados.

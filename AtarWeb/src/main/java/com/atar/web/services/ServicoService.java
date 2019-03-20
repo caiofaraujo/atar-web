@@ -43,6 +43,9 @@ public interface ServicoService {
 	Optional<Servicos> buscarPorDescricao(String descricao);
 	
 	List<Servicos> listarServicos();
+ 
+
+	void deletar(Servicos servico);
 	
 	
 }
