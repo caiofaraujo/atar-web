@@ -75,7 +75,7 @@ app.controller('ServicoCRUDCtrl', ['$scope', '$http', 'ServicoCRUDService','Clie
                         });
             }
             else {
-                $scope.errorMessage = 'Preencha os campos corretamente';
+                $scope.errorMessage = ' Preencha os campos corretamente';
                 $scope.isExibirErro = true;
                 $scope.message = '';
             }
@@ -101,7 +101,7 @@ app.controller('ServicoCRUDCtrl', ['$scope', '$http', 'ServicoCRUDService','Clie
         $scope.deleteServico = function (servico) {            
             ServicoCRUDService.deleteServico(servico).then(function success(res){
             	 $scope.errorMessage = '';
-                 $scope.message = 'Serviço Excluído';
+                 $scope.message = ' Serviço excluído!';
                  $scope.isExibirSucesso = true;
                  $scope.isExibirErro = false;
                  $scope.getAllServicos();

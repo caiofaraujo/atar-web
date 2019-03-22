@@ -41,4 +41,10 @@ public class EquipamentoServiceImpl implements EquipamentoService {
 		return equipamentoRepository.findAll();	
 	}
 
+	@Override
+	public void deletar(Equipamentos equipamento) {
+		// TODO Auto-generated method stub
+		this.equipamentoRepository.delete(equipamento);
+	}
+
 }

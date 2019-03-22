@@ -104,7 +104,7 @@
 						<button data-toggle="modal" data-target="#myModal" type="button" class="btn" value="Update" title="Alterar" ng-click="editar(equipamento)" >
 													<i class="fas fa-edit"></i>											
 						</button>
-						<button type="button" class="btn" value="Delete" title="Excluir">
+						<button type="button" data-toggle="modal" data-target="#modalDelete" class="btn" value="Excluir" ng-click="deletar(equipamento)"  title="Excluir">
 													<i class="fas fa-trash-alt"></i>											
 						</button>
                     </td>
@@ -129,64 +129,81 @@
 				<strong>Falha!</strong> {{errorMessage}}
 			</div>
 			
-	<div class="modal" id="myModal">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
+			<div class="modal" id="myModal">
+		  	<div class="modal-dialog modal-lg">
+			    <div class="modal-content">
+			
+			      <!-- Modal Header -->
+			      <div class="modal-header">
+			        <h4 class="modal-title">Alterar Equipamento</h4>
+			 
+			        <button type="button" class="close" data-dismiss="modal">&times;</button>        
+			      </div>
+			
+			      <!-- Modal body -->
+			      <div class="modal-body">
+							<div class="form-group">
+								<label for="abc">Marca: </label><br>
+								<select class="form-control" name="singleSelect" ng-model="equipamento.marca" value="Selecione...">
+									<option value="" selected="selected">Selecione...</option>
+				 					<option value="BRASTEMP">BRASTEMP</option>
+									<option value="CARRIER">CARRIER</option>
+									<option value="CONSUL">CONSUL</option>
+									<option value="DAIKIN">DAIKIN</option>
+									<option value="ELECTROLUX">ELECTROLUX</option>
+									<option value="ELGIN">ELGIN</option>
+									<option value="FUJITSU">FUJITSU</option>
+									<option value="GREE">GREE</option>
+									<option value="HITACHI">HITACHI</option>
+									<option value="KOMECO">KOMECO</option>
+									<option value="LG">LG</option>
+									<option value="MIDEO">MIDEO</option>
+									<option value="PANASONIC">PANASONIC</option>
+									<option value="RHEEM">RHEEM</option>
+									<option value="SAMSUNG">SAMSUNG</option>
+									<option value="SPRINGER">SPRINGER</option>
+									<option value="TRANE">TRANE</option>
+									<option value="YORK">YORK</option>
+									<option value="OUTROS">OUTROS</option>
+								</select>
+							</div><br>
+							
+							<div class="form-group">
+							    <label for="modelo">Modelo:</label>
+							   	<input type="text" class="form-control" id="modelo2" required="required" placeholder="Digite o modelo" ng-model="equipamento.modelo">
+							</div>
+							<br>
+			      </div>
+			
+			      <!-- Modal footer -->
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+			        <button type="button" class="text-white-100 btn btn-dark" title="Salvar" data-dismiss="modal" ng-click="updateEquipamento()">Salvar</button>
+			      </div>
+			
+			    </div>
+			</div>
+			</div><br><br>
+			
+			<div class="modal fade" id="modalDelete" role="dialog">
+			    <div class="modal-dialog modal-sm">
+			      <div class="modal-content">
+			        <div class="modal-header">
+			          <button type="button" class="close" data-dismiss="modal">&times;</button>
+			          <h4 class="modal-title"> </h4>
+			        </div>
+			        <div class="modal-body">
+			          <p>Deseja realmente excluir?</p>
+			        </div>
+			        <div class="modal-footer">
+			          <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="cancelar()">Cancelar</button>
+			          <button type="button" class="btn text-white-100 btn btn-dark" data-dismiss="modal" ng-click="deleteEquipamento(equipamento)">Confirmar</button>
+			        </div>
+			      </div>
+			    </div>
+			</div>
+  
 
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title">Alterar Equipamento</h4>
- 
-        <button type="button" class="close" data-dismiss="modal">&times;</button>        
-      </div>
-
-      <!-- Modal body -->
-      <div class="modal-body">
-				<div class="form-group">
-					<label for="abc">Marca: </label><br>
-					<select class="form-control" name="singleSelect" ng-model="equipamento.marca" value="Selecione...">
-						<option value="" selected="selected">Selecione...</option>
-	 					<option value="BRASTEMP">BRASTEMP</option>
-						<option value="CARRIER">CARRIER</option>
-						<option value="CONSUL">CONSUL</option>
-						<option value="DAIKIN">DAIKIN</option>
-						<option value="ELECTROLUX">ELECTROLUX</option>
-						<option value="ELGIN">ELGIN</option>
-						<option value="FUJITSU">FUJITSU</option>
-						<option value="GREE">GREE</option>
-						<option value="HITACHI">HITACHI</option>
-						<option value="KOMECO">KOMECO</option>
-						<option value="LG">LG</option>
-						<option value="MIDEO">MIDEO</option>
-						<option value="PANASONIC">PANASONIC</option>
-						<option value="RHEEM">RHEEM</option>
-						<option value="SAMSUNG">SAMSUNG</option>
-						<option value="SPRINGER">SPRINGER</option>
-						<option value="TRANE">TRANE</option>
-						<option value="YORK">YORK</option>
-						<option value="OUTROS">OUTROS</option>
-					</select>
-				</div><br>
-				
-				<div class="form-group">
-				    <label for="modelo">Modelo:</label>
-				   	<input type="text" class="form-control" id="modelo2" required="required" placeholder="Digite o modelo" ng-model="equipamento.modelo">
-				</div>
-				<br>
-      </div>
-
-      <!-- Modal footer -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="text-white-100 btn btn-dark" title="Salvar" data-dismiss="modal" ng-click="updateEquipamento()">Salvar</button>
-      </div>
-
-    </div>
-  </div>
-  </div>
-
-            <br>
-            <br>
         </div>
     </div>
 </body>

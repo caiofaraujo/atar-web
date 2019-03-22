@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import com.atar.web.entities.Equipamentos;
+import com.atar.web.entities.Servicos;
 
 public interface EquipamentoService {
 
@@ -49,6 +50,8 @@ public interface EquipamentoService {
 	 * @author @Caio Fernandes
 	 */
 	List<Equipamentos> listarEquipamentos();
+	
+	void deletar(Equipamentos equipamento);
 	
 	
 }

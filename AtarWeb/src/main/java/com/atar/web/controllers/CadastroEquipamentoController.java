@@ -60,6 +60,27 @@ public class CadastroEquipamentoController {
 	}
 	
 	/**
+	 * Exclusão de equipamentos no sistema.
+	 * 
+	 * @param cadastroEquipamentoDto
+	 * @return ResponseEntity<Response<EquipamentoDto>>
+	 * @throws NoSuchAlgorithmException
+	 */
+	@PostMapping("excluir")
+	public ResponseEntity<Response<CadastroEquipamentoDto>> excluir(
+			  @RequestBody CadastroEquipamentoDto cadastroEquipamentoDto)
+			throws NoSuchAlgorithmException {
+
+		log.info("Deletando Equipamento: {}", cadastroEquipamentoDto.toString());
+		Response<CadastroEquipamentoDto> response = new Response<CadastroEquipamentoDto>();
+
+		Equipamentos equipamento = this.converterDtoParaEquipamento(cadastroEquipamentoDto);
+		equipamentoService.deletar(equipamento);
+
+		return ResponseEntity.ok(response);
+	}
+	
+	/**
 	 * Alteração de equipamentos no sistema.
 	 * 
 	 * @param cadastroEquipamentoDto

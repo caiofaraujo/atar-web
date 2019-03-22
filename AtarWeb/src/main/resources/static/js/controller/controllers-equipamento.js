@@ -37,7 +37,7 @@ app.controller('EquipamentoCRUDCtrl', ['$scope', '$http', 'EquipamentoCRUDServic
                         });
             }
             else {
-                $scope.errorMessage = 'Preencha os campos corretamente';
+                $scope.errorMessage = ' Preencha os campos corretamente';
                 $scope.isExibirErro = true;
                 $scope.message = '';
             }
@@ -69,7 +69,7 @@ app.controller('EquipamentoCRUDCtrl', ['$scope', '$http', 'EquipamentoCRUDServic
                         });
             }
             else {
-                $scope.errorMessage = 'Preencha os campos corretamente';
+                $scope.errorMessage = ' Preencha os campos corretamente';
                 $scope.isExibirErro = true;
                 $scope.message = '';
             }
@@ -84,14 +84,30 @@ app.controller('EquipamentoCRUDCtrl', ['$scope', '$http', 'EquipamentoCRUDServic
                 $scope.message = '';
             });
         }
-
-        $scope.deleteEquipamento = function (index) {
-
-            $scope.aux = $scope.equipamentos.shift(index);
-            EquipamentoCRUDService.deleteEquipamento($scope.aux)
-            $scope.getAllEquipamentos();
+        
+        $scope.deletar = function(equipamento) {
+        	$scope.equipamento = equipamento;
+		}
+        
+        $scope.cancelar = function() {
+        	$scope.equipamento = {};
+		}
+        
+        $scope.deleteEquipamento = function (equipamento) {            
+        	EquipamentoCRUDService.deleteEquipamento(equipamento).then(function success(res){
+	        	 $scope.errorMessage = '';
+	             $scope.message = ' Equipamento excluído!';
+	             $scope.isExibirSucesso = true;
+	             $scope.isExibirErro = false;
+	             $scope.getAllEquipamentos();
+	        	}, function error(res){
+	        		 $scope.errorMessage = 'Falha na consulta!';
+	                 $scope.message = '';
+	                 $scope.isExibirErro = true;
+	        	});
         }
 
+        
         $scope.getAllEquipamentos();
 
     }]);

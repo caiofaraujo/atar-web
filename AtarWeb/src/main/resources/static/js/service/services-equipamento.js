@@ -30,16 +30,17 @@ app.service('EquipamentoCRUDService', ['$http', function ($http) {
             url: '/atar/cadastrar-equipamento/listar-equipamento'
         });
     } 
-
-    this.deleteServico = function deleteServico(servico) {
-        $http({
+    
+    this.deleteEquipamento = function deleteEquipamento(equipamento) {
+  	  return $http({
             method: 'POST',
-            url: 'api/student/delete',
+            url: '/atar/cadastrar-equipamento/excluir',
             data: {
-                id: student.id
+            	id : equipamento.id
             }
         });
     }
+
 
 
 }]);
