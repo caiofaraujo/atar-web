@@ -38,7 +38,7 @@ app.controller('ClienteCRUDCtrl', ['$scope', '$http', 'ClienteCRUDService',
                         });
             }
             else {
-                $scope.errorMessage = 'Preencha os campos corretamente';
+                $scope.errorMessage = ' Preencha os campos corretamente';
                 $scope.isExibirErro = true;
                 $scope.message = '';
             }
@@ -53,7 +53,7 @@ app.controller('ClienteCRUDCtrl', ['$scope', '$http', 'ClienteCRUDService',
 
             	ClienteCRUDService.updateCliente($scope.cliente)
                     .then(function success(response) {
-                        $scope.message = ' Cliente Alterado!';
+                        $scope.message = ' Cliente alterado!';
                         $scope.isExibirSucesso = true;
                         $scope.errorMessage = '';
 
@@ -72,7 +72,7 @@ app.controller('ClienteCRUDCtrl', ['$scope', '$http', 'ClienteCRUDService',
                         });
             }
             else {
-                $scope.errorMessage = 'Preencha os campos corretamente';
+                $scope.errorMessage = ' Preencha os campos corretamente';
                 $scope.isExibirErro = true;
                 $scope.message = '';
             }
@@ -87,13 +87,27 @@ app.controller('ClienteCRUDCtrl', ['$scope', '$http', 'ClienteCRUDService',
             });
         }
 
-        $scope.deleteCliente = function (index) {
-
-            $scope.aux = $scope.clientes.shift(index);
-            ClienteCRUDService.deleteCliente($scope.aux)
-            $scope.getAllClientes();
+        $scope.deletar = function(cliente) {
+        	$scope.cliente = cliente;
+		}
+        
+        $scope.cancelar = function() {
+        	$scope.cliente = {};
+		}
+        
+        $scope.deleteCliente = function (cliente) {            
+        	ClienteCRUDService.deleteCliente(cliente).then(function success(res){
+            	 $scope.errorMessage = '';
+                 $scope.message = ' Cliente excluído!';
+                 $scope.isExibirSucesso = true;
+                 $scope.isExibirErro = false;
+                 $scope.getAllClientes();
+            	}, function error(res){
+            		 $scope.errorMessage = 'Falha na consulta!';
+                     $scope.message = '';
+                     $scope.isExibirErro = true;
+            	});
         }
-
 
         $scope.getAllClientes();
 

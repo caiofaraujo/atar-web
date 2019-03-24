@@ -34,15 +34,14 @@ app.service('ClienteCRUDService', ['$http', function ($http) {
         });
     } 
 
-    this.deleteCliente = function deleteCliente(student) {
-        $http({
+    this.deleteCliente = function deleteCliente(cliente) {
+  	  return $http({
             method: 'POST',
-            url: 'api/student/delete',
+            url: '/atar/cadastrar-cliente/excluir',
             data: {
-                id: student.id
+            	id : cliente.id
             }
         });
-    }
-
+  }
 
 }]);

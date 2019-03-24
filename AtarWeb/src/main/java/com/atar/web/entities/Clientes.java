@@ -52,35 +52,35 @@ public class Clientes implements Serializable {
 	@JoinColumn(name = "ID_SERVICO_SERV")
 	private List<Servicos> servicos;
 	
-	@OneToMany(cascade= CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinColumn(name = "ID_CLIENTE_CLIE")
-    private List<Clientes> clientes;
+//	@OneToMany(cascade= CascadeType.ALL, fetch = FetchType.EAGER)
+//	@JoinColumn(name = "ID_CLIENTE_CLIE")
+//    private List<Clientes> clientes;
 	
-	@ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name="TB_CLIENTESEQUIPAMENTO_CLEQ", joinColumns=
-    {@JoinColumn(name="ID_CLIENTE_CLIE")}, inverseJoinColumns=
-      {@JoinColumn(name="ID_EQUIPAMENTO_EQUI")})
-	private List<Equipamentos> equipamentos;
+//	@ManyToMany(cascade = CascadeType.ALL)
+//    @JoinTable(name="TB_CLIENTESEQUIPAMENTO_CLEQ", joinColumns=
+//    {@JoinColumn(name="ID_CLIENTE_CLIE")}, inverseJoinColumns=
+//      {@JoinColumn(name="ID_EQUIPAMENTO_EQUI")})
+//	private List<Equipamentos> equipamentos;
 
 	public Clientes() {
 
 	}
 
-	public List<Equipamentos> getEquipamentos() {
-		return equipamentos;
-	}
+//	public List<Equipamentos> getEquipamentos() {
+//		return equipamentos;
+//	}
+//
+//	public void setEquipamentos(List<Equipamentos> equipamentos) {
+//		this.equipamentos = equipamentos;
+//	}
 
-	public void setEquipamentos(List<Equipamentos> equipamentos) {
-		this.equipamentos = equipamentos;
-	}
-
-	public List<Clientes> getClientes() {
-		return clientes;
-	}
-
-	public void setClientes(List<Clientes> clientes) {
-		this.clientes = clientes;
-	}
+//	public List<Clientes> getClientes() {
+//		return clientes;
+//	}
+//
+//	public void setClientes(List<Clientes> clientes) {
+//		this.clientes = clientes;
+//	}
 
 	public List<Servicos> getServicos() {
 		return servicos;

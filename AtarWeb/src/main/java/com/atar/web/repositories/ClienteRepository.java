@@ -13,4 +13,7 @@ public interface ClienteRepository  extends JpaRepository<Clientes, Long>{
 	@Transactional (readOnly = true)
 	Clientes findByEndereco(String endereco);
 	
+	@Transactional (readOnly = false)
+	void deleteById(Long id);
+	
 }
