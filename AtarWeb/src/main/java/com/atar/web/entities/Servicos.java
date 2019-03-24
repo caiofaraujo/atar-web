@@ -55,6 +55,9 @@ public class Servicos implements Serializable {
 	
 	@JoinColumn(name = "ID_CLIENTE_CLIE")
 	private Long clienteId;
+	
+	@JoinColumn(name = "ID_EQUIPAMENTO_EQUI")
+	private Equipamentos equipamento;
 
 	public Long getClienteId() {
 		return clienteId;
@@ -160,6 +163,14 @@ public class Servicos implements Serializable {
 		System.out.println(date);
 		
 		return dt;
+	}
+
+	public Equipamentos getEquipamento() {
+		return equipamento;
+	}
+
+	public void setEquipamento(Equipamentos equipamento) {
+		this.equipamento = equipamento;
 	}
 	
 	

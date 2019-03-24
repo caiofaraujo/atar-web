@@ -19,7 +19,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.atar.web.converter.EquipamentoConverter;
+import com.atar.web.dtos.CadastroEquipamentoDto;
 import com.atar.web.dtos.CadastroServicoDto;
+import com.atar.web.entities.Equipamentos;
 import com.atar.web.entities.Servicos;
 import com.atar.web.repositories.ClienteRepository;
 import com.atar.web.response.Response;
@@ -37,6 +40,9 @@ public class CadastroServicoController {
 	
 	@Autowired
 	private ClienteRepository clienteRepository;
+	
+	@Autowired
+	EquipamentoConverter equipamentoConverter;  
 
 	public CadastroServicoController() {
 
@@ -154,7 +160,6 @@ public class CadastroServicoController {
 	 * @return servico
 	 */
 	private Servicos converterDtoParaServico(CadastroServicoDto cadastroServicoDto) {
-
 		Servicos servico = new Servicos();
 		servico.setDescricao(cadastroServicoDto.getDescricao());
 		servico.setTipo(cadastroServicoDto.getTipo());
@@ -163,9 +168,8 @@ public class CadastroServicoController {
 		servico.setDtFinalServ(cadastroServicoDto.getDtFinalServico());
 		servico.setClienteId(cadastroServicoDto.getIdCliente());
 		servico.setId(cadastroServicoDto.getId());
-
+		servico.setEquipamento(equipamentoConverter.converterDtoParaEquipamento(cadastroServicoDto.getEquipamento()));
 		return servico;
-
 	}
 
 	/**
@@ -185,6 +189,8 @@ public class CadastroServicoController {
 		cadastroServicoDto.setNomeCliente(clienteRepository.findById(servico.getClienteId()).get().getNome());
 		cadastroServicoDto.setIdCliente(servico.getClienteId());
 		cadastroServicoDto.setId(servico.getId());
+		cadastroServicoDto.setEquipamento(equipamentoConverter.converterCadastroEquipamentoDto(servico.getEquipamento()));
+		
 		return cadastroServicoDto;
 	}
 

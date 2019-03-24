@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+<title>ATAR</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
+<link href="/css/layout.css" rel="stylesheet">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<script src="/js/app.js"></script>
+<script src="/js/service/services-servico.js"></script>
+<script src="/js/service/services.js"></script>
+<script src="/js/controller/controllers-servico.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="//fonts.googleapis.com/css?family=Ubuntu" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+</head>
+
+<script>
+	/* When the user clicks on the button, 
+	 toggle between hiding and showing the dropdown content */
+	function myFunction() {
+		document.getElementById("myDropdown").classList.toggle("show");
+	}
+
+	// Close the dropdown menu if the user clicks outside of it
+	window.onclick = function(event) {
+		if (!event.target.matches('.dropbtn')) {
+			var dropdowns = document.getElementsByClassName("dropdown-content");
+			var i;
+			for (i = 0; i < dropdowns.length; i++) {
+				var openDropdown = dropdowns[i];
+				if (openDropdown.classList.contains('show')) {
+					openDropdown.classList.remove('show');
+				}
+			}
+		}
+	}
+</script>
+
+<body>
+
+	<div class="w3-sidebar w3-bar-block w3-border-right"
+		style="display: none" id="mySidebar">
+		<button onclick="w3_close()" class="w3-bar-item w3-large">Fechar
+			&times;</button>
+		<button onclick="myFunction()"
+			class="w3-bar-item w3-button dropbtn menuPai">Gerenciamentos</button>
+
+		<div id="myDropdown" class="dropdown-content">
+			<a href="/cadastro-cliente.html" class="w3-bar-item w3-button">Cadastro
+				de Cliente</a> <a href="/cadastro-equipamento.html"
+				class="w3-bar-item w3-button">Cadastro de Equipamento</a> <a
+				href="/cadastro-servico.html" class="w3-bar-item w3-button">Cadastro
+				de Servico</a> <a href="/html/listar-servico.html"
+				class="w3-bar-item w3-button">Listar Serviços</a>
+		</div>
+
+		<!-- Uses a header that scrolls with the text, rather than staying
+  locked at the top -->
+
+
+
+
+	</div>
+
+	<!--     Page Content -->
+	<div class="w3-teal">
+		<button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰
+			ATAR</button>
+	</div>
+	<script>
+		function w3_open() {
+			document.getElementById("mySidebar").style.display = "block";
+		}
+
+		function w3_close() {
+			document.getElementById("mySidebar").style.display = "none";
+		}
+
+		function formataDtServ(data) {
+			console.log(data);
+		}
+	</script>
+
+
+	<div ng-controller="ServicoCRUDCtrl" class="container">
+
+
+
+
+		<h3>Serviços</h3>
+		<div class="table-responsive-md table-stripped">
+			<table class="table table-stripped">
+				<thead class="thead">
+					<tr>
+						<th>Descrição</th>
+						<th>Tipo</th>
+						<th>Obs.</th>
+						<th>Data inicio</th>
+						<th>Data fim</th>
+						<th>Editar</th>
+						<th>Excluir</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="servico in servicos">
+						<td>{{servico.descricao}}</td>
+						<td>{{servico.tipo}}</td>
+						<td>{{servico.observacao | date : "dd/MM/yyyy"}}</td>
+						<td>{{servico.dtInicioServico | date : "dd/MM/yyyy"}}</td>
+						<td>{{servico.dtFinalServico | date : "dd/MM/yyyy"}}</td>
+						<td data-toggle="modal" data-target="#myModal" ng-click="editar(servico)">Editar</td>
+						<td>Excluir</td>
+					 
+
+					</tr>
+				</tbody>
+			</table>
+			<br> <br> <br>
+	</div> 	
+
+
+
+		<br> <br>
+
+	
+	<div class="modal" id="myModal">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Editar</h4>
+        		<!--             <div class="alert alert-success alert-dismissible" ng-if="isExibirSucesso"> -->
+		<!--                 <button type="button" class="close" data-dismiss="alert">&times;</button> -->
+		<!--                 <strong>Successo!</strong>{{message}} -->
+		<!--             </div> -->
+		<!--             <div class="alert alert-danger alert-dismissible" ng-if="isExibirErro"> -->
+		<!--                 <button type="button" class="close" data-dismiss="alert">&times;</button> -->
+		<!--                 <strong>Falha!</strong> {{errorMessage}} -->
+		<!--             </div> -->
+        <button type="button" class="close" data-dismiss="modal">&times;</button>        
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+         <div class="form-group">
+				  <label for="descricao">Descrição do Serviço:</label>
+				  <textarea ng-model="servico.descricao" type="text" id="descricao" class="md-textarea form-control" mdbInputDirective placeholder="Digite a descrição..."></textarea>
+				</div><br>
+				
+				<div class="form-group">
+					<label for="tipo">Tipo: </label><br>
+					<select class="form-control" name="singleSelect" ng-model="servico.tipo" value="Selecione...">
+						<option value="" selected="selected">Selecione...</option>
+	 					<option value="INSTALAÇÃO">INSTALAÇÃO</option>
+						<option value="MANUTENÇÃO CORRETIVA">MANUTENÇÃO CORRETIVA</option>
+						<option value="MANUTENÇÃO PREVENTIVA">MANUTENÇÃO PREVENTIVA</option>
+						<option value="OUTROS">OUTROS</option>
+					</select>
+				</div><br>
+                
+				<!--Basic textarea-->
+				<div class="form-group">
+				  <label for="observacao">Observação:</label>
+				  <textarea ng-model="servico.observacao" type="text" id="observacao" class="md-textarea form-control" mdbInputDirective placeholder="Digite a observação..."></textarea>
+				</div><br>
+				
+				<div class="form-group">
+			       <label for="dtInicioServ" class="control-label">Data de Início: </label>
+			       <div class="control">
+			           <input ng-model="servico.dtInicioServico" id="dtInicioServ" class="form-control" type="date" date-model="dtInicioServ">
+			       </div>
+			   </div>
+			   
+			   <div class="form-group">
+			       <label for="dtFinalServico" class="control-label">Data de Finalização: </label>
+			       <div class="control">
+			           <input ng-model="servico.dtFinalServico" id="dtFimServ" class="form-control" type="date" date-model="dtFinalServico">
+			       </div>
+               </div>
+               
+ 
+               <div class="form-group">
+                <label for="cliente">Cliente: </label><br>                
+                <select class="form-control" ng-model="servico.idCliente" ng-options="c.id as c.nome for c in lstClientes" ng-value="servico.nomeCliente">
+                	<option value="" selected="selected">Selecione...</option>
+ 
+                </select>
+            </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn" data-dismiss="modal" ng-click="updateServico()">Confirmar</button>
+      </div>
+
+    </div>
+  </div>
+  </div>
+	</div>
+	 
+</body>
+
+</html>

@@ -28,6 +28,8 @@ public class CadastroServicoDto {
 	private Long idCliente; 
 	
 	private String nomeCliente;
+	
+	private CadastroEquipamentoDto equipamento;
 
 	public CadastroServicoDto() {
 		
@@ -101,6 +103,17 @@ public class CadastroServicoDto {
 	public void setNomeCliente(String nomeCliente) {
 		this.nomeCliente = nomeCliente;
 	}
+	
+
+	public CadastroEquipamentoDto getEquipamento() {
+		return equipamento;
+	}
+
+	public void setEquipamento(CadastroEquipamentoDto equipamento) {
+		this.equipamento = equipamento;
+	}
+
+ 
 	
 	
 }
