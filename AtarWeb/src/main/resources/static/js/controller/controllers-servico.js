@@ -114,7 +114,7 @@ app.controller('ServicoCRUDCtrl', ['$scope', '$http', 'ServicoCRUDService','Clie
             }
         
         
-        $scope.getEquipamentos = function(){
+        $scope.getAllEquipamentos = function(){
          	EquipamentoCRUDService.getAllEquipamentos().then(function success(response) {
          		debugger;
                 $scope.equipamentos = response.data.data;
@@ -140,7 +140,7 @@ app.controller('ServicoCRUDCtrl', ['$scope', '$http', 'ServicoCRUDService','Clie
         $scope.getClientes();
         $scope.getAllServicos();
 
-        // $scope.getAllEquipamentos();
+        $scope.getAllEquipamentos();
 
     }]);
 

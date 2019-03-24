@@ -123,7 +123,16 @@
 	                <select class="form-control" ng-model="servico.idCliente" ng-options="c.id as c.nome for c in lstClientes">
 	                	<option value="" selected="selected">Selecione...</option>
 	                </select>
-            	</div><br>
+            	</div>
+            	
+            	
+            	<div class="form-group">
+	                <label for="cliente">Equipamento: </label> 
+	                <select class="form-control" ng-model="servico.equipamento.modelo" ng-options="c.id as c.modelo for c in equipamentos>
+	                	<option value="" selected="selected">Selecione...</option>
+	                </select>
+            	</div>            	
+            	<br>
                 <button type="button" class="text-white-100 btn btn-dark" ng-click="addServico(servico)">Salvar</button>
             </form>
             <br>
