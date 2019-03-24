@@ -43,7 +43,13 @@ public class ClienteServiceImpl implements ClienteService {
 		// TODO Auto-generated method stub
 		return clienteRepository.findAll();			
 	}
+
+	public void deletar(Long id) {
+		// TODO Auto-generated method stub
+		this.clienteRepository.deleteById(id);
+	}
 		
+	
 }
 
 	

@@ -51,6 +51,12 @@ public interface EquipamentoService {
 	 */
 	List<Equipamentos> listarEquipamentos();
 	
+	/**
+	 * Realiza a exclusão de um equipamento.
+	 * 
+	 * @param equipamento
+	 * @author @Caio Fernandes
+	 */
 	void deletar(Equipamentos equipamento);
 	
 	

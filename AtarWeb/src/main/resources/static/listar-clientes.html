@@ -107,7 +107,7 @@
 						<button data-toggle="modal" data-target="#myModal" type="button" class="btn" value="Update" title="Alterar" ng-click="editar(cliente)" >
 													<i class="fas fa-edit"></i>											
 						</button>
-						<button type="button" class="btn" value="Delete" title="Excluir">
+						<button type="button" data-toggle="modal" data-target="#modalDelete" class="btn" value="Excluir" ng-click="deletar(cliente)"  title="Excluir">
 													<i class="fas fa-trash-alt"></i>											
 						</button>
                     </td>
@@ -172,10 +172,30 @@
 					<button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
 					<button type="button" class="text-white-100 btn btn-dark" title="Salvar" data-dismiss="modal" ng-click="updateCliente()">Salvar</button>
 				</div>
+				
+
 	
 			</div>
 		  </div>
 		  </div>
+		  
+			<div class="modal fade" id="modalDelete" role="dialog">
+			    <div class="modal-dialog modal-sm">
+			      <div class="modal-content">
+			        <div class="modal-header">
+			          <button type="button" class="close" data-dismiss="modal">&times;</button>
+			          <h4 class="modal-title"> </h4>
+			        </div>
+			        <div class="modal-body">
+			          <p>Deseja realmente excluir?</p>
+			        </div>
+			        <div class="modal-footer">
+			          <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="cancelar()">Cancelar</button>
+			          <button type="button" class="btn text-white-100 btn btn-dark" data-dismiss="modal" ng-click="deleteCliente(cliente)">Confirmar</button>
+			        </div>
+			      </div>
+			    </div>
+			</div>
         </div>
     </div>
 </body>

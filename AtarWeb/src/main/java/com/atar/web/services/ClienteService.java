@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import com.atar.web.entities.Clientes;
+import com.atar.web.entities.Equipamentos;
 
 public interface ClienteService {
 	
@@ -38,5 +39,12 @@ public interface ClienteService {
 	
 	List<Clientes> listarClientes();
 	
+	/**
+	 * Realiza a exclusão de um cliente.
+	 * 
+	 * @param cliente
+	 * @author @Caio Fernandes
+	 */
+	void deletar(Long id);
 	
 }

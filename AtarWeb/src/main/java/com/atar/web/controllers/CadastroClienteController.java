@@ -86,6 +86,28 @@ public class CadastroClienteController {
 	}
 	
 	/**
+	 * Exclusão de clientes no sistema.
+	 * 
+	 * @param cadastroClienteDto
+	 * @return ResponseEntity<Response<ClienteDto>>
+	 * @throws NoSuchAlgorithmException
+	 */
+	@PostMapping("excluir")
+	public ResponseEntity<Response<CadastroClienteDto>> excluir(
+			  @RequestBody CadastroClienteDto cadastroClienteDto)
+			throws NoSuchAlgorithmException {
+
+		log.info("Deletando Cliente: {}", cadastroClienteDto.toString());
+		Response<CadastroClienteDto> response = new Response<CadastroClienteDto>();
+
+
+		Clientes cliente = this.converterDtoParaCliente(cadastroClienteDto);
+		clienteService.deletar(cliente.getId());
+
+		return ResponseEntity.ok(response);
+	}
+	
+	/**
 	 * Alteração de clientes no sistema.
 	 * 
 	 * @param cadastroClienteDto
