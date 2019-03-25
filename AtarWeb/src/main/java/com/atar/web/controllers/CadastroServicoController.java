@@ -14,11 +14,12 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.atar.web.converter.ClienteConverter;
+import com.atar.web.converter.EquipamentoConverter;
 import com.atar.web.dtos.CadastroServicoDto;
 import com.atar.web.entities.Servicos;
 import com.atar.web.repositories.ClienteRepository;
@@ -37,6 +38,12 @@ public class CadastroServicoController {
 	
 	@Autowired
 	private ClienteRepository clienteRepository;
+	
+	@Autowired
+	EquipamentoConverter equipamentoConverter;  
+	
+	@Autowired
+	ClienteConverter clienteConverter;
 
 	public CadastroServicoController() {
 
@@ -120,7 +127,9 @@ public class CadastroServicoController {
 		Response<CadastroServicoDto> response = new Response<CadastroServicoDto>();
 		
 
-		Servicos servico = this.converterDtoParaServico(cadastroServicoDto);
+		Servicos servico = new Servicos();
+		servico.setId(cadastroServicoDto.getId());
+		
 		servicoService.deletar(servico);
 
 //		if (result.hasErrors()) {
@@ -154,18 +163,16 @@ public class CadastroServicoController {
 	 * @return servico
 	 */
 	private Servicos converterDtoParaServico(CadastroServicoDto cadastroServicoDto) {
-
 		Servicos servico = new Servicos();
 		servico.setDescricao(cadastroServicoDto.getDescricao());
 		servico.setTipo(cadastroServicoDto.getTipo());
 		servico.setObservacao(cadastroServicoDto.getObservacao());
 		servico.setDtInicioServ(cadastroServicoDto.getDtInicioServico());
-		servico.setDtFinalServ(cadastroServicoDto.getDtFinalServico());
-		servico.setClienteId(cadastroServicoDto.getIdCliente());
+		servico.setDtFinalServ(cadastroServicoDto.getDtFinalServico());		
+		servico.setCliente(clienteConverter.converterDtoParaCliente(cadastroServicoDto.getCliente()));
 		servico.setId(cadastroServicoDto.getId());
-
+		servico.setEquipamento(equipamentoConverter.converterDtoParaEquipamento(cadastroServicoDto.getEquipamento()));
 		return servico;
-
 	}
 
 	/**
@@ -182,9 +189,10 @@ public class CadastroServicoController {
 		cadastroServicoDto.setObservacao(servico.getObservacao());
 		cadastroServicoDto.setDtInicioServico(servico.getDtInicioServ());
 		cadastroServicoDto.setDtFinalServico(servico.getDtFinalServ());
-		cadastroServicoDto.setNomeCliente(clienteRepository.findById(servico.getClienteId()).get().getNome());
-		cadastroServicoDto.setIdCliente(servico.getClienteId());
+		cadastroServicoDto.setCliente(clienteConverter.converterCadastroClienteDto(servico.getCliente()));
 		cadastroServicoDto.setId(servico.getId());
+		cadastroServicoDto.setEquipamento(equipamentoConverter.converterCadastroEquipamentoDto(servico.getEquipamento()));
+		
 		return cadastroServicoDto;
 	}
 

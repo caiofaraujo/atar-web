@@ -10,8 +10,9 @@ app.service('ServicoCRUDService', ['$http', function ($http) {
             	tipo : servico.tipo,
             	observacao : servico.observacao,
             	dtInicioServico : servico.dtInicioServico,
-            	dtFinalServico : servico.dtFinalServico,
-            	idCliente: servico.idCliente
+            	dtFinalServico : servico.dtFinalServico, 
+            	cliente : servico.cliente,
+            	equipamento : servico.equipamento
             }
         });
     }
@@ -26,7 +27,8 @@ app.service('ServicoCRUDService', ['$http', function ($http) {
             	observacao : servico.observacao,
             	dtInicioServico : servico.dtInicioServico,
             	dtFinalServico : servico.dtFinalServico,
-            	idCliente: servico.idCliente,
+            	cliente : servico.cliente,
+            	equipamento : servico.equipamento,
             	id : servico.id
             }
         });

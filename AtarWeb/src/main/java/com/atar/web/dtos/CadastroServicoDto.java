@@ -27,19 +27,22 @@ public class CadastroServicoDto {
 	
 	private Date dtFinalServico;
 	
-	private Long idCliente; 
+ 
 	
 	private String nomeCliente;
 	
-	private Clientes cliente;
+	private CadastroClienteDto cliente;
 
-	public Clientes getCliente() {
+ 
+	public CadastroClienteDto getCliente() {
 		return cliente;
 	}
 
-	public void setCliente(Clientes cliente) {
+	public void setCliente(CadastroClienteDto cliente) {
 		this.cliente = cliente;
 	}
+
+	private CadastroEquipamentoDto equipamento;
 
 	public CadastroServicoDto() {
 		
@@ -49,13 +52,7 @@ public class CadastroServicoDto {
 		return id;
 	}
 
-	public Long getIdCliente() {
-		return idCliente;
-	}
-
-	public void setIdCliente(Long idCliente) {
-		this.idCliente = idCliente;
-	}
+ 
 
 	public void setId(Long id) {
 		this.id = id;
@@ -113,6 +110,17 @@ public class CadastroServicoDto {
 	public void setNomeCliente(String nomeCliente) {
 		this.nomeCliente = nomeCliente;
 	}
+	
+
+	public CadastroEquipamentoDto getEquipamento() {
+		return equipamento;
+	}
+
+	public void setEquipamento(CadastroEquipamentoDto equipamento) {
+		this.equipamento = equipamento;
+	}
+
+ 
 	
 	
 }

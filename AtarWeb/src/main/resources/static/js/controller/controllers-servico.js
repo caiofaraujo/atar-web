@@ -1,10 +1,11 @@
 
 
-app.controller('ServicoCRUDCtrl', ['$scope', '$http', 'ServicoCRUDService','ClienteCRUDService',
-    function ($scope, $http, ServicoCRUDService,ClienteCRUDService) {
+app.controller('ServicoCRUDCtrl', ['$scope', '$http', 'ServicoCRUDService','ClienteCRUDService','EquipamentoCRUDService',
+    function ($scope, $http, ServicoCRUDService,ClienteCRUDService,EquipamentoCRUDService) {
         $scope.isExibirSucesso = false;
         $scope.isExibirErro = false;
         $scope.lstClientes = [];
+        $scope.equipamentos = [];
         
         $scope.editar = function(servico){
         	$scope.servico = {};
@@ -111,6 +112,18 @@ app.controller('ServicoCRUDCtrl', ['$scope', '$http', 'ServicoCRUDService','Clie
                      $scope.isExibirErro = true;
             	});
             }
+        
+        
+        $scope.getAllEquipamentos = function(){
+         	EquipamentoCRUDService.getAllEquipamentos().then(function success(response) {
+         		debugger;
+                $scope.equipamentos = response.data.data;
+            }, function error(response) {
+            	debugger;
+                $scope.errorMessage = 'Falha na consulta!';
+                $scope.message = '';
+            });	
+        }
     
 
         $scope.getClientes = function(){            
@@ -124,10 +137,10 @@ app.controller('ServicoCRUDCtrl', ['$scope', '$http', 'ServicoCRUDService','Clie
             });
         }
 
-        //$scope.getClientes();
+        $scope.getClientes();
         $scope.getAllServicos();
 
-        // $scope.getAllEquipamentos();
+        $scope.getAllEquipamentos();
 
     }]);
 

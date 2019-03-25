@@ -3,19 +3,15 @@ package com.atar.web.entities;
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
-import javax.persistence.CascadeType;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.PrePersist;
-import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 
 @Entity
@@ -52,7 +48,12 @@ public class Servicos implements Serializable {
 	private Date dtCadastro;	
 	
 	@JoinColumn(name = "ID_CLIENTE_CLIE")
+	@OneToOne
 	private Clientes cliente;
+	
+	@JoinColumn(name = "ID_EQUIPAMENTO_EQUI")
+	@OneToOne
+	private Equipamentos equipamento;
 
 	public Clientes getCliente() {
 		return cliente;
@@ -158,6 +159,14 @@ public class Servicos implements Serializable {
 		System.out.println(date);
 		
 		return dt;
+	}
+
+	public Equipamentos getEquipamento() {
+		return equipamento;
+	}
+
+	public void setEquipamento(Equipamentos equipamento) {
+		this.equipamento = equipamento;
 	}
 	
 	
