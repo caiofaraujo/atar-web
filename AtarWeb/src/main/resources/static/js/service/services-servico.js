@@ -11,7 +11,7 @@ app.service('ServicoCRUDService', ['$http', function ($http) {
             	observacao : servico.observacao,
             	dtInicioServico : servico.dtInicioServico,
             	dtFinalServico : servico.dtFinalServico,
-            	idCliente: servico.idCliente
+            	idCliente: servico.cliente.idCliente
             }
         });
     }
@@ -26,7 +26,7 @@ app.service('ServicoCRUDService', ['$http', function ($http) {
             	observacao : servico.observacao,
             	dtInicioServico : servico.dtInicioServico,
             	dtFinalServico : servico.dtFinalServico,
-            	idCliente: servico.idCliente,
+            	idCliente: servico.cliente.idCliente,
             	id : servico.id
             }
         });
