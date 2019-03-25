@@ -9698,3 +9698,61 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact org.springfra
 2019-03-24 20:12:23,802 [Worker-29: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
 2019-03-24 20:12:23,802 [Worker-29: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 18 resources
 2019-03-24 20:12:23,880 [Worker-29: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-03-24 20:12:23,880 [Worker-29: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\eclipse-workspace\atar_web\AtarWeb\src\test\resources
+2019-03-24 20:41:30,170 [Worker-42: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-03-24 20:41:30,170 [Worker-42: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-03-24 20:41:30,170 [Worker-42: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-03-24 20:41:30,185 [Worker-42: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-03-24 20:41:30,185 [Worker-42: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\eclipse-workspace\atar_web\AtarWeb\src\test\resources
+2019-03-24 20:47:32,498 [Worker-43: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-03-24 20:47:32,498 [Worker-43: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-03-24 20:47:32,498 [Worker-43: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-03-24 20:47:32,498 [Worker-43: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-03-24 20:47:32,498 [Worker-43: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\eclipse-workspace\atar_web\AtarWeb\src\test\resources
+2019-03-24 20:59:10,196 [Worker-50: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-03-24 20:59:10,196 [Worker-50: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2019-03-24 20:59:10,212 [Worker-50: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 18 resources
+2019-03-24 20:59:10,212 [Worker-50: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-03-24 20:59:10,212 [Worker-50: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\eclipse-workspace\atar_web\AtarWeb\src\test\resources
+2019-03-24 21:06:52,353 [Worker-51: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-03-24 21:06:52,353 [Worker-51: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2019-03-24 21:06:52,384 [Worker-51: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 18 resources
+2019-03-24 21:06:52,400 [Worker-51: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-03-24 21:06:52,400 [Worker-51: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\eclipse-workspace\atar_web\AtarWeb\src\test\resources
+2019-03-24 21:07:01,400 [Worker-47: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-03-24 21:07:01,416 [Worker-47: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2019-03-24 21:07:01,416 [Worker-47: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 18 resources
+2019-03-24 21:07:01,431 [Worker-47: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-03-24 21:07:01,431 [Worker-47: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\eclipse-workspace\atar_web\AtarWeb\src\test\resources
+2019-03-24 21:07:26,195 [Worker-45: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-03-24 21:07:26,195 [Worker-45: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2019-03-24 21:07:26,211 [Worker-45: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 18 resources
+2019-03-24 21:07:26,227 [Worker-45: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-03-24 21:07:26,227 [Worker-45: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\eclipse-workspace\atar_web\AtarWeb\src\test\resources
+2019-03-24 21:09:13,857 [Worker-43: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-03-24 21:09:13,873 [Worker-43: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2019-03-24 21:09:13,888 [Worker-43: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 18 resources
+2019-03-24 21:09:13,888 [Worker-43: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-03-24 21:09:13,888 [Worker-43: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\eclipse-workspace\atar_web\AtarWeb\src\test\resources
+2019-03-24 21:36:22,770 [Worker-54: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-03-24 21:36:22,786 [Worker-54: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2019-03-24 21:36:22,786 [Worker-54: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 18 resources
+2019-03-24 21:36:22,802 [Worker-54: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-03-24 21:36:22,802 [Worker-54: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\eclipse-workspace\atar_web\AtarWeb\src\test\resources
+2019-03-24 21:37:22,751 [Worker-54: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-03-24 21:37:22,767 [Worker-54: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2019-03-24 21:37:22,783 [Worker-54: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 18 resources
+2019-03-24 21:37:22,798 [Worker-54: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-03-24 21:37:22,798 [Worker-54: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\eclipse-workspace\atar_web\AtarWeb\src\test\resources
+2019-03-24 21:37:29,548 [Worker-45: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-03-24 21:37:29,563 [Worker-45: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2019-03-24 21:37:29,579 [Worker-45: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 18 resources
+2019-03-24 21:37:29,579 [Worker-45: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-03-24 21:37:29,579 [Worker-45: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\eclipse-workspace\atar_web\AtarWeb\src\test\resources
+2019-03-24 21:37:42,151 [Worker-54: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-03-24 21:37:42,167 [Worker-54: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2019-03-24 21:37:42,167 [Worker-54: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 18 resources
+2019-03-24 21:37:42,183 [Worker-54: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-03-24 21:37:42,183 [Worker-54: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\eclipse-workspace\atar_web\AtarWeb\src\test\resources
+2019-03-24 21:42:10,744 [Worker-55: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-03-24 21:42:10,744 [Worker-55: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource

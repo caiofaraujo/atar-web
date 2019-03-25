@@ -51,17 +51,15 @@ public class Servicos implements Serializable {
 	@Column(name = "DH_CADASTRO_SERV")
 	private Date dtCadastro;	
 	
-	//TODO CLIENTE 
-	
 	@JoinColumn(name = "ID_CLIENTE_CLIE")
-	private Long clienteId;
+	private Clientes cliente;
 
-	public Long getClienteId() {
-		return clienteId;
+	public Clientes getCliente() {
+		return cliente;
 	}
 
-	public void setClienteId(Long clienteId) {
-		this.clienteId = clienteId;
+	public void setCliente(Clientes cliente) {
+		this.cliente = cliente;
 	}
 
 	public Servicos() {

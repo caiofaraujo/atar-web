@@ -143,6 +143,10 @@ public class CadastroServicoController {
 	// cadastroServicoDto, BindingResult result) {
 	// this.servicoService.buscarPorNome(cadastroServicoDto.getNome())
 	// .ifPresent(cli -> result.addError(new ObjectError("servico", "Servico já
+	
+	
+	
+	
 	// existente.")));
 
 	// }
@@ -161,7 +165,7 @@ public class CadastroServicoController {
 		servico.setObservacao(cadastroServicoDto.getObservacao());
 		servico.setDtInicioServ(cadastroServicoDto.getDtInicioServico());
 		servico.setDtFinalServ(cadastroServicoDto.getDtFinalServico());
-		servico.setClienteId(cadastroServicoDto.getIdCliente());
+		servico.setCliente(cadastroServicoDto.getCliente());
 		servico.setId(cadastroServicoDto.getId());
 
 		return servico;
@@ -182,8 +186,10 @@ public class CadastroServicoController {
 		cadastroServicoDto.setObservacao(servico.getObservacao());
 		cadastroServicoDto.setDtInicioServico(servico.getDtInicioServ());
 		cadastroServicoDto.setDtFinalServico(servico.getDtFinalServ());
-		cadastroServicoDto.setNomeCliente(clienteRepository.findById(servico.getClienteId()).get().getNome());
-		cadastroServicoDto.setIdCliente(servico.getClienteId());
+		//cadastroServicoDto.setNomeCliente(clienteRepository.findById(servico.getClienteId()).get().getNome());
+		cadastroServicoDto.setNomeCliente(servico.getCliente().getNome());
+		cadastroServicoDto.setIdCliente(servico.getCliente().getId());
+		//cadastroServicoDto.setIdCliente(servico.getClienteId());
 		cadastroServicoDto.setId(servico.getId());
 		return cadastroServicoDto;
 	}

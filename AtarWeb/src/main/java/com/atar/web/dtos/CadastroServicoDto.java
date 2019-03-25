@@ -2,6 +2,8 @@ package com.atar.web.dtos;
 
 import org.hibernate.validator.constraints.Length;
 
+import com.atar.web.entities.Clientes;
+
 import java.util.Date;
 import java.util.Optional;
 
@@ -28,6 +30,16 @@ public class CadastroServicoDto {
 	private Long idCliente; 
 	
 	private String nomeCliente;
+	
+	private Clientes cliente;
+
+	public Clientes getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Clientes cliente) {
+		this.cliente = cliente;
+	}
 
 	public CadastroServicoDto() {
 		

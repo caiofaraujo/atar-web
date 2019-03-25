@@ -124,7 +124,7 @@ app.controller('ServicoCRUDCtrl', ['$scope', '$http', 'ServicoCRUDService','Clie
             });
         }
 
-        $scope.getClientes();
+        //$scope.getClientes();
         $scope.getAllServicos();
 
         // $scope.getAllEquipamentos();
