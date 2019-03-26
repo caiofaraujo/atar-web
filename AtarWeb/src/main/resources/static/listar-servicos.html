@@ -81,13 +81,6 @@
 	<div class="container bg-light">
 		<div ng-controller="ServicoCRUDCtrl" class="padraoContainer">
 			<h3>Listagem de Serviços</h3>
-			<div class="alert alert-success alert-dismissible" ng-if="isExibirSucesso">
-		                <button type="button" class="close" data-dismiss="alert">&times;</button>
-		                <strong>Successo!</strong>{{message}}
-		            </div>
-		            <div class="alert alert-danger alert-dismissible" ng-if="isExibirErro">
-		                <button type="button" class="close" data-dismiss="alert">&times;</button>
-		                </div>
 			<div class="table-responsive">
 				<table class="container mdl-data-table mdl-js-data-table mdl-shadow--2dp">
 					<thead class="thead">
@@ -95,7 +88,9 @@
 							<th style="text-align:left">Código</th>
 							<th style="text-align:left">Descrição</th>
 							<th style="text-align:left">Tipo</th>
-							<th style="text-align:left">Equipamento.</th>
+							<th style="text-align:left">Cliente</th>
+							<th style="text-align:left">Modelo Equipamento</th>
+							<th style="text-align:left">Marca Equipamento</th>
 							<th style="text-align:left">Obs.</th>
 							<th style="text-align:left">Data inicio</th>
 							<th style="text-align:left">Data fim</th>
@@ -104,18 +99,20 @@
 					</thead>
 					<tbody>
 						<tr ng-repeat="servico in servicos">
-							<td style="text-align:left">{{servico.id}}</td>
+							<td style="text-align:center">{{servico.id}}</td>
 							<td style="text-align:left">{{servico.descricao}}</td>
 							<td style="text-align:left">{{servico.tipo}}</td>
+							<td style="text-align:left">{{servico.cliente.nome}}</td>
 							<td style="text-align:left">{{servico.equipamento.modelo}}</td>
+							<td style="text-align:left">{{servico.equipamento.marca}}</td>
 							<td style="text-align:left">{{servico.observacao }}</td>
 							<td style="text-align:left">{{servico.dtInicioServico | date : "dd/MM/yyyy"}}</td>
 							<td style="text-align:left">{{servico.dtFinalServico | date : "dd/MM/yyyy"}}</td>
 		                    <td>
-								<button type="button" data-toggle="modal" data-target="#myModal"  class="btn" value="Update" ng-click="editar(servico)" title="Editar">
+								<button type="button" data-toggle="modal" data-target="#myModal"  class="btn" value="Update" ng-click="editar(servico)" title="Alterar">
 														<i class="fas fa-edit"></i>											
 								</button>
-								<button type="button" data-toggle="modal" data-target="#modalDelete" class="btn" value="Delete" ng-click="deletar(servico)"  title="Deletar">
+								<button type="button" data-toggle="modal" data-target="#modalDelete" class="btn" value="Delete" ng-click="deletar(servico)"  title="Excluir">
 														<i class="fas fa-trash-alt"></i>											
 								</button>
 		                    </td>							
@@ -128,14 +125,23 @@
 				<form action="/cadastro-servico.html">
 				    <input type="submit" class="text-white-100 btn btn-dark" value="INCLUIR" title="Incluir"/>
 				</form>
-			</div>
+			</div><br>
+			
+			<div class="alert alert-success alert-dismissible" ng-if="isExibirSucesso">
+            	<button type="button" class="close" data-dismiss="alert">&times;</button>
+               	<strong>Successo!</strong>{{message}}
+            </div>
+            <div class="alert alert-danger alert-dismissible" ng-if="isExibirErro">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+            </div>
+			
 	<div class="modal" id="myModal">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
 
       <!-- Modal Header -->
       <div class="modal-header">
-        <h4 class="modal-title">Editar</h4>
+        <h4 class="modal-title">Alterar</h4>
  
         <button type="button" class="close" data-dismiss="modal">&times;</button>        
       </div>
@@ -196,8 +202,8 @@
 
       <!-- Modal footer -->
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn" data-dismiss="modal" ng-click="updateServico()">Confirmar</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" title="Cancelar">Cancelar</button>
+        <button type="button" class="btn text-white-100 btn btn-dark" data-dismiss="modal" ng-click="updateServico()" title="Confirmar">Confirmar</button>
       </div>
 
     </div>
@@ -212,11 +218,11 @@
           <h4 class="modal-title"> </h4>
         </div>
         <div class="modal-body">
-          <p>Confirmar Operação</p>
+          <p>Deseja realmente excluir?</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="cancelar()">Cancelar</button>
-          <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="deleteServico(servico)">Confirmar</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="cancelar()" title="Cancelar">Cancelar</button>
+          <button type="button" class="btn text-white-100 btn btn-dark" data-dismiss="modal" ng-click="deleteServico(servico)" title="Confirmar">Confirmar</button>
         </div>
       </div>
     </div>

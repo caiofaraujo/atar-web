@@ -70,6 +70,16 @@
         function w3_close() {
             document.getElementById("mySidebar").style.display = "none";
         }
+        
+        function GoBackWithRefresh(event) {
+            if ('referrer' in document) {
+                window.location = document.referrer;
+                /* OR */
+                //location.replace(document.referrer);
+            } else {
+                window.history.back();
+            }
+        }
     </script>
 	<!-- FIM MENU -->
 
@@ -93,9 +103,11 @@
                     <label for="txttelefone">Telefone:</label>
                     <input type="tel" name="txttelefone" class="form-control" id="txttelefone" required placeholder="Digite o telefone" ng-model="cliente.telefone">
 					<script type="text/javascript">$("#txttelefone").mask("(00) 00000-0009");</script>
-                </div>
-                <br>
-                <button type="button" class="text-white-100 btn btn-dark" ng-click="addCliente(cliente)">Salvar</button>
+                </div><br>
+                
+                <button type="button" class="text-white-100 btn btn-dark" ng-click="addCliente(cliente)" style="float: right; margin-left: 3%;" title="Salvar">SALVAR</button>
+                <button type="button" onclick="GoBackWithRefresh();return false;" class="text-white-100 btn btn-dark" style="float: right;" title="Voltar">VOLTAR</button><br><br> 
+                
             </form>
             <br>
 

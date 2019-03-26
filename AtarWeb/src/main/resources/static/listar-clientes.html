@@ -138,7 +138,7 @@
 
 				<!-- Modal Header -->
 				<div class="modal-header">
-					<h4 class="modal-title">Alterar Cliente</h4>
+					<h4 class="modal-title">Alterar</h4>
 	
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
 				</div>
@@ -169,7 +169,7 @@
 	
 				<!-- Modal footer -->
 				<div class="modal-footer">
-					<button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+					<button type="button" class="btn btn-danger" data-dismiss="modal" title="Cancelar">Cancelar</button>
 					<button type="button" class="text-white-100 btn btn-dark" title="Salvar" data-dismiss="modal" ng-click="updateCliente()">Salvar</button>
 				</div>
 				
@@ -190,8 +190,8 @@
 			          <p>Deseja realmente excluir?</p>
 			        </div>
 			        <div class="modal-footer">
-			          <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="cancelar()">Cancelar</button>
-			          <button type="button" class="btn text-white-100 btn btn-dark" data-dismiss="modal" ng-click="deleteCliente(cliente)">Confirmar</button>
+			          <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="cancelar()" title="Cancelar">Cancelar</button>
+			          <button type="button" class="btn text-white-100 btn btn-dark" data-dismiss="modal" ng-click="deleteCliente(cliente)" title="Confirmar">Confirmar</button>
 			        </div>
 			      </div>
 			    </div>
