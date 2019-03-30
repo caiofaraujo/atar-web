@@ -26,16 +26,13 @@
 <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.Query"/>
 <fullyQualifiedTypeName name="org.springframework.data.querydsl.binding.QuerydslBindings"/>
 <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.JpaRepository"/>
-<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
 <fullyQualifiedTypeName name="org.hibernate.annotations.common.util.impl.LoggerFactory"/>
-<fullyQualifiedTypeName name="com.atar.web.repositories.ClienteRepository"/>
 <fullyQualifiedTypeName name="com.atar.web.repositories.EquipamentoRepository"/>
 <fullyQualifiedTypeName name="org.springframework.data.domain.PageRequest"/>
 <fullyQualifiedTypeName name="org.springframework.data.domain.Page"/>
 <fullyQualifiedTypeName name="com.atar.web.repositories.ServicoRepository"/>
 <fullyQualifiedTypeName name="com.atar.web.services.ClienteService"/>
 <fullyQualifiedTypeName name="com.atar.web.controllers.CadastroClienteController"/>
-<fullyQualifiedTypeName name="com.atar.web.dtos.CadastroClienteDto"/>
 <fullyQualifiedTypeName name="javax.validation.Valid"/>
 <fullyQualifiedTypeName name="java.security.NoSuchAlgorithmException"/>
 <fullyQualifiedTypeName name="com.atar.web.response.Response"/>
@@ -54,4 +51,10 @@
 <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
 <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
 <fullyQualifiedTypeName name="com.atar.web.entities.Equipamentos"/>
+<fullyQualifiedTypeName name="com.atar.web.repositories.ClienteRepository"/>
+<fullyQualifiedTypeName name="com.atar.web.dtos.CadastroClienteDto"/>
+<fullyQualifiedTypeName name="org.springframework.context.annotation.Configuration"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="com.atar.web.converter.ClienteConverter"/>
+<fullyQualifiedTypeName name="org.hibernate.annotations.Fetch"/>
 </qualifiedTypeNameHistroy>

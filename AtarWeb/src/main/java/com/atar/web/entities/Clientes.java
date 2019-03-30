@@ -47,10 +47,10 @@ public class Clientes implements Serializable {
 	@Column(name = "NR_TELEFONE_CLIE")
 	private String nrTelefone;
 	
-	@OneToMany(cascade= CascadeType.ALL)
-	@LazyCollection(LazyCollectionOption.FALSE)  
-	@JoinColumn(name = "ID_SERVICO_SERV")
-	private List<Servicos> servicos;
+//	@OneToMany(cascade= CascadeType.ALL)
+//	@LazyCollection(LazyCollectionOption.FALSE)  
+//	@JoinColumn(name = "ID_SERVICO_SERV")
+//	private List<Servicos> servicos;
 	
 //	@OneToMany(cascade= CascadeType.ALL, fetch = FetchType.EAGER)
 //	@JoinColumn(name = "ID_CLIENTE_CLIE")
@@ -82,13 +82,13 @@ public class Clientes implements Serializable {
 //		this.clientes = clientes;
 //	}
 
-	public List<Servicos> getServicos() {
-		return servicos;
-	}
-
-	public void setServicos(List<Servicos> servicos) {
-		this.servicos = servicos;
-	}
+//	public List<Servicos> getServicos() {
+//		return servicos;
+//	}
+//
+//	public void setServicos(List<Servicos> servicos) {
+//		this.servicos = servicos;
+//	}
 	
 //	public List<Equipamentos> getEquipamentos() {
 //		return equipamentos;

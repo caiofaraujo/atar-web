@@ -33,8 +33,11 @@ public class ClienteConverter {
 	 * @return cadastroClienteDto
 	 */
 	public CadastroClienteDto converterCadastroClienteDto(Clientes cliente) {
+		//
 		CadastroClienteDto cadastroClienteDto = new CadastroClienteDto();
-		cadastroClienteDto.setId(cliente.getId());
+		if (cliente.getId() != null) {
+			cadastroClienteDto.setId(cliente.getId());
+		}
 		cadastroClienteDto.setNome(cliente.getNome());
 		cadastroClienteDto.setEndereco(cliente.getEndereco());
 		cadastroClienteDto.setTelefone(cliente.getNrTelefone());

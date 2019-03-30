@@ -31,6 +31,7 @@ public class CadastroServicoDto {
 	
 	private String nomeCliente;
 	
+	@NotEmpty(message = "Selecione um cliente")
 	private CadastroClienteDto cliente;
 
  
@@ -42,6 +43,7 @@ public class CadastroServicoDto {
 		this.cliente = cliente;
 	}
 
+	@NotEmpty(message = "Selecione um equipamento")
 	private CadastroEquipamentoDto equipamento;
 
 	public CadastroServicoDto() {

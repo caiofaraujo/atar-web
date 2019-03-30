@@ -169,9 +169,14 @@ public class CadastroServicoController {
 		servico.setObservacao(cadastroServicoDto.getObservacao());
 		servico.setDtInicioServ(cadastroServicoDto.getDtInicioServico());
 		servico.setDtFinalServ(cadastroServicoDto.getDtFinalServico());		
-		servico.setCliente(clienteConverter.converterDtoParaCliente(cadastroServicoDto.getCliente()));
+		if (cadastroServicoDto.getCliente() != null) {
+			servico.setCliente(clienteConverter.converterDtoParaCliente(cadastroServicoDto.getCliente()));
+		}
 		servico.setId(cadastroServicoDto.getId());
-		servico.setEquipamento(equipamentoConverter.converterDtoParaEquipamento(cadastroServicoDto.getEquipamento()));
+		if (cadastroServicoDto.getEquipamento() != null) {
+			servico.setEquipamento(equipamentoConverter.converterDtoParaEquipamento(cadastroServicoDto.getEquipamento()));
+		}
+		
 		return servico;
 	}
 
@@ -189,10 +194,13 @@ public class CadastroServicoController {
 		cadastroServicoDto.setObservacao(servico.getObservacao());
 		cadastroServicoDto.setDtInicioServico(servico.getDtInicioServ());
 		cadastroServicoDto.setDtFinalServico(servico.getDtFinalServ());
-		cadastroServicoDto.setCliente(clienteConverter.converterCadastroClienteDto(servico.getCliente()));
+		if (servico.getCliente() != null) {
+			cadastroServicoDto.setCliente(clienteConverter.converterCadastroClienteDto(servico.getCliente()));
+		}
 		cadastroServicoDto.setId(servico.getId());
-		cadastroServicoDto.setEquipamento(equipamentoConverter.converterCadastroEquipamentoDto(servico.getEquipamento()));
-		
+		if (servico.getEquipamento() != null) {
+			cadastroServicoDto.setEquipamento(equipamentoConverter.converterCadastroEquipamentoDto(servico.getEquipamento()));
+		}
 		return cadastroServicoDto;
 	}
 

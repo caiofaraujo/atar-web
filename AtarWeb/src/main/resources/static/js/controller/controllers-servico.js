@@ -40,7 +40,10 @@ app.controller('ServicoCRUDCtrl', ['$scope', '$http', 'ServicoCRUDService','Clie
 
                     },
                         function error(response) {
-                            $scope.errorMessage = response.data.errors[0];
+                    		if (response.data.errors[0] != null) {
+                    			$scope.errorMessage = response.data.errors[0];
+                    		}
+                            
                             $scope.isExibirErro = true;
                             $scope.message = '';
                         });
