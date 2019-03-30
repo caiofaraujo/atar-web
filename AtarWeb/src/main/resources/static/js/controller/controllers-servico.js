@@ -34,6 +34,8 @@ app.controller('ServicoCRUDCtrl', ['$scope', '$http', 'ServicoCRUDService','Clie
                         $scope.servico.dtInicioServico = '';
                         $scope.servico.dtFinalServico = '';
                         $scope.servico.id = '';
+                        $scope.servico.cliente = '';
+                        $scope.servico.equipamento = '';
                         // $scope.getAllEquipamentos();
 
                     },
@@ -67,6 +69,8 @@ app.controller('ServicoCRUDCtrl', ['$scope', '$http', 'ServicoCRUDService','Clie
                         $scope.servico.dtInicioServico = '';
                         $scope.servico.dtFinalServico = '';
                         $scope.servico.id = '';
+                        $scope.servico.cliente = '';
+                        $scope.servico.equipamento = '';
                         $scope.getAllServicos();
                     },
                         function error(response) {

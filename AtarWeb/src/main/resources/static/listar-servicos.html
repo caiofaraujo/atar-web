@@ -75,6 +75,15 @@
         function w3_close() {
             document.getElementById("mySidebar").style.display = "none";
         }
+        function GoBackWithRefresh(event) {
+            if ('referrer' in document) {
+                window.location = document.referrer;
+                /* OR */
+                //location.replace(document.referrer);
+            } else {
+                window.history.back();
+            }
+        }
     </script>
 	<!-- FIM MENU -->
 
@@ -123,8 +132,9 @@
 			
 			<div id="btnIncluir" align="right">
 				<form action="/cadastro-servico.html">
-				    <input type="submit" class="text-white-100 btn btn-dark" value="INCLUIR" title="Incluir"/>
+				    <input type="submit" class="text-white-100 btn btn-dark" value="INCLUIR" title="Incluir" style="float: right; margin-left: 3%;"/>
 				</form>
+				<button type="button" onclick="GoBackWithRefresh();return false;" class="text-white-100 btn btn-dark" style="float: right;" title="Voltar">VOLTAR</button><br><br>
 			</div><br>
 			
 			<div class="alert alert-success alert-dismissible" ng-if="isExibirSucesso">
