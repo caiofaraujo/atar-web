@@ -27,11 +27,21 @@ public class CadastroServicoDto {
 	
 	private Date dtFinalServico;
 	
+	private Date dtFinalRet ;
+	
  
 	
+	public Date getDtFinalRet() {
+		return dtFinalRet;
+	}
+
+	public void setDtFinalRet(Date dtFinalRet) {
+		this.dtFinalRet = dtFinalRet;
+	}
+
 	private String nomeCliente;
 	
-	@NotEmpty(message = "Selecione um cliente")
+	//@NotEmpty(message = "Selecione um cliente")
 	private CadastroClienteDto cliente;
 
  
@@ -43,7 +53,7 @@ public class CadastroServicoDto {
 		this.cliente = cliente;
 	}
 
-	@NotEmpty(message = "Selecione um equipamento")
+	//@NotEmpty(message = "Selecione um equipamento")
 	private CadastroEquipamentoDto equipamento;
 
 	public CadastroServicoDto() {

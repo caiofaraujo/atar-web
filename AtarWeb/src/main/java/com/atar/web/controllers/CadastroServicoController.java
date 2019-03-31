@@ -168,7 +168,8 @@ public class CadastroServicoController {
 		servico.setTipo(cadastroServicoDto.getTipo());
 		servico.setObservacao(cadastroServicoDto.getObservacao());
 		servico.setDtInicioServ(cadastroServicoDto.getDtInicioServico());
-		servico.setDtFinalServ(cadastroServicoDto.getDtFinalServico());		
+		servico.setDtFinalServ(cadastroServicoDto.getDtFinalServico());
+		servico.setDtFinalRet(cadastroServicoDto.getDtFinalRet());	
 		if (cadastroServicoDto.getCliente() != null) {
 			servico.setCliente(clienteConverter.converterDtoParaCliente(cadastroServicoDto.getCliente()));
 		}
@@ -194,6 +195,7 @@ public class CadastroServicoController {
 		cadastroServicoDto.setObservacao(servico.getObservacao());
 		cadastroServicoDto.setDtInicioServico(servico.getDtInicioServ());
 		cadastroServicoDto.setDtFinalServico(servico.getDtFinalServ());
+		cadastroServicoDto.setDtFinalRet(servico.getDtFinalRet());
 		if (servico.getCliente() != null) {
 			cadastroServicoDto.setCliente(clienteConverter.converterCadastroClienteDto(servico.getCliente()));
 		}

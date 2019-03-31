@@ -10,14 +10,15 @@ app.service('ServicoCRUDService', ['$http', function ($http) {
             	tipo : servico.tipo,
             	observacao : servico.observacao,
             	dtInicioServico : servico.dtInicioServico,
-            	dtFinalServico : servico.dtFinalServico, 
+            	dtFinalServico : servico.dtFinalServico,
+            	dtFinalRet : servico.dtFinalRet,
             	cliente : servico.cliente,
             	equipamento : servico.equipamento
             }
         });
     }
     
-    this.updateServico = function addServ(servico) {   
+    this.updateServico = function addServ(servico) {       	
         return $http({
             method: 'POST',
             url: '/atar/cadastrar-servico/alterar',
@@ -28,6 +29,7 @@ app.service('ServicoCRUDService', ['$http', function ($http) {
             	dtInicioServico : servico.dtInicioServico,
             	dtFinalServico : servico.dtFinalServico,
             	cliente : servico.cliente,
+            	dtFinalRet : servico.dtFinalRet,
             	equipamento : servico.equipamento,
             	id : servico.id
             }

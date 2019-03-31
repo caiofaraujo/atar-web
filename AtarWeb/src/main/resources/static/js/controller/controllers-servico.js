@@ -12,10 +12,11 @@ app.controller('ServicoCRUDCtrl', ['$scope', '$http', 'ServicoCRUDService','Clie
         	$scope.servico = servico;
         	$scope.servico.dtFinalServico = servico.dtFinalServico != null ? new Date(servico.dtFinalServico) : null;
         	$scope.servico.dtInicioServico = servico.dtInicioServico != null ? new Date(servico.dtInicioServico) : null;
+        	$scope.servico.dtFinalRet = servico.dtFinalRet != null ? new Date(servico.dtFinalRet) : null;
         	
         }
         
-
+ 
         $scope.addServico = function () {
         	$scope.isExibirErro = false;
         	$scope.isExibirSucesso = false;
@@ -92,10 +93,23 @@ app.controller('ServicoCRUDCtrl', ['$scope', '$http', 'ServicoCRUDService','Clie
         $scope.getAllServicos = function () {
         	ServicoCRUDService.getAllServicos().then(function success(response) {
                 $scope.servicos = response.data.data;
+//                $scope.servicos.forEach(a =>         
+//             );
+                angular.forEach( $scope.servicos, function(a){
+                    if(a.tipo === "MANUTENÇÃO PREVENTIVA"){
+                    	a.dtRestante = Math.floor((Math.abs(new Date(a.dtInicioServico) - new Date(a.dtFinalRet)) ) / 86400000)
+                    }else{ 
+                    	a.dtRestante = Math.floor((Math.abs(new Date(a.dtInicioServico) - new Date(a.dtFinalServico)) ) / 86400000)
+                    }
+                	});
+                
             }, function error(response) {
                 $scope.errorMessage = 'Falha na consulta!';
                 $scope.message = '';
             });
+        	
+        	
+        	
         }
         
         $scope.deletar = function(servico) {
@@ -103,6 +117,7 @@ app.controller('ServicoCRUDCtrl', ['$scope', '$http', 'ServicoCRUDService','Clie
 		}
         
         $scope.cancelar = function() {
+        	$scope.getAllServicos();
         	$scope.servico = {};
 		}
         
@@ -123,10 +138,10 @@ app.controller('ServicoCRUDCtrl', ['$scope', '$http', 'ServicoCRUDService','Clie
         
         $scope.getAllEquipamentos = function(){
          	EquipamentoCRUDService.getAllEquipamentos().then(function success(response) {
-         		debugger;
+         		
                 $scope.equipamentos = response.data.data;
             }, function error(response) {
-            	debugger;
+             
                 $scope.errorMessage = 'Falha na consulta!';
                 $scope.message = '';
             });	

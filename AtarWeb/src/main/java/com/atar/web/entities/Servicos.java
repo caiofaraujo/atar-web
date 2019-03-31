@@ -45,8 +45,20 @@ public class Servicos implements Serializable {
 	private Date dtInativacao;
 	
 	@Column(name = "DH_CADASTRO_SERV")
-	private Date dtCadastro;	
+	private Date dtCadastro;
 	
+	@Column(name = "DH_RETORNO_SERV")
+	private Date dtFinalRet;
+	
+	
+	public Date getDtFinalRet() {
+		return dtFinalRet;
+	}
+
+	public void setDtFinalRet(Date dtFinalRet) {
+		this.dtFinalRet = dtFinalRet;
+	}
+
 	@JoinColumn(name = "ID_CLIENTE_CLIE")
 	@OneToOne
 	private Clientes cliente;

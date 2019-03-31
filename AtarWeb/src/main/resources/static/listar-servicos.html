@@ -103,6 +103,8 @@
 							<th style="text-align:left">Obs.</th>
 							<th style="text-align:left">Data inicio</th>
 							<th style="text-align:left">Data fim</th>
+							<th style="text-align:left">Dias Restantes</th>
+							<th style="text-align:left">Data Retorno</th>
 							<th style="text-align:left">Ações</th>
 						</tr>
 					</thead>
@@ -117,6 +119,9 @@
 							<td style="text-align:left">{{servico.observacao }}</td>
 							<td style="text-align:left">{{servico.dtInicioServico | date : "dd/MM/yyyy"}}</td>
 							<td style="text-align:left">{{servico.dtFinalServico | date : "dd/MM/yyyy"}}</td>
+							<td style="text-align:left">{{servico.dtRestante  }}</td>
+							<td style="text-align:left">{{servico.dtFinalRet | date : "dd/MM/yyyy"}}</td>
+							
 		                    <td>
 								<button type="button" data-toggle="modal" data-target="#myModal"  class="btn" value="Update" ng-click="editar(servico)" title="Alterar">
 														<i class="fas fa-edit"></i>											
@@ -194,6 +199,13 @@
 			       </div>
                </div>
                
+                 <div class="form-group">
+			       <label for="dtFinalRet" class="control-label">Data de Retorno: </label>
+			       <div class="control">
+			           <input ng-model="servico.dtFinalRet" id="dtFimServ" class="form-control" type="date" date-model="servico.dtFinalRet">
+			       </div>
+               </div>               
+             
  
                <div class="form-group">
                 <label for="cliente">Cliente: </label><br>                
@@ -212,7 +224,7 @@
 
       <!-- Modal footer -->
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal" title="Cancelar">Cancelar</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="cancelar()"  title="Cancelar">Cancelar</button>
         <button type="button" class="btn text-white-100 btn btn-dark" data-dismiss="modal" ng-click="updateServico()" title="Confirmar">Confirmar</button>
       </div>
 
