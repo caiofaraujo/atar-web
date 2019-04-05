@@ -103,7 +103,7 @@ app.controller('ClienteCRUDCtrl', ['$scope', '$http', 'ClienteCRUDService',
                  $scope.isExibirErro = false;
                  $scope.getAllClientes();
             	}, function error(res){
-            		 $scope.errorMessage = 'Falha na consulta!';
+            		 $scope.errorMessage = res.data.errors[0];
                      $scope.message = '';
                      $scope.isExibirErro = true;
             	});

@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.atar.web.entities.Clientes;
 import com.atar.web.entities.Servicos;
 import com.atar.web.repositories.ServicoRepository;
 import com.atar.web.services.ServicoService;
@@ -41,6 +42,14 @@ public class ServicoServiceImpl implements ServicoService{
 	public void deletar(Servicos servico) {
 		// TODO Auto-generated method stub
 		this.servicoRepository.delete(servico);
+		
+		
+		
+	}
+
+	@Override
+	public Optional<List<Servicos>> buscarPorCliente(Clientes cliente) {
+		return  this.servicoRepository.findByCliente(cliente);
 		
 	}
 
