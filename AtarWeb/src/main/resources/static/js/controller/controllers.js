@@ -106,6 +106,8 @@ app.controller('ClienteCRUDCtrl', ['$scope', '$http', 'ClienteCRUDService',
             		 $scope.errorMessage = res.data.errors[0];
                      $scope.message = '';
                      $scope.isExibirErro = true;
+                     $scope.getAllClientes();
+
             	});
         }
 
