@@ -2,22 +2,27 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="Incluir" key="selection"/>
+		<item value="#CC6860" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="INCLUIR"/>
-			<item value="Incluir"/>
-			<item value="GoBackWithRefresh"/>
-			<item value="DELETAR"/>
-			<item value="idCliente"/>
-			<item value="listar"/>
-			<item value="clienteConverter"/>
-			<item value="ClienteConverter"/>
-			<item value="al"/>
-			<item value="id_cliente_clie"/>
+			<item value="#CC6860"/>
+			<item value="#5A94C8"/>
+			<item value="dropbtn"/>
+			<item value="dropdown-content"/>
+			<item value="myDropdown"/>
+			<item value="w3-bar-item"/>
+			<item value="w3-border-right"/>
+			<item value="w3-bar-block"/>
+			<item value="hover"/>
+			<item value="btnMenu"/>
+			<item value=".css"/>
+			<item value="date2"/>
+			<item value="update"/>
+			<item value="alterar"/>
+			<item value="confirm"/>
 		</list>
 		<list key="replacehistory">
 			<item value="Equipamentos"/>

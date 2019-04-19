@@ -50,8 +50,8 @@
 <body>
 	<!-- MENU -->
     <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
-      <button onclick="w3_close()" class="w3-bar-item w3-large">Fechar &times;</button>
-	  <button onclick="myFunction()" class="w3-bar-item w3-button dropbtn menuPai" >Gerenciamento</button>
+      <button onclick="w3_close()" class="w3-bar-item w3-large btnFechar">☰ &times;</button>
+	  <button onclick="myFunction()" class="w3-bar-item w3-button dropbtn menuPai" >GERENCIAMENTO</button>
 	  <div id="myDropdown" class="dropdown-content">
 	    <a href="/cadastro-cliente.html" class="w3-bar-item w3-button">Cadastrar Cliente</a>
         <a href="/cadastro-equipamento.html" class="w3-bar-item w3-button">Cadastrar Equipamento</a>
@@ -82,7 +82,9 @@
 	<!-- FIM MENU -->
 
 	<div class="container bg-light">
+	<div id="meplus-consumer-eu-enroll" class="form row no-header padded clearfix">
 	<div ng-controller="ServicoCRUDCtrl" class="padraoContainer">
+		<img id="imgCadastroServico" src="/images/air-conditioner-png-2900x2200.png" style="float: right; margin-top: -3%;" >
 		<h3>Listagem de Serviços</h3>
 		<div class="table-responsive">
 			<table class="container mdl-data-table mdl-js-data-table mdl-shadow--2dp">
@@ -205,6 +207,7 @@
     </div>
   </div>
   </div>
+	</div>
 	</div>
 	</div>
 	 

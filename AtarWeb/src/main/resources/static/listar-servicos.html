@@ -16,7 +16,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu" />
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<!--     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 	<script src="/js/app.js"></script>
 	<script src="/js/service/services-equipamento.js"></script>
@@ -52,8 +52,8 @@
 <body>
 	<!-- MENU -->
     <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
-      <button onclick="w3_close()" class="w3-bar-item w3-large">Fechar &times;</button>
-	  <button onclick="myFunction()" class="w3-bar-item w3-button dropbtn menuPai" >Gerenciamento</button>
+      <button onclick="w3_close()" class="w3-bar-item w3-large btnFechar">☰ &times;</button>
+	  <button onclick="myFunction()" class="w3-bar-item w3-button dropbtn menuPai" >GERENCIAMENTO</button>
 	  <div id="myDropdown" class="dropdown-content">
 	    <a href="/cadastro-cliente.html" class="w3-bar-item w3-button">Cadastrar Cliente</a>
         <a href="/cadastro-equipamento.html" class="w3-bar-item w3-button">Cadastrar Equipamento</a>
@@ -64,8 +64,9 @@
 	  </div>
     </div>
 
-    <div class="w3-teal">
-        <button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰ ATAR</button>
+    <div class="w3-teal btnMenu">
+        <button id="btnMenu" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰ ATAR <img id="auxMenuIcon" src="/images/cold5bold-512x512.png" alt=""></button>
+        
     </div>
     <script>
         function w3_open() {
@@ -88,7 +89,9 @@
 	<!-- FIM MENU -->
 
 	<div class="container bg-light">
+	<div id="meplus-consumer-eu-enroll" class="form row no-header padded clearfix">
 		<div ng-controller="ServicoCRUDCtrl" class="padraoContainer">
+		<img id="imgCadastroServico" src="/images/air-conditioner-png-2900x2200.png" style="float: right; margin-top: -3%;" >
 			<h3>Listagem de Serviços</h3>
 			<div class="table-responsive">
 				<table class="container mdl-data-table mdl-js-data-table mdl-shadow--2dp">
@@ -123,10 +126,10 @@
 							<td style="text-align:left">{{servico.dtFinalRet | date : "dd/MM/yyyy"}}</td>
 							
 		                    <td>
-								<button type="button" data-toggle="modal" data-target="#myModal"  class="btn" value="Update" ng-click="editar(servico)" title="Alterar">
+								<button type="button" data-toggle="modal" data-target="#myModal"  class="btnIcons" value="Update" ng-click="editar(servico)" title="Alterar">
 														<i class="fas fa-edit"></i>											
 								</button>
-								<button type="button" data-toggle="modal" data-target="#modalDelete" class="btn" value="Delete" ng-click="deletar(servico)"  title="Excluir">
+								<button type="button" data-toggle="modal" data-target="#modalDelete" class="btnIcons" value="Delete" ng-click="deletar(servico)"  title="Excluir">
 														<i class="fas fa-trash-alt"></i>											
 								</button>
 		                    </td>							
@@ -137,10 +140,12 @@
 			
 			<div id="btnIncluir" align="right">
 				<form action="/cadastro-servico.html">
-				    <input type="submit" class="text-white-100 btn btn-dark" value="INCLUIR" title="Incluir" style="float: right; margin-left: 3%;"/>
+				    <input type="submit" class="text-white-100 btnPadrao"  value="INCLUIR" title="Incluir" style="float: right; margin-left: 3%;"/>
 				</form>
-				<button type="button" onclick="GoBackWithRefresh();return false;" class="text-white-100 btn btn-dark" style="float: right;" title="Voltar">VOLTAR</button><br><br>
-			</div><br>
+				<form>
+				    <input type="submit" onclick="GoBackWithRefresh();return false;" class="text-white-100 btnPadrao" value="VOLTAR" title="Voltar" style="float: right; margin-left: 3%;"/>
+				</form>
+			</div><br><br><br>
 			
 			<div class="alert alert-success alert-dismissible" ng-if="isExibirSucesso">
             	<button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -156,7 +161,11 @@
 
       <!-- Modal Header -->
       <div class="modal-header">
-        <h4 class="modal-title">Alterar</h4>
+        
+        
+        <img id="imgListarServicoUpdate1" src="/images/maintenance.png" ><h4 class="modal-title">Alterar</h4><br>
+        
+        
  
         <button type="button" class="close" data-dismiss="modal">&times;</button>        
       </div>
@@ -224,8 +233,8 @@
 
       <!-- Modal footer -->
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="cancelar()"  title="Cancelar">Cancelar</button>
-        <button type="button" class="btn text-white-100 btn btn-dark" data-dismiss="modal" ng-click="updateServico()" title="Confirmar">Confirmar</button>
+        <button type="button" class="btnPadrao" data-dismiss="modal" ng-click="cancelar()"  title="Cancelar">Cancelar</button>
+        <button type="button" class="btnPadrao" data-dismiss="modal" ng-click="updateServico()" title="Confirmar">Confirmar</button>
       </div>
 
     </div>
@@ -243,12 +252,13 @@
           <p>Deseja realmente excluir?</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="cancelar()" title="Cancelar">Cancelar</button>
-          <button type="button" class="btn text-white-100 btn btn-dark" data-dismiss="modal" ng-click="deleteServico(servico)" title="Confirmar">Confirmar</button>
+          <button type="button" class="btnPadrao" data-dismiss="modal" ng-click="cancelar()" title="Cancelar">Cancelar</button>
+          <button type="button" class="btnPadrao" data-dismiss="modal" ng-click="deleteServico(servico)" title="Confirmar">Confirmar</button>
         </div>
       </div>
     </div>
   </div>
+	</div>
 	</div>
 	</div>
 </body>
