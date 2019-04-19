@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import javax.validation.Valid;
 
@@ -23,8 +24,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.atar.web.dtos.CadastroClienteDto;
 import com.atar.web.entities.Clientes;
+import com.atar.web.entities.Servicos;
 import com.atar.web.response.Response;
 import com.atar.web.services.ClienteService;
+import com.atar.web.services.ServicoService;
 
 @RestController
 @RequestMapping("/atar/cadastrar-cliente")
@@ -35,6 +38,9 @@ public class CadastroClienteController {
 
 	@Autowired
 	private ClienteService clienteService;
+	
+	@Autowired
+	private ServicoService servicoService;
 
 	public CadastroClienteController() {
 
@@ -99,10 +105,17 @@ public class CadastroClienteController {
 
 		log.info("Deletando Cliente: {}", cadastroClienteDto.toString());
 		Response<CadastroClienteDto> response = new Response<CadastroClienteDto>();
-
-
-		Clientes cliente = this.converterDtoParaCliente(cadastroClienteDto);
-		clienteService.deletar(cliente.getId());
+		Clientes cliente = this.converterDtoParaCliente(cadastroClienteDto);		
+		Optional<List<Servicos>> retorno = servicoService.buscarPorCliente(cliente);		
+		
+		if(retorno.isPresent()){			
+			response.getErrors().add("Existem Serviços atrelados ao cliente");
+			return ResponseEntity.badRequest().body(response);
+			
+		}else{
+		
+			clienteService.deletar(cliente.getId());
+		}
 
 		return ResponseEntity.ok(response);
 	}
