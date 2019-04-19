@@ -15,7 +15,7 @@
     <script src="js/app.js"></script>
     <script src="js/service/services-equipamento.js"></script>
     <script src="js/controller/controllers-equipamento.js"></script>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<!--     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu" />
 </head>
 
@@ -46,8 +46,8 @@
 <body>
 	<!-- MENU -->
     <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
-      <button onclick="w3_close()" class="w3-bar-item w3-large">Fechar &times;</button>
-	  <button onclick="myFunction()" class="w3-bar-item w3-button dropbtn menuPai" >Gerenciamento</button>
+      <button onclick="w3_close()" class="w3-bar-item w3-large btnFechar">☰ &times;</button>
+	  <button onclick="myFunction()" class="w3-bar-item w3-button dropbtn menuPai" >GERENCIAMENTO</button>
 	  <div id="myDropdown" class="dropdown-content">
 	    <a href="/cadastro-cliente.html" class="w3-bar-item w3-button">Cadastrar Cliente</a>
         <a href="/cadastro-equipamento.html" class="w3-bar-item w3-button">Cadastrar Equipamento</a>
@@ -58,8 +58,9 @@
 	  </div>
     </div>
 
-    <div class="w3-teal">
-        <button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰ ATAR</button>
+    <div class="w3-teal btnMenu">
+        <button id="btnMenu" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰ ATAR <img id="auxMenuIcon" src="/images/cold5bold-512x512.png" alt=""></button>
+        
     </div>
     <script>
         function w3_open() {
@@ -84,8 +85,11 @@
 
 
     <div class="container bg-light">
+    <div id="meplus-consumer-eu-enroll" class="form row no-header padded clearfix">
     	<div ng-controller="EquipamentoCRUDCtrl" class="padraoContainer">
     	<br>
+    	<img id="imgCadastroServico" src="/images/ar-home-png-587x440.png" style="float: right; margin-top: -3%;" >
+		<img id="imgCadastroServico2" src="/images/maintenance.png" ><br>
         
             <h3>Cadastro de Equipamentos</h3>
             <br>
@@ -120,8 +124,8 @@
 				   	<input type="modelo" class="form-control" id="modelo" required placeholder="Digite o modelo" ng-model="equipamento.modelo">
 				</div><br>
 				
-                <button type="button" class="text-white-100 btn btn-dark" ng-click="addEquipamento(equipamento)" style="float: right; margin-left: 3%;" title="Salvar">SALVAR</button>
-                <button type="button" onclick="GoBackWithRefresh();return false;" class="text-white-100 btn btn-dark" style="float: right;" title="Voltar">VOLTAR</button><br><br>  
+                <button type="button" class="text-white-100 btnPadrao" ng-click="addEquipamento(equipamento)" style="float: right; margin-left: 3%;" title="Salvar">SALVAR</button>
+                <button type="button" onclick="GoBackWithRefresh();return false;" class="text-white-100 btnPadrao" style="float: right;" title="Voltar">VOLTAR</button><br><br>  
                 
                 
             </form>
@@ -137,6 +141,7 @@
             </div>
             
     	</div>
+    </div>
     </div>
 </body>
 </html>

@@ -104,6 +104,32 @@ SVG Icons - svgicons.sparkk.fr
 	
 }
 
+#imgListarCliente {
+	max-width: 15%;
+}
+
+#imgListarEquipamentos {
+	max-width: 25%;
+}
+
+.imgLixeira {
+	max-width: 15%;
+}
+
+#imgLixeiraEquip {
+	max-width: 20%;
+}
+
+.imgLixeiraServ {
+	max-width: 20%;
+	
+}
+
+#imgCadastrarCliente {
+	max-width: 22%;
+	margin-left: 200px;
+}
+
 
 #imgCadastroServico2 {
 	max-width: 7%;
@@ -113,8 +139,8 @@ SVG Icons - svgicons.sparkk.fr
 	
 }
 
-#imgListarServicoUpdate1 {
-	max-width: 4%;
+.imgListarServicoUpdate1 {
+	max-width:5%;
 	float: left; 
 	margin-right: 1%;
 	margin-top: 0%;

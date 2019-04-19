@@ -2,27 +2,27 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="#CC6860" key="selection"/>
+		<item value="Ubuntu" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="Ubuntu"/>
+			<item value="Hel"/>
+			<item value="dropdown-content"/>
+			<item value="mySidebar"/>
+			<item value="#btnMenu"/>
+			<item value="w3-bar-item"/>
+			<item value="&quot;w3-bar-item"/>
+			<item value="w3-button"/>
+			<item value="imgListarServicoUpdate"/>
+			<item value="imgCadastroServico"/>
+			<item value="imgCadastroServico2"/>
 			<item value="#CC6860"/>
 			<item value="#5A94C8"/>
 			<item value="dropbtn"/>
-			<item value="dropdown-content"/>
 			<item value="myDropdown"/>
-			<item value="w3-bar-item"/>
-			<item value="w3-border-right"/>
-			<item value="w3-bar-block"/>
-			<item value="hover"/>
-			<item value="btnMenu"/>
-			<item value=".css"/>
-			<item value="date2"/>
-			<item value="update"/>
-			<item value="alterar"/>
-			<item value="confirm"/>
 		</list>
 		<list key="replacehistory">
 			<item value="Equipamentos"/>
@@ -36,7 +36,7 @@
 		<item value="284" key="DIALOG_WIDTH"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 		<item value="384" key="DIALOG_HEIGHT"/>
-		<item value="1025" key="DIALOG_X_ORIGIN"/>
-		<item value="574" key="DIALOG_Y_ORIGIN"/>
+		<item value="978" key="DIALOG_X_ORIGIN"/>
+		<item value="343" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>
