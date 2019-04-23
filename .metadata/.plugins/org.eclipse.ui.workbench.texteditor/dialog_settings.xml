@@ -2,27 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="Ubuntu" key="selection"/>
+		<item value="ServicoService" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="Ubuntu"/>
-			<item value="Hel"/>
-			<item value="dropdown-content"/>
-			<item value="mySidebar"/>
-			<item value="#btnMenu"/>
-			<item value="w3-bar-item"/>
-			<item value="&quot;w3-bar-item"/>
-			<item value="w3-button"/>
-			<item value="imgListarServicoUpdate"/>
-			<item value="imgCadastroServico"/>
-			<item value="imgCadastroServico2"/>
-			<item value="#CC6860"/>
-			<item value="#5A94C8"/>
-			<item value="dropbtn"/>
-			<item value="myDropdown"/>
+			<item value="servicoService"/>
+			<item value="excluir"/>
+			<item value="imgLixeiraServ"/>
+			<item value="imgLixeiraEquip"/>
+			<item value="update1"/>
+			<item value="Update1"/>
+			<item value="imgLixeira"/>
+			<item value="imgListarCliente"/>
 		</list>
 		<list key="replacehistory">
 			<item value="Equipamentos"/>

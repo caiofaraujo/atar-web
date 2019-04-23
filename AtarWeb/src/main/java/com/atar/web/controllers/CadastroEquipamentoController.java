@@ -3,6 +3,7 @@ package com.atar.web.controllers;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import javax.validation.Valid;
 
@@ -23,8 +24,10 @@ import com.atar.web.dtos.CadastroClienteDto;
 import com.atar.web.dtos.CadastroEquipamentoDto;
 import com.atar.web.entities.Clientes;
 import com.atar.web.entities.Equipamentos;
+import com.atar.web.entities.Servicos;
 import com.atar.web.response.Response;
 import com.atar.web.services.EquipamentoService;
+import com.atar.web.services.ServicoService;
 
 @RestController
 @RequestMapping("/atar/cadastrar-equipamento")
@@ -36,12 +39,15 @@ public class CadastroEquipamentoController {
 	@Autowired
 	private EquipamentoService equipamentoService;
 	
+	@Autowired
+	private ServicoService servicoService;
+	
 	public CadastroEquipamentoController() {
 			
 	}
 	
 	/**
-	 * Listagem de clientes no sistema.
+	 * Listagem de equipamentos no sistema.
 	 * 
 	 * @return ResponseEntity<Response<EquipamentoDto>>
 	 * @throws NoSuchAlgorithmException
@@ -75,7 +81,16 @@ public class CadastroEquipamentoController {
 		Response<CadastroEquipamentoDto> response = new Response<CadastroEquipamentoDto>();
 
 		Equipamentos equipamento = this.converterDtoParaEquipamento(cadastroEquipamentoDto);
-		equipamentoService.deletar(equipamento);
+		
+		Optional<List<Servicos>> retorno = servicoService.buscarPorEquipamento(equipamento);
+		
+		if(retorno.isPresent()) {
+			response.getErrors().add("Existem serviços atrelados ao equipamento.");
+			return ResponseEntity.badRequest().body(response);
+		} else {
+			equipamentoService.deletar(equipamento);
+		}
+		
 
 		return ResponseEntity.ok(response);
 	}

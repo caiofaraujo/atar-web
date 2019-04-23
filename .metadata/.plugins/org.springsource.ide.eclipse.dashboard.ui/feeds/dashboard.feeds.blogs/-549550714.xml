@@ -5,7 +5,96 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2019-04-19T01:01:00Z</updated>
+  <updated>2019-04-19T19:19:11Z</updated>
+  <entry>
+    <title>Preview releases of Spring Cloud Alibaba are available: 0.9.0, 0.2.2, and 0.1.2</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/04/19/preview-releases-of-spring-cloud-alibaba-are-available-0-9-0-0-2-2-and-0-1-2" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Spencer Gibb</name>
+    </author>
+    <id>tag:spring.io,2019-04-19:3654</id>
+    <updated>2019-04-19T19:19:11Z</updated>
+    <content type="html">&lt;p&gt;&lt;strong&gt;NOTE: This is a guest post from our friends at Alibaba.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Hi! Today, we’re very excited to announce that the 0.9.0, 0.2.2, and 0.1.2 releases of Spring Cloud Alibaba are now available.&lt;/p&gt;&lt;h2&gt;&lt;a href="#release-highlight" class="anchor" name="release-highlight"&gt;&lt;/a&gt;Release Highlight&lt;/h2&gt;
+&lt;p&gt;Included in this GA are 3 new releases:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Release 0.9.0: Compatible with Spring Cloud Greenwich&lt;/li&gt;
+  &lt;li&gt;Release 0.2.2: Compatible with Spring Cloud Finchley&lt;/li&gt;
+  &lt;li&gt;Release 0.1.2: Compatible with Spring Cloud Edgware&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Four new modules were added to all three releases: &lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;spring-cloud-alibaba-sentinel-zuul&lt;/li&gt;
+  &lt;li&gt;spring-cloud-alibaba-seata&lt;/li&gt;
+  &lt;li&gt;spring-cloud-alibaba-dubbo (not available in Release 0.1.2)&lt;/li&gt;
+  &lt;li&gt;spring-cloud-alibaba-sms&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In addition, we introduced new features in spring-cloud-alibaba-nacos and spring-cloud-alibaba-sentinel, and rocketmq-binder is now integrated with rocketmq-spring. &lt;/p&gt;
+&lt;p&gt;Lastly, we fixed some bugs found in the previous version.&lt;/p&gt;
+&lt;p&gt;Note: The Spring Cloud Alibaba project is a community project maintained by Alibaba.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-alibaba-seata" class="anchor" name="spring-cloud-alibaba-seata"&gt;&lt;/a&gt;Spring Cloud Alibaba Seata&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://github.com/seata/seata"&gt;Seata&lt;/a&gt; is a distributed transaction component that is jointly open-sourced by Alibaba Group and Ant Financial. Being able to integrate with most of today&amp;rsquo;s relational databases that support ACID transactions, Seata addresses distributed transaction issues in microservice scenarios in an efficient and nonintrusive manner.&lt;/p&gt;
+&lt;p&gt;At the level of Spring Cloud, Seata accesses the Spring Cloud layer by passing the transaction context in microservices:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Support for automatic restoration of Seata transaction contexts in a Spring MVC environment&lt;/li&gt;
+  &lt;li&gt;Support for automatic passing of Seata transaction contexts when the service caller calls a service through RestTemplate or FeignClient&lt;/li&gt;
+  &lt;li&gt;Support for using FeingClient together with Hystrix or Sentinel in rate limiting and service-degradation scenarios&lt;/li&gt;
+&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-alibaba-dubbo" class="anchor" name="spring-cloud-alibaba-dubbo"&gt;&lt;/a&gt;Spring Cloud Alibaba Dubbo&lt;/h3&gt;
+&lt;p&gt;&lt;a href="http://dubbo.apache.org/en-us/index.html"&gt;Apache Dubbo™ (incubating)&lt;/a&gt; is a high-performance, Java-based open-source RPC framework.&lt;/p&gt;
+&lt;p&gt;Spring Cloud Alibaba integrated with it: &lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Based on Dubbo Spring Boot 2.7.1 (minimum JDK requirement: Java 8)&lt;/li&gt;
+  &lt;li&gt;Supports all Spring Cloud registry implementations for Dubbo service registration (including Alibaba Nacos) and introduces a new Dubbo registry protocol: &amp;quot;**spring-&lt;a href="cloud://localhost**"&gt;cloud://localhost**&lt;/a&gt;&amp;quot;&lt;/li&gt;
+  &lt;li&gt;Extends the communication protocols of Spring Cloud service-to-service calls, meaning that REST is no longer the only way and more communication protocols that Dubbo supports can be chosen, providing better performance &amp;ndash; e.g. dubbo, thrift, and so on. There are three programming models for the developers:&lt;/li&gt;
+  &lt;li&gt;Standard Apache Dubbo: &lt;code&gt;@Reference&lt;/code&gt; &lt;code&gt;@Service&lt;/code&gt; annotated on Java interface&lt;/li&gt;
+  &lt;li&gt;Spring Cloud Open Feign: &lt;code&gt;@DubboTransported&lt;/code&gt; annotated on &lt;code&gt;@FeignClient&lt;/code&gt; Java interface&lt;/li&gt;
+  &lt;li&gt;Spring Cloud RestTemplate: &lt;code&gt;@DubboTransported&lt;/code&gt; annotated on &lt;code&gt;@Bean&lt;/code&gt; definition of RestTemplate annonated &lt;code&gt;@LoadBalanced&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Substitutes for Netflix Ribbon by using Dubbo built-in Load balancer that offers a weighting mechanism making things more smooth and stable.&lt;/li&gt;
+&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-alibaba-nacos" class="anchor" name="spring-cloud-alibaba-nacos"&gt;&lt;/a&gt;Spring Cloud Alibaba Nacos&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://github.com/alibaba/nacos"&gt;Nacos&lt;/a&gt; is a dynamic service discovery, configuration management, and service management platform that makes it easier to build cloud-native applications.&lt;/p&gt;&lt;h4&gt;&lt;a href="#spring-cloud-alibaba-nacos-config" class="anchor" name="spring-cloud-alibaba-nacos-config"&gt;&lt;/a&gt;Spring Cloud Alibaba Nacos Config&lt;/h4&gt;
+&lt;p&gt;We updated Nacos Config as follows:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Upgrade Nacos Client version to 1.0.0&lt;/li&gt;
+  &lt;li&gt;Support &lt;code&gt;spring.cloud.nacos.config.enabled&lt;/code&gt; configuration to turn off Nacos Config auto-injection&lt;/li&gt;
+  &lt;li&gt;Replace &lt;code&gt;spring.cloud.nacos.config.enabled&lt;/code&gt; with &lt;code&gt;spring.profiles.active&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h4&gt;&lt;a href="#spring-cloud-alibaba-nacos-discovery" class="anchor" name="spring-cloud-alibaba-nacos-discovery"&gt;&lt;/a&gt;Spring Cloud Alibaba Nacos Discovery&lt;/h4&gt;
+&lt;p&gt;We updated Nacos service registration as follows:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Upgrade Nacos Client version to 1.0.0.&lt;/li&gt;
+  &lt;li&gt;Support namespace to isolate the data.&lt;/li&gt;
+  &lt;li&gt;Provide &lt;code&gt;NacosWatch&lt;/code&gt; to trigger &lt;code&gt;HeartbeatEvent&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Make &lt;code&gt;@EnableDiscoveryClient&lt;/code&gt; optional to register service.&lt;/li&gt;
+&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-alibaba-sentinel" class="anchor" name="spring-cloud-alibaba-sentinel"&gt;&lt;/a&gt;Spring Cloud Alibaba Sentinel&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://github.com/alibaba/Sentinel"&gt;Sentinel&lt;/a&gt; is an open-source project developed by the Alibaba Middleware team to address flow-control issues and ensure high availability in distributed architectures. Sentinel takes &amp;ldquo;flow&amp;rdquo; as the breakthrough point, and helps you to ensure service reliability through flow control, circuit breaking, and system load protection.&lt;/p&gt;
+&lt;p&gt;Updates in this release include:&lt;br/&gt;- Upgrade the Sentinel version to 1.5.2&lt;br/&gt;- Add the &lt;code&gt;ruleType&lt;/code&gt; property for sentinel dataSource to fix the bug that the rule data won&amp;rsquo;t load dynamically when dataSource loads empty data for the first time&lt;br/&gt;- Fix the bug that &lt;code&gt;@SentinelRestTemplate&lt;/code&gt; doesn&amp;rsquo;t work in some scenarios&lt;br/&gt;- Add JSR 303 validation in &lt;code&gt;SentinelProperties&lt;/code&gt; and add two configuration items: Client IP and whether &lt;code&gt;CommonFilter&lt;/code&gt; is initialized&lt;br/&gt;- Support automatic injection of &lt;code&gt;RequestOriginParser&lt;/code&gt;&lt;br/&gt;- The priority of &lt;code&gt;SentinelProtectInterceptor&lt;/code&gt; that corresponds to &lt;code&gt;@SentinelRestTemplate&lt;/code&gt; becomes the highest&lt;br/&gt;- &lt;code&gt;SentinelEndpoint&lt;/code&gt; now displays more information, such as application name, log directory, log name policy, dashboard address, metrics file size, client IP, etc&lt;br/&gt;- Support &lt;code&gt;@EnableCircuitBreaker&lt;/code&gt;&lt;br/&gt;- Optimize flow control and circuit breaking handling logic in &lt;code&gt;RestTemplate&lt;/code&gt; and &lt;code&gt;Feign&lt;/code&gt;&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-alibaba-rocketmq-binder" class="anchor" name="spring-cloud-alibaba-rocketmq-binder"&gt;&lt;/a&gt;Spring Cloud Alibaba RocketMQ Binder&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://github.com/apache/rocketmq"&gt;RocketMQ&lt;/a&gt; is an open-source distributed messaging system based on highly available cluster technologies. It provides low-latency and highly available message publication and subscription services.&lt;/p&gt;
+&lt;p&gt;Updates in this release include:&lt;br/&gt;- Integrate with RocketMQ Spring and refactoring&lt;br/&gt;- Support connection with Aliware MQ by configuring Alibaba Cloud AK/SK only&lt;br/&gt;- Optimized processing logic in the cases of message sending and consuming errors&lt;br/&gt;- Support sending messages asynchronously, and, by default, send messages asynchronously&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-alibaba-sentinel-zuul" class="anchor" name="spring-cloud-alibaba-sentinel-zuul"&gt;&lt;/a&gt;Spring Cloud Alibaba Sentinel Zuul&lt;/h3&gt;
+&lt;p&gt;Zuul is a network gateway product of Netflix. We have now integrated it into Sentinel.&lt;/p&gt;
+&lt;p&gt;Updates in this release include:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Sentinel is now integrated with Zuul and provides &lt;code&gt;SentinelPreFilter&lt;/code&gt;?&lt;code&gt;SentinelPostFilter&lt;/code&gt;?&lt;code&gt;SentinelErrorFilter&lt;/code&gt; for request interception&lt;/li&gt;
+  &lt;li&gt;Provide the configuration prefix of &lt;code&gt;spring.cloud.sentinel.zuul.&lt;/code&gt; to configure Sentinel Filter&lt;/li&gt;
+&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-alibaba-cloud-sms" class="anchor" name="spring-cloud-alibaba-cloud-sms"&gt;&lt;/a&gt;Spring Cloud Alibaba Cloud SMS&lt;/h3&gt;
+&lt;p&gt;SMS is a messaging service provided by Alibaba Cloud. &lt;/p&gt;
+&lt;p&gt;Spring Cloud Alibaba Cloud SMS provides the following functions:&lt;br/&gt;- Support single and batch SMS delivery&lt;br/&gt;- Support SMS queries based on mobile phone number, date, and message type&lt;br/&gt;- Support queries of SMS delivery status by subscribing to the downlink messages&lt;br/&gt;- Support content retrieval of end user replies by subscribing to the uplink messages&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-alibaba-cloud-schedulerx" class="anchor" name="spring-cloud-alibaba-cloud-schedulerx"&gt;&lt;/a&gt;Spring Cloud Alibaba Cloud SchedulerX&lt;/h3&gt;
+&lt;p&gt;SchedulerX is a job scheduling middleware tool provided by Alibaba Cloud.&lt;/p&gt;
+&lt;p&gt;In this release we, fixed the circular reference bug.&lt;/p&gt;&lt;h2&gt;&lt;a href="#how-to-use" class="anchor" name="how-to-use"&gt;&lt;/a&gt;How to Use&lt;/h2&gt;
+&lt;p&gt;These artifacts are available from Maven Central and Spring Release repository by using the BOM, as follows:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;&amp;lt;dependencyManagement&amp;gt;&#xD;
+    &amp;lt;dependencies&amp;gt;&#xD;
+        &amp;lt;dependency&amp;gt;&#xD;
+            &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
+            &amp;lt;artifactId&amp;gt;spring-cloud-alibaba-dependencies&amp;lt;/artifactId&amp;gt;&#xD;
+            &amp;lt;version&amp;gt;0.9.0.RELEASE&amp;lt;/version&amp;gt;&#xD;
+            &amp;lt;type&amp;gt;pom&amp;lt;/type&amp;gt;&#xD;
+            &amp;lt;scope&amp;gt;import&amp;lt;/scope&amp;gt;&#xD;
+        &amp;lt;/dependency&amp;gt;&#xD;
+    &amp;lt;/dependencies&amp;gt;&#xD;
+&amp;lt;/dependencyManagement&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a href="#what-rsquo-s-next" class="anchor" name="what-rsquo-s-next"&gt;&lt;/a&gt;What&amp;rsquo;s next&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Sentinel&lt;/strong&gt; currently supports reactive and will adapt to WebFlux and Spring Cloud Gateway.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;RocketMQ Binder&lt;/strong&gt; adaptation to MessageSource for message pulling.&lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>A Bootiful Podcast: Pivotal Field CTO and OG Cloud Native Matt Stine on Architecture</title>
     <link rel="alternate" href="https://spring.io/blog/2019/04/19/a-bootiful-podcast-pivotal-field-cto-and-og-cloud-native-matt-stine-on-architecture" />
@@ -1520,55 +1609,5 @@ class UserWithDetailsController(
   &lt;li&gt;Spring Data Elasticsearch 2.1.20 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-elasticsearch/2.1.20.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/2.1.20.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/2.1.20.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/2.1.20.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;Spring Data Couchbase 2.2.20 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-couchbase/2.2.20.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/2.2.20.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/2.2.20.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/2.2.20.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Cloud Data Flow 2.0.2 GA Released</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/04/10/spring-cloud-data-flow-2-0-2-ga-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Ilayaperumal Gopinathan</name>
-    </author>
-    <id>tag:spring.io,2019-04-10:3634</id>
-    <updated>2019-04-10T05:45:58Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;The &lt;a href="https://cloud.spring.io/spring-cloud-dataflow/"&gt;Spring Cloud Data Flow&lt;/a&gt; team is pleased to announce the release of 2.0.2 GA of Data Flow. Follow the Getting Started guides for running on &lt;a href="http://docs.spring.io/spring-cloud-dataflow/docs/2.0.2.RELEASE/reference/htmlsingle/#getting-started-local"&gt;Local&lt;/a&gt;, &lt;a href="http://docs.spring.io/spring-cloud-dataflow/docs/2.0.2.RELEASE/reference/htmlsingle/#getting-started-cloudfoundry"&gt;Cloud Foundry&lt;/a&gt;, and &lt;a href="http://docs.spring.io/spring-cloud-dataflow/docs/2.0.2.RELEASE/reference/htmlsingle/#getting-started-kubernetes"&gt;Kubernetes&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;This is a minor release with mostly bug fixes and documentation enhancements.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Here are the highlights of this release:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Improved documentation&lt;/p&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Docs update for enabling Kafka on Helm Chart&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Improved architecture diagrams&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Getting started guide improvements&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Bug &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow/milestone/70?closed=1"&gt;fixes&lt;/a&gt; on Spring Cloud Data Flow, Spring Cloud Data Flow UI, and Spring Cloud Deployer implementations&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="stay-in-touch"&gt;&lt;a class="anchor" href="#stay-in-touch"&gt;&lt;/a&gt;Stay in touch&amp;#8230;&amp;#8203;&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;As always, we welcome feedback and contributions, so please reach out to us on &lt;a href="https://stackoverflow.com/questions/tagged/spring-cloud-dataflow"&gt;Stackoverflow&lt;/a&gt; or &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow/issues"&gt;GitHub&lt;/a&gt; or via &lt;a href="https://gitter.im/spring-cloud/spring-cloud-dataflow"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</content>
   </entry>
 </feed>

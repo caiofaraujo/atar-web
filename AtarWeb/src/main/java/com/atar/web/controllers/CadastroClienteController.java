@@ -105,11 +105,13 @@ public class CadastroClienteController {
 
 		log.info("Deletando Cliente: {}", cadastroClienteDto.toString());
 		Response<CadastroClienteDto> response = new Response<CadastroClienteDto>();
+		
 		Clientes cliente = this.converterDtoParaCliente(cadastroClienteDto);		
+		
 		Optional<List<Servicos>> retorno = servicoService.buscarPorCliente(cliente);		
 		
 		if(retorno.isPresent()){			
-			response.getErrors().add("Existem Serviços atrelados ao cliente");
+			response.getErrors().add("Existem serviços atrelados ao cliente.");
 			return ResponseEntity.badRequest().body(response);
 			
 		}else{

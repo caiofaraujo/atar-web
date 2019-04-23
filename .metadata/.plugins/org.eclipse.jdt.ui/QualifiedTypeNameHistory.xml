@@ -43,18 +43,19 @@
 <fullyQualifiedTypeName name="com.atar.web.services.EquipamentoService"/>
 <fullyQualifiedTypeName name="com.atar.web.dtos.CadastroEquipamentoDto"/>
 <fullyQualifiedTypeName name="java.sql.Date"/>
-<fullyQualifiedTypeName name="java.util.Optional"/>
 <fullyQualifiedTypeName name="com.atar.web.dtos.CadastroServicoDto"/>
-<fullyQualifiedTypeName name="com.atar.web.entities.Servicos"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
 <fullyQualifiedTypeName name="com.atar.web.services.ServicoService"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
 <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
-<fullyQualifiedTypeName name="com.atar.web.entities.Equipamentos"/>
 <fullyQualifiedTypeName name="com.atar.web.repositories.ClienteRepository"/>
 <fullyQualifiedTypeName name="com.atar.web.dtos.CadastroClienteDto"/>
 <fullyQualifiedTypeName name="org.springframework.context.annotation.Configuration"/>
 <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
 <fullyQualifiedTypeName name="com.atar.web.converter.ClienteConverter"/>
 <fullyQualifiedTypeName name="org.hibernate.annotations.Fetch"/>
+<fullyQualifiedTypeName name="java.util.Optional"/>
+<fullyQualifiedTypeName name="com.atar.web.entities.Servicos"/>
+<fullyQualifiedTypeName name="org.springframework.http.ResponseEntity"/>
+<fullyQualifiedTypeName name="com.atar.web.entities.Equipamentos"/>
 </qualifiedTypeNameHistroy>

@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.atar.web.entities.Clientes;
+import com.atar.web.entities.Equipamentos;
 import com.atar.web.entities.Servicos;
 import com.atar.web.repositories.ServicoRepository;
 import com.atar.web.services.ServicoService;
@@ -53,7 +54,11 @@ public class ServicoServiceImpl implements ServicoService{
 		
 	}
 
- 
+	@Override
+	public Optional<List<Servicos>> buscarPorEquipamento(Equipamentos equipamento) {
+		return  this.servicoRepository.findByEquipamento(equipamento);
+		
+	}
 
 	
 	

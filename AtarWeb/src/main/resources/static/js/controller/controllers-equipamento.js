@@ -101,9 +101,10 @@ app.controller('EquipamentoCRUDCtrl', ['$scope', '$http', 'EquipamentoCRUDServic
 	             $scope.isExibirErro = false;
 	             $scope.getAllEquipamentos();
 	        	}, function error(res){
-	        		 $scope.errorMessage = 'Falha na consulta!';
+	        		 $scope.errorMessage = res.data.errors[0];
 	                 $scope.message = '';
 	                 $scope.isExibirErro = true;
+	                 $scope.getAllClientes();
 	        	});
         }
 
