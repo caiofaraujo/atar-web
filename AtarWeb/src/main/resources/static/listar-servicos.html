@@ -23,6 +23,7 @@
 	<script src="/js/service/services-servico.js"></script>
 	<script src="/js/service/services.js"></script>
 	<script src="/js/controller/controllers-servico.js"></script>
+	
 </head>
 
 <script>
@@ -92,12 +93,16 @@
 	<div id="meplus-consumer-eu-enroll" class="form row no-header padded clearfix">
 		<div ng-controller="ServicoCRUDCtrl" class="padraoContainer">
 		<img id="imgCadastroServico" src="/images/iconfinder_tools_61840.png" style="float: right; margin-top: -5%;" >
-			<h3 style="margin-top: 6%;">Listagem de Serviços</h3>
+			<h3 style="margin-top: 6%;">Listagem de Serviços</h3><br><br><br>
+			<div class="well form-group" style="margin-top: 1%; float: right;margin-bottom: -20px">
+				<label style="font-weight: normal;"><input type="text" id="txtPesquisar" ng-model="criteria" class="form-control" placeholder="Pesquisar..."></input></label>
+				<label for="search-input"><i class="fa fa-search" aria-hidden="true"></i></label>
+			</div>
 			<div class="table-responsive">
 				<table class="container mdl-data-table mdl-js-data-table mdl-shadow--2dp">
 					<thead class="thead">
 						<tr>
-							<th style="text-align:left">Código</th>
+							<th ng-click="sort('servico.id')" style="text-align:left">Código<i ng-class="{'icon-chevron-up':isSortUp('id'),'icon-chevron-down':isSortDown('id')}"></i></th>
 							<th style="text-align:left">Descrição</th>
 							<th style="text-align:left">Tipo</th>
 							<th style="text-align:left">Cliente</th>
@@ -106,13 +111,13 @@
 							<th style="text-align:left">Obs.</th>
 							<th style="text-align:left">Data inicio</th>
 							<th style="text-align:left">Data fim</th>
-							<th style="text-align:left">Dias Restantes</th>
 							<th style="text-align:left">Data Retorno</th>
+							<th style="text-align:left">Dias Restantes</th>
 							<th style="text-align:left">Ações</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr ng-repeat="servico in servicos">
+						<tr ng-repeat="servico in servicos | filter:criteria">
 							<td style="text-align:center">{{servico.id}}</td>
 							<td style="text-align:left">{{servico.descricao}}</td>
 							<td style="text-align:left">{{servico.tipo}}</td>
@@ -122,8 +127,8 @@
 							<td style="text-align:left">{{servico.observacao }}</td>
 							<td style="text-align:left">{{servico.dtInicioServico | date : "dd/MM/yyyy"}}</td>
 							<td style="text-align:left">{{servico.dtFinalServico | date : "dd/MM/yyyy"}}</td>
-							<td style="text-align:left">{{servico.dtRestante  }}</td>
 							<td style="text-align:left">{{servico.dtFinalRet | date : "dd/MM/yyyy"}}</td>
+							<td style="text-align:center">{{servico.dtRestante  }}</td>
 							
 		                    <td>
 								<button type="button" data-toggle="modal" data-target="#myModal"  class="btnIcons" value="Update" ng-click="editar(servico)" title="Alterar">

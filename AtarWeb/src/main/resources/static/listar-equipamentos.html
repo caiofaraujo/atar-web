@@ -92,7 +92,13 @@
     <div id="meplus-consumer-eu-enroll" class="form row no-header padded clearfix">
         <div ng-controller="EquipamentoCRUDCtrl" class="padraoContainer">
         <img id="imgListarEquipamentos" src="/images/ar-home-png-587x440.png" style="float: right; margin-top: -2%;" >
-            <h3 style="margin-top: 6%;">Listagem de Equipamentos</h3>
+            <h3 style="margin-top: 6%;">Listagem de Equipamentos</h3><br><br><br>
+            
+            <div class="well form-group" style="margin-top: 1%; float: right;margin-bottom: -20px">
+				<label style="font-weight: normal;"><input type="text" id="txtPesquisar" ng-model="criteria" class="form-control" placeholder="Pesquisar..."></input></label>
+				<label for="search-input"><i class="fa fa-search" aria-hidden="true"></i></label>
+			</div>
+            
             <div class="table-responsive">
 			<table class="container mdl-data-table mdl-js-data-table mdl-shadow--2dp" >
 			  <thead>
@@ -104,7 +110,7 @@
 			    </tr>
 			  </thead>
 			  <tbody>
-				<tr ng-repeat="equipamento in equipamentos">
+				<tr ng-repeat="equipamento in equipamentos | filter:criteria">
                     <td style="text-align:center">{{equipamento.id}}</td>
                     <td style="text-align:left" class="mdl-data-table__cell--non-numeric">{{equipamento.marca}}</td>
                     <td style="text-align:left" class="mdl-data-table__cell--non-numeric">{{equipamento.modelo}}</td>

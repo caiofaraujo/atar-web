@@ -105,7 +105,7 @@ SVG Icons - svgicons.sparkk.fr
 }
 
 #imgListarCliente {
-	max-width: 15%;
+	max-width: 22%;
 }
 
 #imgListarEquipamentos {
@@ -440,6 +440,12 @@ a[href]:after{content:none!important;}
 .btnPadrao:active:not(.btnPadrao-link):not(.btnPadrao-flat){background-color:#CC6860;}
 .btnPadrao:active:not(.btnPadrao-link):not(.btnPadrao-flat){background-color:#CC6860;}
 .btnPadrao{border:0;color:#fff!important;background-color:#5A94C8;font-size:14px;font-weight:700;line-height:24px;text-align:left;white-space:normal;-moz-box-shadow:-4px 3px 15px 0 rgba(0,0,0,.2);-webkit-box-shadow:-4px 3px 15px 0 rgba(0,0,0,.2);box-shadow:-4px 3px 15px 0 rgba(0,0,0,.2);-moz-border-radius:0;-webkit-border-radius:0;border-radius:0;text-transform:none!important;-moz-transition:background-color .2s ease,box-shadow .28s cubic-bezier(.4,0,.2,1);-o-transition:background-color .2s ease,box-shadow .28s cubic-bezier(.4,0,.2,1);-webkit-transition:background-color .2s ease,box-shadow .28s cubic-bezier(.4,0,.2,1);transition:background-color .2s ease,box-shadow .28s cubic-bezier(.4,0,.2,1);}
+
+
+.well {
+	float: right;
+}
+
 
 
 

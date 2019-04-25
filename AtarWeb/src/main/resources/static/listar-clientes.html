@@ -93,7 +93,13 @@
     <div id="meplus-consumer-eu-enroll" class="form row no-header padded clearfix">
         <div ng-controller="ClienteCRUDCtrl" ng-app="app" class="padraoContainer">
         	<img id="imgListarCliente" src="/images/iconfinder_3_2716420.png" style="float: right; margin-top: -2%;" >
-            <h3 style="margin-top: 6%">Listagem de Clientes</h3>
+            <h3 style="margin-top: 6%">Listagem de Clientes</h3><br><br><br>
+            
+            <div class="well form-group" style="margin-top: 1%; float: right;margin-bottom: -20px">
+				<label style="font-weight: normal;"><input type="text" id="txtPesquisar" ng-model="criteria" class="form-control" placeholder="Pesquisar..."></input></label>
+				<label for="search-input"><i class="fa fa-search" aria-hidden="true"></i></label>
+			</div>
+			
             <div class="table-responsive">
 			<table class="container mdl-data-table mdl-js-data-table mdl-shadow--2dp" >
 			  <thead>
@@ -106,7 +112,7 @@
 			    </tr>
 			  </thead>
 			  <tbody>
-				<tr ng-repeat="cliente in clientes">
+				<tr ng-repeat="cliente in clientes | filter:criteria">
                     <td style="text-align:center">{{cliente.id}}</td>
                     <td style="text-align:left" class="mdl-data-table__cell--non-numeric">{{cliente.nome}}</td>
                     <td style="text-align:left">{{cliente.endereco}}</td>
